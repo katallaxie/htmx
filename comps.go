@@ -6,8 +6,7 @@ import (
 	"html/template"
 	"io"
 	"strings"
-
-	"github.com/go-playground/validator/v10"
+	
 	"github.com/katallaxie/pkg/errorx"
 	"github.com/yuin/goldmark"
 )
@@ -379,19 +378,6 @@ func IfElse(condition bool, n, elseN Node) Node {
 
 // Errors is a slice of errors.
 type Errors[K comparable] map[K]error
-
-// Error is a node that renders an error.
-func FromValidationErrors[K comparable](errr []validator.FieldError) Errors[K] {
-	ee := make(Errors[K])
-
-	for _, err := range errr {
-		if k, ok := any(err).(K); ok {
-			ee[k] = err
-		}
-	}
-
-	return ee
-}
 
 // KeyExists is a node that renders a child node if a key exists in a map.
 func KeyExists[K comparable, V any](m map[K]V, key K, fn func(k K, v V) Node) Node {
