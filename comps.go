@@ -6,7 +6,7 @@ import (
 	"html/template"
 	"io"
 	"strings"
-	
+
 	"github.com/katallaxie/pkg/errorx"
 	"github.com/yuin/goldmark"
 )
@@ -339,13 +339,6 @@ func (c fallback) Render(w io.Writer) (err error) {
 		n := c.f(nil)
 		return n.Render(w)
 	}
-
-	defer func() {
-		if r := recover(); r != nil {
-			n := c.f(errorx.RecoverError(r))
-			err = n.Render(w)
-		}
-	}()
 
 	var b bytes.Buffer
 
