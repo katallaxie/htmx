@@ -7,7 +7,6 @@ import (
 	"io"
 	"strings"
 
-	"github.com/katallaxie/pkg/errorx"
 	"github.com/yuin/goldmark"
 )
 
