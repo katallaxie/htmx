@@ -20,7 +20,7 @@ require (
 	github.com/yuin/goldmark v1.7.11
 	github.com/zeiss/pkg v0.1.23
 	golang.org/x/text v0.25.0
-	gorm.io/gorm v1.26.0
+	gorm.io/gorm v1.26.1
 )
 
 require (
