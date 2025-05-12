@@ -12,7 +12,7 @@ tool (
 require (
 	github.com/ettle/strcase v0.2.0
 	github.com/hashicorp/golang-lru/v2 v2.0.7
-	github.com/katallaxie/pkg v0.7.6
+	github.com/katallaxie/pkg v0.7.7
 	github.com/spf13/cobra v1.9.1
 	github.com/spf13/pflag v1.0.6
 	github.com/stretchr/testify v1.10.0
@@ -20,7 +20,7 @@ require (
 	github.com/yuin/goldmark v1.7.11
 	github.com/zeiss/pkg v0.1.23
 	golang.org/x/text v0.25.0
-	gorm.io/gorm v1.26.0
+	gorm.io/gorm v1.26.1
 )
 
 require (
