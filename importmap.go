@@ -6,7 +6,7 @@ import (
 	"github.com/katallaxie/htmx/imports"
 	"github.com/katallaxie/pkg/conv"
 	"github.com/katallaxie/pkg/errorx"
-	"github.com/zeiss/pkg/utilx"
+	"github.com/katallaxie/pkg/utilx"
 )
 
 // ImportMap is a struct that represents an import map.

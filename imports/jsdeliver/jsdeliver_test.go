@@ -4,8 +4,8 @@ import (
 	"testing"
 
 	"github.com/katallaxie/htmx/imports"
+	"github.com/katallaxie/pkg/jsonx"
 	"github.com/stretchr/testify/require"
-	"github.com/zeiss/pkg/jsonx"
 )
 
 func TestResolve(t *testing.T) {

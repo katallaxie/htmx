@@ -3,7 +3,7 @@ package cache
 import (
 	"github.com/hashicorp/golang-lru/v2/simplelru"
 	"github.com/katallaxie/htmx/imports"
-	"github.com/zeiss/pkg/errorx"
+	"github.com/katallaxie/pkg/errorx"
 )
 
 var _ imports.Resolver = (*cache)(nil)

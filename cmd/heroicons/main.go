@@ -10,9 +10,9 @@ import (
 	"strings"
 	"text/template"
 
+	"github.com/katallaxie/pkg/filex"
 	"github.com/katallaxie/pkg/logx"
 	"github.com/spf13/pflag"
-	"github.com/zeiss/pkg/filex"
 	"golang.org/x/text/cases"
 	"golang.org/x/text/language"
 )

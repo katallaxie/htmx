@@ -18,7 +18,6 @@ require (
 	github.com/stretchr/testify v1.10.0
 	github.com/tdewolff/parse/v2 v2.8.0
 	github.com/yuin/goldmark v1.7.11
-	github.com/zeiss/pkg v0.1.23
 	golang.org/x/text v0.25.0
 	gorm.io/gorm v1.26.1
 )
