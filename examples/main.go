@@ -2,10 +2,13 @@ package main
 
 import (
 	"net/http"
+	"time"
 
 	htmx "github.com/katallaxie/htmx"
 	"github.com/katallaxie/htmx/buttons"
 )
+
+const defaultTimeout = 3 * time.Second
 
 func Demo() htmx.Node {
 	return htmx.HTML5(
@@ -32,5 +35,12 @@ func hello(w http.ResponseWriter, _ *http.Request) {
 func main() {
 	http.HandleFunc("/", hello)
 
-	http.ListenAndServe(":3000", nil)
+	server := &http.Server{
+		Addr:              ":3000",
+		ReadHeaderTimeout: defaultTimeout,
+	}
+
+	if err := server.ListenAndServe(); err != nil {
+		panic(err)
+	}
 }
