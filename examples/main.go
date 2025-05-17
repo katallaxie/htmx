@@ -25,8 +25,8 @@ func Demo() htmx.Node {
 	)
 }
 
-func hello(w http.ResponseWriter, req *http.Request) {
-	Demo().Render(w)
+func hello(w http.ResponseWriter, _ *http.Request) {
+	_ = Demo().Render(w)
 }
 
 func main() {
