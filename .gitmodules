@@ -1,3 +1,6 @@
 [submodule "heroicons"]
 	path = heroicons
 	url = https://github.com/tailwindlabs/heroicons
+[submodule "sidekickicons"]
+	path = sidekickicons
+	url = https://github.com/ndri/sidekickicons
