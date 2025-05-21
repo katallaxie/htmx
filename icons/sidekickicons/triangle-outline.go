@@ -7,22 +7,22 @@ import (
 )
 
 func TriangleOutline(p icons.IconProps) htmx.Node {
-    return htmx.SVG(
-        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-        htmx.Attribute("viewBox", "0 0 24 24"),
-        htmx.Merge(
-            htmx.ClassNames{
-                "h-5": true,
-                "h-6": false,
-                "w-5": true,
-                "w-6": false,
-            },
-            p.ClassNames,
-        ),
-        htmx.Path(
-            htmx.Attribute("stroke-linecap", "round"),
-            htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "m 2.6967631,16.125654 c -0.86539,1.5 0.21718,3.3744 1.94891,3.3744 H 19.354333 c 1.7317,0 2.8143,-1.8744 1.9489,-3.3744 l -7.3543,-12.74751 c -0.8659,-1.50083 -3.032,-1.50083 -3.8978,0 z"),
-        ),
-    )
+	return htmx.SVG(
+		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+		htmx.Attribute("viewBox", "0 0 24 24"),
+		htmx.Merge(
+			htmx.ClassNames{
+				"h-5": true,
+				"h-6": false,
+				"w-5": true,
+				"w-6": false,
+			},
+			p.ClassNames,
+		),
+		htmx.Path(
+			htmx.Attribute("stroke-linecap", "round"),
+			htmx.Attribute("stroke-linejoin", "round"),
+			htmx.Attribute("d", "m 2.6967631,16.125654 c -0.86539,1.5 0.21718,3.3744 1.94891,3.3744 H 19.354333 c 1.7317,0 2.8143,-1.8744 1.9489,-3.3744 l -7.3543,-12.74751 c -0.8659,-1.50083 -3.032,-1.50083 -3.8978,0 z"),
+		),
+	)
 }

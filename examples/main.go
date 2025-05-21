@@ -4,32 +4,32 @@ import (
 	"net/http"
 	"time"
 
-	htmx "github.com/katallaxie/htmx"
-	"github.com/katallaxie/htmx/buttons"
+	"github.com/katallaxie/htmx"
+	"github.com/katallaxie/htmx/drawers"
 )
 
 const defaultTimeout = 3 * time.Second
 
-func Demo() htmx.Node {
+func Page() htmx.Node {
 	return htmx.HTML5(
 		htmx.HTML5Props{
-			Title:    "Demo",
-			Language: "en",
-			Head: []htmx.Node{
-				htmx.Script(
-					htmx.Src("https://unpkg.com/fiber-reload@0.9.0/reload.js"),
-					htmx.Type("text/javascript"),
-				),
-			},
+			Title: "HTMX Page",
 		},
 		htmx.Body(
-			buttons.Button(buttons.ButtonProps{}, htmx.Text("Demo")),
+			htmx.Div(
+				drawers.Drawer(
+					drawers.DrawerProps{},
+					drawers.DrawerContent(
+						drawers.DrawerContentProps{},
+					),
+				),
+			),
 		),
 	)
 }
 
 func hello(w http.ResponseWriter, _ *http.Request) {
-	_ = Demo().Render(w)
+	_ = Page().Render(w)
 }
 
 func main() {

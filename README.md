@@ -46,6 +46,22 @@ htmx.Button(
 )
 ```
 
+All nodes implement the `io.Writer` interface. Which means it is possible to render to a `http.Request`
+but also to render to a file.
+
+```go
+f, err := os.OpenFile("123.txt", os.O_WRONLY|os.O_CREATE|os.O_APPEND, 0600)
+if err != nil {
+    panic(err)
+}
+defer f.Close()
+
+err = Page().Render(f)
+if err != nil {
+    panic(err)
+}
+```
+
 ## 🎨 Elements
 
 HTML and HTMX elements are represented as functions in Go. The functions are used to create the elements.

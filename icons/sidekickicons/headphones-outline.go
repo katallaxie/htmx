@@ -7,22 +7,22 @@ import (
 )
 
 func HeadphonesOutline(p icons.IconProps) htmx.Node {
-    return htmx.SVG(
-        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-        htmx.Attribute("viewBox", "0 0 24 24"),
-        htmx.Merge(
-            htmx.ClassNames{
-                "h-5": true,
-                "h-6": false,
-                "w-5": true,
-                "w-6": false,
-            },
-            p.ClassNames,
-        ),
-        htmx.Path(
-            htmx.Attribute("stroke-linecap", "round"),
-            htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "m 7.1097231,12.822252 c -2.550635,0.683463 -4.289574,1.3778 -3.376095,4.787064 0.91348,3.409259 2.766603,3.141078 5.317237,2.457614 l -0.970571,-3.622339 z m 9.7805539,0 c 2.550635,0.683463 4.289574,1.377801 3.376095,4.787064 -0.913479,3.409259 -2.766603,3.141079 -5.317237,2.457614 l 0.970571,-3.622339 z m 2.428551,0.912156 a 7.7499056,7.7023072 0 0 0 -2.719888,-8.7325713 7.7499056,7.7023072 0 0 0 -9.1978803,-1e-7 7.7499056,7.7023072 0 0 0 -2.7198874,8.7325714"),
-        ),
-    )
+	return htmx.SVG(
+		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+		htmx.Attribute("viewBox", "0 0 24 24"),
+		htmx.Merge(
+			htmx.ClassNames{
+				"h-5": true,
+				"h-6": false,
+				"w-5": true,
+				"w-6": false,
+			},
+			p.ClassNames,
+		),
+		htmx.Path(
+			htmx.Attribute("stroke-linecap", "round"),
+			htmx.Attribute("stroke-linejoin", "round"),
+			htmx.Attribute("d", "m 7.1097231,12.822252 c -2.550635,0.683463 -4.289574,1.3778 -3.376095,4.787064 0.91348,3.409259 2.766603,3.141078 5.317237,2.457614 l -0.970571,-3.622339 z m 9.7805539,0 c 2.550635,0.683463 4.289574,1.377801 3.376095,4.787064 -0.913479,3.409259 -2.766603,3.141079 -5.317237,2.457614 l 0.970571,-3.622339 z m 2.428551,0.912156 a 7.7499056,7.7023072 0 0 0 -2.719888,-8.7325713 7.7499056,7.7023072 0 0 0 -9.1978803,-1e-7 7.7499056,7.7023072 0 0 0 -2.7198874,8.7325714"),
+		),
+	)
 }

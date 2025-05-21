@@ -7,22 +7,22 @@ import (
 )
 
 func CheckDoubleOutline(p icons.IconProps) htmx.Node {
-    return htmx.SVG(
-        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-        htmx.Attribute("viewBox", "0 0 24 24"),
-        htmx.Merge(
-            htmx.ClassNames{
-                "h-5": true,
-                "h-6": false,
-                "w-5": true,
-                "w-6": false,
-            },
-            p.ClassNames,
-        ),
-        htmx.Path(
-            htmx.Attribute("stroke-linecap", "round"),
-            htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "M 12,16.222656 13,17.25003 21,6.7500088 M 3,12.750009 7.5,17.25003 15.5,6.7500088"),
-        ),
-    )
+	return htmx.SVG(
+		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+		htmx.Attribute("viewBox", "0 0 24 24"),
+		htmx.Merge(
+			htmx.ClassNames{
+				"h-5": true,
+				"h-6": false,
+				"w-5": true,
+				"w-6": false,
+			},
+			p.ClassNames,
+		),
+		htmx.Path(
+			htmx.Attribute("stroke-linecap", "round"),
+			htmx.Attribute("stroke-linejoin", "round"),
+			htmx.Attribute("d", "M 12,16.222656 13,17.25003 21,6.7500088 M 3,12.750009 7.5,17.25003 15.5,6.7500088"),
+		),
+	)
 }

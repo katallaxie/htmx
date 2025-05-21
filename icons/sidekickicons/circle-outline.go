@@ -7,22 +7,22 @@ import (
 )
 
 func CircleOutline(p icons.IconProps) htmx.Node {
-    return htmx.SVG(
-        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-        htmx.Attribute("viewBox", "0 0 24 24"),
-        htmx.Merge(
-            htmx.ClassNames{
-                "h-5": true,
-                "h-6": false,
-                "w-5": true,
-                "w-6": false,
-            },
-            p.ClassNames,
-        ),
-        htmx.Path(
-            htmx.Attribute("stroke-linecap", "round"),
-            htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "m 21,12 c 0,4.9706 -4.0294,9 -9,9 -4.97056,0 -9,-4.0294 -9,-9 0,-4.97056 4.02944,-9 9,-9 4.9706,0 9,4.02944 9,9 z"),
-        ),
-    )
+	return htmx.SVG(
+		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+		htmx.Attribute("viewBox", "0 0 24 24"),
+		htmx.Merge(
+			htmx.ClassNames{
+				"h-5": true,
+				"h-6": false,
+				"w-5": true,
+				"w-6": false,
+			},
+			p.ClassNames,
+		),
+		htmx.Path(
+			htmx.Attribute("stroke-linecap", "round"),
+			htmx.Attribute("stroke-linejoin", "round"),
+			htmx.Attribute("d", "m 21,12 c 0,4.9706 -4.0294,9 -9,9 -4.97056,0 -9,-4.0294 -9,-9 0,-4.97056 4.02944,-9 9,-9 4.9706,0 9,4.02944 9,9 z"),
+		),
+	)
 }
