@@ -16,7 +16,7 @@ require (
 	github.com/spf13/cobra v1.9.1
 	github.com/spf13/pflag v1.0.6
 	github.com/stretchr/testify v1.10.0
-	github.com/tdewolff/parse/v2 v2.8.0
+	github.com/tdewolff/parse/v2 v2.8.1
 	github.com/yuin/goldmark v1.7.12
 	golang.org/x/text v0.25.0
 	gorm.io/gorm v1.26.1
