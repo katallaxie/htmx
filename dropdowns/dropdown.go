@@ -2,6 +2,7 @@ package dropdowns
 
 import (
 	htmx "github.com/katallaxie/htmx"
+
 	"github.com/katallaxie/pkg/conv"
 )
 
@@ -12,7 +13,7 @@ type DropdownProps struct {
 
 // Dropdown generates a dropdown element based on the provided properties.
 func Dropdown(p DropdownProps, children ...htmx.Node) htmx.Node {
-	return htmx.Div(
+	return htmx.Details(
 		htmx.Merge(
 			htmx.ClassNames{
 				"dropdown": true,
@@ -31,17 +32,33 @@ type DropdownButtonProps struct {
 
 // DropdownButton generates a dropdown summary element based on the provided properties.
 func DropdownButton(p DropdownButtonProps, children ...htmx.Node) htmx.Node {
-	return htmx.Div(
+	return htmx.Summary(
 		htmx.TabIndex(conv.String(p.TabIndex)),
 		htmx.Role("button"),
 		htmx.Merge(
 			htmx.ClassNames{
 				"btn": true,
-				"m-1": true,
 			},
 			p.ClassNames,
 		),
+		htmx.Group(children...),
+	)
+}
 
+// DropdownContentProps represents the properties for a dropdown content element.
+type DropdownContentProps struct {
+	htmx.ClassNames // The class names for the dropdown content element.
+}
+
+// DropdownContent generates a dropdown content element based on the provided properties.
+func DropdownContent(p DropdownContentProps, children ...htmx.Node) htmx.Node {
+	return htmx.Div(
+		htmx.Merge(
+			htmx.ClassNames{
+				"dropdown-content": true,
+			},
+			p.ClassNames,
+		),
 		htmx.Group(children...),
 	)
 }
@@ -49,7 +66,6 @@ func DropdownButton(p DropdownButtonProps, children ...htmx.Node) htmx.Node {
 // DropdownMenuItemsProps represents the properties for a dropdown menu items element.
 type DropdownMenuItemsProps struct {
 	TabIndex int
-
 	htmx.ClassNames
 }
 
@@ -78,7 +94,7 @@ func DropdownMenuItems(p DropdownMenuItemsProps, children ...htmx.Node) htmx.Nod
 
 // DropdownMenuItem represents the properties for a dropdown items element.
 type DropdownMenuItemProps struct {
-	ClassNames htmx.ClassNames // The class names for the dropdown items element.
+	htmx.ClassNames // The class names for the dropdown items element.
 }
 
 // DropdownMenuItem generates a dropdown items element based on the provided properties.
