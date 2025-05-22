@@ -1,11 +1,13 @@
 package htmx
 
 import (
+	"bytes"
 	"fmt"
 	"os"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/require"
 )
 
 func TestElementA(t *testing.T) {
@@ -86,6 +88,13 @@ func TestElementH6(t *testing.T) {
 	assert.Implements(t, (*fmt.Stringer)(nil), e)
 	assert.Equal(t, ElementType, e.Type())
 	assert.Equal(t, "<h6></h6>", e.String())
+}
+
+func TestElementSytle(t *testing.T) {
+	var buf bytes.Buffer
+	err := Style().Render(&buf)
+	require.NoError(t, err)
+	require.Equal(t, "<style></style>", buf.String())
 }
 
 func TestElementCustom(t *testing.T) {

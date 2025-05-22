@@ -315,8 +315,8 @@ func Span(children ...Node) Node {
 	return Element("span", children...)
 }
 
-// StyleElement represents an HTML style element.
-func StyleElement(children ...Node) Node {
+// Style represents an HTML style element.
+func Style(children ...Node) Node {
 	return Element("style", children...)
 }
 
