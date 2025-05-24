@@ -4,8 +4,7 @@ import htmx "github.com/katallaxie/htmx"
 
 // IndicatorProps is a struct that contains the properties of an indicator.
 type IndicatorProps struct {
-	// ClassNames is a map of class names.
-	ClassNames htmx.ClassNames
+	htmx.ClassNames
 }
 
 // Indicator is a function that returns an indicator.
@@ -23,8 +22,7 @@ func Indicator(props IndicatorProps, children ...htmx.Node) htmx.Node {
 
 // IndiciatorItemProps is a struct that contains the properties of an indicator item.
 type IndicatorItemProps struct {
-	// ClassNames is a map of class names.
-	ClassNames htmx.ClassNames
+	htmx.ClassNames
 }
 
 // IndicatorItem is a function that returns an indicator item.
