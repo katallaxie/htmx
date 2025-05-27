@@ -7,11 +7,7 @@ import (
 )
 
 func MagnifyingGlassOutline(p icons.IconProps) htmx.Node {
-<<<<<<< HEAD
-    return htmx.SVG(
-=======
 	return htmx.SVG(
->>>>>>> 6e89f91 (feat(plugin): render proto)
         htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 24 24"),
         htmx.Merge(

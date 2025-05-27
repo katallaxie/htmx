@@ -19,13 +19,9 @@ require (
 	github.com/tdewolff/parse/v2 v2.8.1
 	github.com/yuin/goldmark v1.7.12
 	golang.org/x/text v0.25.0
-<<<<<<< HEAD
-	gorm.io/gorm v1.30.0
-=======
 	google.golang.org/grpc v1.72.0
 	google.golang.org/protobuf v1.36.6
-	gorm.io/gorm v1.26.1
->>>>>>> 6e89f91 (feat(plugin): render proto)
+	gorm.io/gorm v1.30.0
 )
 
 require (
