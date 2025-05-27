@@ -7,22 +7,22 @@ import (
 )
 
 func ComputerLaptopOutline(p icons.IconProps) htmx.Node {
-    return htmx.SVG(
-        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-        htmx.Attribute("viewBox", "0 0 24 24"),
-        htmx.Merge(
-            htmx.ClassNames{
-                "h-5": true,
-                "h-6": false,
-                "w-5": true,
-                "w-6": false,
-            },
-            p.ClassNames,
-        ),
-        htmx.Path(
-            htmx.Attribute("stroke-linecap", "round"),
-            htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "m 10.5,17.5 h 3 M 4.7499426,15 3.4478377,16.632087 A 0.99641763,0.99645563 0 0 0 4.2267268,18.25 H 19.7726 a 0.99642004,0.99645803 0 0 0 0.778891,-1.617917 L 19.24939,15 M 6.9998562,5.75 C 5.7572648,5.75 4.749942,6.7573612 4.749942,8 v 7 H 19.249389 V 8 c 0,-1.2426388 -1.007363,-2.25 -2.249914,-2.25 z"),
-        ),
-    )
+	return htmx.SVG(
+		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+		htmx.Attribute("viewBox", "0 0 24 24"),
+		htmx.Merge(
+			htmx.ClassNames{
+				"h-5": true,
+				"h-6": false,
+				"w-5": true,
+				"w-6": false,
+			},
+			p.ClassNames,
+		),
+		htmx.Path(
+			htmx.Attribute("stroke-linecap", "round"),
+			htmx.Attribute("stroke-linejoin", "round"),
+			htmx.Attribute("d", "m 10.5,17.5 h 3 M 4.7499426,15 3.4478377,16.632087 A 0.99641763,0.99645563 0 0 0 4.2267268,18.25 H 19.7726 a 0.99642004,0.99645803 0 0 0 0.778891,-1.617917 L 19.24939,15 M 6.9998562,5.75 C 5.7572648,5.75 4.749942,6.7573612 4.749942,8 v 7 H 19.249389 V 8 c 0,-1.2426388 -1.007363,-2.25 -2.249914,-2.25 z"),
+		),
+	)
 }

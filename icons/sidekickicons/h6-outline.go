@@ -7,22 +7,22 @@ import (
 )
 
 func H6Outline(p icons.IconProps) htmx.Node {
-    return htmx.SVG(
-        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-        htmx.Attribute("viewBox", "0 0 24 24"),
-        htmx.Merge(
-            htmx.ClassNames{
-                "h-5": true,
-                "h-6": false,
-                "w-5": true,
-                "w-6": false,
-            },
-            p.ClassNames,
-        ),
-        htmx.Path(
-            htmx.Attribute("stroke-linecap", "round"),
-            htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "M 16.500001,16.5 C 16.5,14.999996 17.75,14.499999 19.25,14.499999 c 1.5,0 2.5,0.75 2.5,2.5 0,1.75 -1,2.5 -2.499999,2.500001 C 17.75,19.499999 16.5,18.749999 16.5,16.999999 v -3.25 c 0,-3.25 1.5,-4.5 4.75,-3.75 M 2.2470404,4.4962084 v 7.4999996 m 0,0 v 7.502 m 0,-7.501 H 12.74704 m 0,-7.4999996 v 7.4999996 m 0,0 v 7.501"),
-        ),
-    )
+	return htmx.SVG(
+		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+		htmx.Attribute("viewBox", "0 0 24 24"),
+		htmx.Merge(
+			htmx.ClassNames{
+				"h-5": true,
+				"h-6": false,
+				"w-5": true,
+				"w-6": false,
+			},
+			p.ClassNames,
+		),
+		htmx.Path(
+			htmx.Attribute("stroke-linecap", "round"),
+			htmx.Attribute("stroke-linejoin", "round"),
+			htmx.Attribute("d", "M 16.500001,16.5 C 16.5,14.999996 17.75,14.499999 19.25,14.499999 c 1.5,0 2.5,0.75 2.5,2.5 0,1.75 -1,2.5 -2.499999,2.500001 C 17.75,19.499999 16.5,18.749999 16.5,16.999999 v -3.25 c 0,-3.25 1.5,-4.5 4.75,-3.75 M 2.2470404,4.4962084 v 7.4999996 m 0,0 v 7.502 m 0,-7.501 H 12.74704 m 0,-7.4999996 v 7.4999996 m 0,0 v 7.501"),
+		),
+	)
 }

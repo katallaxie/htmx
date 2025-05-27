@@ -7,20 +7,20 @@ import (
 )
 
 func ComputerLaptopSolid(p icons.IconProps) htmx.Node {
-    return htmx.SVG(
-        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-        htmx.Attribute("viewBox", "0 0 24 24"),
-        htmx.Merge(
-            htmx.ClassNames{
-                "h-5": false,
-                "h-6": true,
-                "w-5": false,
-                "w-6": true,
-            },
-            p.ClassNames,
-        ),
-        htmx.Path(
-            htmx.Attribute("d", "M 7,5 C 5.3520634,5 4,6.3520467 4,8 v 6.738281 L 2.8613281,16.164062 C 1.9801317,17.268574 2.8135962,19 4.2265625,19 H 19.773437 c 1.412969,0 2.246433,-1.731425 1.365235,-2.835938 L 20,14.738281 V 8 C 20,6.3520305 18.647909,5 17,5 Z m 0,1.5 h 10 c 0.83719,0 1.5,0.662694 1.5,1.5 v 6.25 H 5.5 V 8 C 5.5,7.1626778 6.1627563,6.5 7,6.5 Z"),
-        ),
-    )
+	return htmx.SVG(
+		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+		htmx.Attribute("viewBox", "0 0 24 24"),
+		htmx.Merge(
+			htmx.ClassNames{
+				"h-5": false,
+				"h-6": true,
+				"w-5": false,
+				"w-6": true,
+			},
+			p.ClassNames,
+		),
+		htmx.Path(
+			htmx.Attribute("d", "M 7,5 C 5.3520634,5 4,6.3520467 4,8 v 6.738281 L 2.8613281,16.164062 C 1.9801317,17.268574 2.8135962,19 4.2265625,19 H 19.773437 c 1.412969,0 2.246433,-1.731425 1.365235,-2.835938 L 20,14.738281 V 8 C 20,6.3520305 18.647909,5 17,5 Z m 0,1.5 h 10 c 0.83719,0 1.5,0.662694 1.5,1.5 v 6.25 H 5.5 V 8 C 5.5,7.1626778 6.1627563,6.5 7,6.5 Z"),
+		),
+	)
 }
