@@ -7,22 +7,22 @@ import (
 )
 
 func SidebarLeftOutline(p icons.IconProps) htmx.Node {
-	return htmx.SVG(
-		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-		htmx.Attribute("viewBox", "0 0 24 24"),
-		htmx.Merge(
-			htmx.ClassNames{
-				"h-5": true,
-				"h-6": false,
-				"w-5": true,
-				"w-6": false,
-			},
-			p.ClassNames,
-		),
-		htmx.Path(
-			htmx.Attribute("stroke-linecap", "round"),
-			htmx.Attribute("stroke-linejoin", "round"),
-			htmx.Attribute("d", "m 9,4.5 v 15 m -4.875,0 h 15.75 C 20.496,19.5 21,18.996 21,18.375 V 5.625 C 21,5.004 20.496,4.5 19.875,4.5 H 4.125 C 3.504,4.5 3,5.004 3,5.625 v 12.75 C 3,18.996 3.504,19.5 4.125,19.5 Z"),
-		),
-	)
+    return htmx.SVG(
+        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+        htmx.Attribute("viewBox", "0 0 24 24"),
+        htmx.Merge(
+            htmx.ClassNames{
+                "h-5": true,
+                "h-6": false,
+                "w-5": true,
+                "w-6": false,
+            },
+            p.ClassNames,
+        ),
+        htmx.Path(
+            htmx.Attribute("stroke-linecap", "round"),
+            htmx.Attribute("stroke-linejoin", "round"),
+            htmx.Attribute("d", "m 9,4.5 v 15 m -4.875,0 h 15.75 C 20.496,19.5 21,18.996 21,18.375 V 5.625 C 21,5.004 20.496,4.5 19.875,4.5 H 4.125 C 3.504,4.5 3,5.004 3,5.625 v 12.75 C 3,18.996 3.504,19.5 4.125,19.5 Z"),
+        ),
+    )
 }

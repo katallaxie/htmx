@@ -7,27 +7,27 @@ import (
 )
 
 func ArrowPathClockOutline(p icons.IconProps) htmx.Node {
-	return htmx.SVG(
-		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-		htmx.Attribute("viewBox", "0 0 24 24"),
-		htmx.Merge(
-			htmx.ClassNames{
-				"h-5": true,
-				"h-6": false,
-				"w-5": true,
-				"w-6": false,
-			},
-			p.ClassNames,
-		),
-		htmx.Path(
-			htmx.Attribute("stroke-linecap", "round"),
-			htmx.Attribute("stroke-linejoin", "round"),
-			htmx.Attribute("d", "m 12.251752,6 v 6 h 4.5"),
-		),
-		htmx.Path(
-			htmx.Attribute("stroke-linecap", "round"),
-			htmx.Attribute("stroke-linejoin", "round"),
-			htmx.Attribute("d", "M 5.8871094,5.6359115 A 9.0002489,8.9963217 45 0 1 16.748688,4.2082869 9.0002489,8.9963217 45 0 1 20.94343,14.330873 9.0002489,8.9963217 45 0 1 12.253209,20.998334 9.0002489,8.9963217 45 0 1 3.5600785,14.327079 M 5.8871094,5.6359116 3.380208,8.1428137 m -0.017203,-4.9925361 3e-7,5.013 m 0,0 5.0129994,-1e-7"),
-		),
-	)
+    return htmx.SVG(
+        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+        htmx.Attribute("viewBox", "0 0 24 24"),
+        htmx.Merge(
+            htmx.ClassNames{
+                "h-5": true,
+                "h-6": false,
+                "w-5": true,
+                "w-6": false,
+            },
+            p.ClassNames,
+        ),
+        htmx.Path(
+            htmx.Attribute("stroke-linecap", "round"),
+            htmx.Attribute("stroke-linejoin", "round"),
+            htmx.Attribute("d", "m 12.251752,6 v 6 h 4.5"),
+        ),
+        htmx.Path(
+            htmx.Attribute("stroke-linecap", "round"),
+            htmx.Attribute("stroke-linejoin", "round"),
+            htmx.Attribute("d", "M 5.8871094,5.6359115 A 9.0002489,8.9963217 45 0 1 16.748688,4.2082869 9.0002489,8.9963217 45 0 1 20.94343,14.330873 9.0002489,8.9963217 45 0 1 12.253209,20.998334 9.0002489,8.9963217 45 0 1 3.5600785,14.327079 M 5.8871094,5.6359116 3.380208,8.1428137 m -0.017203,-4.9925361 3e-7,5.013 m 0,0 5.0129994,-1e-7"),
+        ),
+    )
 }

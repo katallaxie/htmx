@@ -7,22 +7,22 @@ import (
 )
 
 func CompassOutline(p icons.IconProps) htmx.Node {
-	return htmx.SVG(
-		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-		htmx.Attribute("viewBox", "0 0 24 24"),
-		htmx.Merge(
-			htmx.ClassNames{
-				"h-5": true,
-				"h-6": false,
-				"w-5": true,
-				"w-6": false,
-			},
-			p.ClassNames,
-		),
-		htmx.Path(
-			htmx.Attribute("stroke-linecap", "round"),
-			htmx.Attribute("stroke-linejoin", "round"),
-			htmx.Attribute("d", "m 12,12 v 0 m 9,0 c 0,4.970566 -4.029437,8.999996 -9,8.999996 -4.970563,0 -9,-4.02943 -9,-8.999996 0,-4.970566 4.029437,-8.999996 9,-8.999996 4.970563,0 9,4.0294299 9,8.999996 z m -13.5,4.5 3,-6 6,-3 -3,6 z"),
-		),
-	)
+    return htmx.SVG(
+        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+        htmx.Attribute("viewBox", "0 0 24 24"),
+        htmx.Merge(
+            htmx.ClassNames{
+                "h-5": true,
+                "h-6": false,
+                "w-5": true,
+                "w-6": false,
+            },
+            p.ClassNames,
+        ),
+        htmx.Path(
+            htmx.Attribute("stroke-linecap", "round"),
+            htmx.Attribute("stroke-linejoin", "round"),
+            htmx.Attribute("d", "m 12,12 v 0 m 9,0 c 0,4.970566 -4.029437,8.999996 -9,8.999996 -4.970563,0 -9,-4.02943 -9,-8.999996 0,-4.970566 4.029437,-8.999996 9,-8.999996 4.970563,0 9,4.0294299 9,8.999996 z m -13.5,4.5 3,-6 6,-3 -3,6 z"),
+        ),
+    )
 }

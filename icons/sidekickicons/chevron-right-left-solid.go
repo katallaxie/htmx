@@ -7,20 +7,20 @@ import (
 )
 
 func ChevronRightLeftSolid(p icons.IconProps) htmx.Node {
-	return htmx.SVG(
-		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-		htmx.Attribute("viewBox", "0 0 24 24"),
-		htmx.Merge(
-			htmx.ClassNames{
-				"h-5": false,
-				"h-6": true,
-				"w-5": false,
-				"w-6": true,
-			},
-			p.ClassNames,
-		),
-		htmx.Path(
-			htmx.Attribute("d", "m 14.488048,11.460316 a 0.75,0.75 0 0 0 0,1.06 l 3.75,3.75 a 0.75,0.75 0 0 0 1.06,-1.06 l -3.22,-3.22 3.22,-3.2200001 a 0.75,0.75 0 0 0 -1.06,-1.06 z m -9.7486798,-3.75 a 0.75,0.75 0 0 0 0,1.06 l 3.22,3.22 -3.22,3.22 a 0.75,0.75 0 1 0 1.06,1.06 l 3.75,-3.75 a 0.75,0.75 0 0 0 0,-1.06 l -3.75,-3.7500001 a 0.75,0.75 0 0 0 -1.06,10e-8 z"),
-		),
-	)
+    return htmx.SVG(
+        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+        htmx.Attribute("viewBox", "0 0 24 24"),
+        htmx.Merge(
+            htmx.ClassNames{
+                "h-5": false,
+                "h-6": true,
+                "w-5": false,
+                "w-6": true,
+            },
+            p.ClassNames,
+        ),
+        htmx.Path(
+            htmx.Attribute("d", "m 14.488048,11.460316 a 0.75,0.75 0 0 0 0,1.06 l 3.75,3.75 a 0.75,0.75 0 0 0 1.06,-1.06 l -3.22,-3.22 3.22,-3.2200001 a 0.75,0.75 0 0 0 -1.06,-1.06 z m -9.7486798,-3.75 a 0.75,0.75 0 0 0 0,1.06 l 3.22,3.22 -3.22,3.22 a 0.75,0.75 0 1 0 1.06,1.06 l 3.75,-3.75 a 0.75,0.75 0 0 0 0,-1.06 l -3.75,-3.7500001 a 0.75,0.75 0 0 0 -1.06,10e-8 z"),
+        ),
+    )
 }

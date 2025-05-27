@@ -7,20 +7,20 @@ import (
 )
 
 func ArcThirdSolid(p icons.IconProps) htmx.Node {
-	return htmx.SVG(
-		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-		htmx.Attribute("viewBox", "0 0 24 24"),
-		htmx.Merge(
-			htmx.ClassNames{
-				"h-5": false,
-				"h-6": true,
-				"w-5": false,
-				"w-6": true,
-			},
-			p.ClassNames,
-		),
-		htmx.Path(
-			htmx.Attribute("d", "M 12,2.25 A 0.75,0.75 0 0 0 11.25,3 0.75,0.75 0 0 0 12,3.75 c 2.948638,0 5.670212,1.5714028 7.144531,4.125 1.474319,2.553597 1.474319,5.696403 0,8.25 a 0.75,0.75 0 0 0 0.275391,1.025391 0.75,0.75 0 0 0 1.023437,-0.275391 c 1.741066,-3.015616 1.741066,-6.734384 0,-9.75 C 18.702294,4.1093843 15.482131,2.25 12,2.25 Z"),
-		),
-	)
+    return htmx.SVG(
+        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+        htmx.Attribute("viewBox", "0 0 24 24"),
+        htmx.Merge(
+            htmx.ClassNames{
+                "h-5": false,
+                "h-6": true,
+                "w-5": false,
+                "w-6": true,
+            },
+            p.ClassNames,
+        ),
+        htmx.Path(
+            htmx.Attribute("d", "M 12,2.25 A 0.75,0.75 0 0 0 11.25,3 0.75,0.75 0 0 0 12,3.75 c 2.948638,0 5.670212,1.5714028 7.144531,4.125 1.474319,2.553597 1.474319,5.696403 0,8.25 a 0.75,0.75 0 0 0 0.275391,1.025391 0.75,0.75 0 0 0 1.023437,-0.275391 c 1.741066,-3.015616 1.741066,-6.734384 0,-9.75 C 18.702294,4.1093843 15.482131,2.25 12,2.25 Z"),
+        ),
+    )
 }

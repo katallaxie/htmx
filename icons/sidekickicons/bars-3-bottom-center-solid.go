@@ -7,20 +7,20 @@ import (
 )
 
 func Bars3BottomCenterSolid(p icons.IconProps) htmx.Node {
-	return htmx.SVG(
-		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-		htmx.Attribute("viewBox", "0 0 24 24"),
-		htmx.Merge(
-			htmx.ClassNames{
-				"h-5": false,
-				"h-6": true,
-				"w-5": false,
-				"w-6": true,
-			},
-			p.ClassNames,
-		),
-		htmx.Path(
-			htmx.Attribute("d", "M 3.75,6 A 0.75,0.75 0 0 0 3,6.75 0.75,0.75 0 0 0 3.75,7.5 h 16.5 A 0.75,0.75 0 0 0 21,6.75 0.75,0.75 0 0 0 20.25,6 Z m 0,5.25 A 0.75,0.75 0 0 0 3,12 0.75,0.75 0 0 0 3.75,12.75 h 16.5 A 0.75,0.75 0 0 0 21,12 0.75,0.75 0 0 0 20.25,11.25 Z m 4.125,5.25 a 0.75,0.75 0 0 0 -0.75,0.75 0.75,0.75 0 0 0 0.75,0.75 h 8.25 a 0.75,0.75 0 0 0 0.75,-0.75 0.75,0.75 0 0 0 -0.75,-0.75 z"),
-		),
-	)
+    return htmx.SVG(
+        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+        htmx.Attribute("viewBox", "0 0 24 24"),
+        htmx.Merge(
+            htmx.ClassNames{
+                "h-5": false,
+                "h-6": true,
+                "w-5": false,
+                "w-6": true,
+            },
+            p.ClassNames,
+        ),
+        htmx.Path(
+            htmx.Attribute("d", "M 3.75,6 A 0.75,0.75 0 0 0 3,6.75 0.75,0.75 0 0 0 3.75,7.5 h 16.5 A 0.75,0.75 0 0 0 21,6.75 0.75,0.75 0 0 0 20.25,6 Z m 0,5.25 A 0.75,0.75 0 0 0 3,12 0.75,0.75 0 0 0 3.75,12.75 h 16.5 A 0.75,0.75 0 0 0 21,12 0.75,0.75 0 0 0 20.25,11.25 Z m 4.125,5.25 a 0.75,0.75 0 0 0 -0.75,0.75 0.75,0.75 0 0 0 0.75,0.75 h 8.25 a 0.75,0.75 0 0 0 0.75,-0.75 0.75,0.75 0 0 0 -0.75,-0.75 z"),
+        ),
+    )
 }

@@ -7,22 +7,22 @@ import (
 )
 
 func SquareOutline(p icons.IconProps) htmx.Node {
-	return htmx.SVG(
-		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-		htmx.Attribute("viewBox", "0 0 24 24"),
-		htmx.Merge(
-			htmx.ClassNames{
-				"h-5": true,
-				"h-6": false,
-				"w-5": true,
-				"w-6": false,
-			},
-			p.ClassNames,
-		),
-		htmx.Path(
-			htmx.Attribute("stroke-linecap", "round"),
-			htmx.Attribute("stroke-linejoin", "round"),
-			htmx.Attribute("d", "M 6.0000001,20.25 H 18 c 1.2426,0 2.25,-1.0074 2.25,-2.25 V 5.9999999 c 0,-1.24264 -1.0074,-2.25 -2.25,-2.25 H 6.0000001 c -1.24264,0 -2.2499999,1.00736 -2.2499999,2.25 V 18 c 0,1.2426 1.0073599,2.25 2.2499999,2.25 z"),
-		),
-	)
+    return htmx.SVG(
+        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+        htmx.Attribute("viewBox", "0 0 24 24"),
+        htmx.Merge(
+            htmx.ClassNames{
+                "h-5": true,
+                "h-6": false,
+                "w-5": true,
+                "w-6": false,
+            },
+            p.ClassNames,
+        ),
+        htmx.Path(
+            htmx.Attribute("stroke-linecap", "round"),
+            htmx.Attribute("stroke-linejoin", "round"),
+            htmx.Attribute("d", "M 6.0000001,20.25 H 18 c 1.2426,0 2.25,-1.0074 2.25,-2.25 V 5.9999999 c 0,-1.24264 -1.0074,-2.25 -2.25,-2.25 H 6.0000001 c -1.24264,0 -2.2499999,1.00736 -2.2499999,2.25 V 18 c 0,1.2426 1.0073599,2.25 2.2499999,2.25 z"),
+        ),
+    )
 }

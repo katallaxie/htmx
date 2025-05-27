@@ -7,22 +7,22 @@ import (
 )
 
 func ChecklistOutline(p icons.IconProps) htmx.Node {
-	return htmx.SVG(
-		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-		htmx.Attribute("viewBox", "0 0 24 24"),
-		htmx.Merge(
-			htmx.ClassNames{
-				"h-5": true,
-				"h-6": false,
-				"w-5": true,
-				"w-6": false,
-			},
-			p.ClassNames,
-		),
-		htmx.Path(
-			htmx.Attribute("stroke-linecap", "round"),
-			htmx.Attribute("stroke-linejoin", "round"),
-			htmx.Attribute("d", "M 3.7500001,18.214306 5.0625,19.500026 7.25,16.500013 M 3.7500001,6.2143061 5.0625,7.5000261 7.25,4.5000131 M 3.7500001,12.214319 5.0625,13.500039 7.25,10.500026 M 10,6.0000131 H 20.25 M 10,12.000013 h 10.25 m -10.25,6 h 10.25"),
-		),
-	)
+    return htmx.SVG(
+        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+        htmx.Attribute("viewBox", "0 0 24 24"),
+        htmx.Merge(
+            htmx.ClassNames{
+                "h-5": true,
+                "h-6": false,
+                "w-5": true,
+                "w-6": false,
+            },
+            p.ClassNames,
+        ),
+        htmx.Path(
+            htmx.Attribute("stroke-linecap", "round"),
+            htmx.Attribute("stroke-linejoin", "round"),
+            htmx.Attribute("d", "M 3.7500001,18.214306 5.0625,19.500026 7.25,16.500013 M 3.7500001,6.2143061 5.0625,7.5000261 7.25,4.5000131 M 3.7500001,12.214319 5.0625,13.500039 7.25,10.500026 M 10,6.0000131 H 20.25 M 10,12.000013 h 10.25 m -10.25,6 h 10.25"),
+        ),
+    )
 }

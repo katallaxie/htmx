@@ -2,7 +2,7 @@ package themes
 
 import htmx "github.com/katallaxie/htmx"
 
-// Theme constants
+// Theme constants holds the names of various themes that can be applied to a web application.
 const (
 	Abyss        = "abyss"
 	Acid         = "acid"

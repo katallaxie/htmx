@@ -7,22 +7,22 @@ import (
 )
 
 func ShieldOutline(p icons.IconProps) htmx.Node {
-	return htmx.SVG(
-		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-		htmx.Attribute("viewBox", "0 0 24 24"),
-		htmx.Merge(
-			htmx.ClassNames{
-				"h-5": true,
-				"h-6": false,
-				"w-5": true,
-				"w-6": false,
-			},
-			p.ClassNames,
-		),
-		htmx.Path(
-			htmx.Attribute("stroke-linecap", "round"),
-			htmx.Attribute("stroke-linejoin", "round"),
-			htmx.Attribute("d", "m 12.000002,2.670987 a 11.959,11.959 0 0 1 -8.402,3.286 11.99,11.99 0 0 0 -0.598,3.749 c 0,5.592 3.824,10.29 9,11.623 5.176,-1.332 9,-6.03 9,-11.622 0,-1.31 -0.21,-2.571 -0.598,-3.751 h -0.152 c -3.196,0 -6.1,-1.248 -8.25,-3.285 z"),
-		),
-	)
+    return htmx.SVG(
+        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+        htmx.Attribute("viewBox", "0 0 24 24"),
+        htmx.Merge(
+            htmx.ClassNames{
+                "h-5": true,
+                "h-6": false,
+                "w-5": true,
+                "w-6": false,
+            },
+            p.ClassNames,
+        ),
+        htmx.Path(
+            htmx.Attribute("stroke-linecap", "round"),
+            htmx.Attribute("stroke-linejoin", "round"),
+            htmx.Attribute("d", "m 12.000002,2.670987 a 11.959,11.959 0 0 1 -8.402,3.286 11.99,11.99 0 0 0 -0.598,3.749 c 0,5.592 3.824,10.29 9,11.623 5.176,-1.332 9,-6.03 9,-11.622 0,-1.31 -0.21,-2.571 -0.598,-3.751 h -0.152 c -3.196,0 -6.1,-1.248 -8.25,-3.285 z"),
+        ),
+    )
 }

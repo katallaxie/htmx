@@ -7,22 +7,22 @@ import (
 )
 
 func PhotoPlusOutline(p icons.IconProps) htmx.Node {
-	return htmx.SVG(
-		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-		htmx.Attribute("viewBox", "0 0 24 24"),
-		htmx.Merge(
-			htmx.ClassNames{
-				"h-5": true,
-				"h-6": false,
-				"w-5": true,
-				"w-6": false,
-			},
-			p.ClassNames,
-		),
-		htmx.Path(
-			htmx.Attribute("stroke-linecap", "round"),
-			htmx.Attribute("stroke-linejoin", "round"),
-			htmx.Attribute("d", "m 19.25,2.25 v 4.9999999 m 2.5,-2.5 h -5 M 2.25,15.75 7.40901,10.591 c 0.87868,-0.87869 2.3033,-0.87869 3.18199,0 l 5.159,5.159 m -1.5,-1.5 1.409,-1.409 c 0.8787,-0.8787 2.3033,-0.8787 3.182,0 l 2.909,2.909 m -8,-11.25 h -10 C 2.92157,4.5 2.25,5.17157 2.25,6 v 12 c 0,0.8284 0.67157,1.5 1.5,1.5 h 16.5 c 0.8284,0 1.5,-0.6716 1.5,-1.5 V 9.25 m -7.5,-1 h 0.0075 V 8.2575 H 14.25 Z m 0.375,0 c 0,0.20711 -0.1679,0.375 -0.375,0.375 -0.2071,0 -0.375,-0.16789 -0.375,-0.375 0,-0.20711 0.1679,-0.375 0.375,-0.375 0.2071,0 0.375,0.16789 0.375,0.375 z"),
-		),
-	)
+    return htmx.SVG(
+        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+        htmx.Attribute("viewBox", "0 0 24 24"),
+        htmx.Merge(
+            htmx.ClassNames{
+                "h-5": true,
+                "h-6": false,
+                "w-5": true,
+                "w-6": false,
+            },
+            p.ClassNames,
+        ),
+        htmx.Path(
+            htmx.Attribute("stroke-linecap", "round"),
+            htmx.Attribute("stroke-linejoin", "round"),
+            htmx.Attribute("d", "m 19.25,2.25 v 4.9999999 m 2.5,-2.5 h -5 M 2.25,15.75 7.40901,10.591 c 0.87868,-0.87869 2.3033,-0.87869 3.18199,0 l 5.159,5.159 m -1.5,-1.5 1.409,-1.409 c 0.8787,-0.8787 2.3033,-0.8787 3.182,0 l 2.909,2.909 m -8,-11.25 h -10 C 2.92157,4.5 2.25,5.17157 2.25,6 v 12 c 0,0.8284 0.67157,1.5 1.5,1.5 h 16.5 c 0.8284,0 1.5,-0.6716 1.5,-1.5 V 9.25 m -7.5,-1 h 0.0075 V 8.2575 H 14.25 Z m 0.375,0 c 0,0.20711 -0.1679,0.375 -0.375,0.375 -0.2071,0 -0.375,-0.16789 -0.375,-0.375 0,-0.20711 0.1679,-0.375 0.375,-0.375 0.2071,0 0.375,0.16789 0.375,0.375 z"),
+        ),
+    )
 }

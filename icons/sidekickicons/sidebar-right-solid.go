@@ -7,20 +7,20 @@ import (
 )
 
 func SidebarRightSolid(p icons.IconProps) htmx.Node {
-	return htmx.SVG(
-		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-		htmx.Attribute("viewBox", "0 0 24 24"),
-		htmx.Merge(
-			htmx.ClassNames{
-				"h-5": false,
-				"h-6": true,
-				"w-5": false,
-				"w-6": true,
-			},
-			p.ClassNames,
-		),
-		htmx.Path(
-			htmx.Attribute("d", "m 15,3.75 v 16.5 H 4.125 C 3.090001,20.25 2.25,19.409999 2.25,18.375 V 5.625 C 2.25,4.589001 3.090001,3.75 4.125,3.75 Z m 4.875,0 H 16.5 v 16.5 h 3.375 A 1.875,1.875 0 0 0 21.75,18.375 V 5.625 C 21.75,4.589 20.91,3.75 19.875,3.75 Z"),
-		),
-	)
+    return htmx.SVG(
+        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+        htmx.Attribute("viewBox", "0 0 24 24"),
+        htmx.Merge(
+            htmx.ClassNames{
+                "h-5": false,
+                "h-6": true,
+                "w-5": false,
+                "w-6": true,
+            },
+            p.ClassNames,
+        ),
+        htmx.Path(
+            htmx.Attribute("d", "m 15,3.75 v 16.5 H 4.125 C 3.090001,20.25 2.25,19.409999 2.25,18.375 V 5.625 C 2.25,4.589001 3.090001,3.75 4.125,3.75 Z m 4.875,0 H 16.5 v 16.5 h 3.375 A 1.875,1.875 0 0 0 21.75,18.375 V 5.625 C 21.75,4.589 20.91,3.75 19.875,3.75 Z"),
+        ),
+    )
 }

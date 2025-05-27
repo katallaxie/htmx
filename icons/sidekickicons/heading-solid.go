@@ -7,20 +7,20 @@ import (
 )
 
 func HeadingSolid(p icons.IconProps) htmx.Node {
-	return htmx.SVG(
-		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-		htmx.Attribute("viewBox", "0 0 24 24"),
-		htmx.Merge(
-			htmx.ClassNames{
-				"h-5": false,
-				"h-6": true,
-				"w-5": false,
-				"w-6": true,
-			},
-			p.ClassNames,
-		),
-		htmx.Path(
-			htmx.Attribute("d", "M 6,3 A 0.75,0.75 0 0 0 5.25,3.75 v 8.248047 a 0.75,0.75 0 0 0 0,0.002 v 8.25 A 0.75,0.75 0 0 0 6,21 0.75,0.75 0 0 0 6.75,20.25 v -7.5 h 10.5 v 7.5 A 0.75,0.75 0 0 0 18,21 0.75,0.75 0 0 0 18.75,20.25 V 12 3.7519531 a 0.75,0.75 0 0 0 -0.75,-0.75 0.75,0.75 0 0 0 -0.75,0.75 V 11.25 H 6.75 V 3.75 A 0.75,0.75 0 0 0 6,3 Z"),
-		),
-	)
+    return htmx.SVG(
+        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+        htmx.Attribute("viewBox", "0 0 24 24"),
+        htmx.Merge(
+            htmx.ClassNames{
+                "h-5": false,
+                "h-6": true,
+                "w-5": false,
+                "w-6": true,
+            },
+            p.ClassNames,
+        ),
+        htmx.Path(
+            htmx.Attribute("d", "M 6,3 A 0.75,0.75 0 0 0 5.25,3.75 v 8.248047 a 0.75,0.75 0 0 0 0,0.002 v 8.25 A 0.75,0.75 0 0 0 6,21 0.75,0.75 0 0 0 6.75,20.25 v -7.5 h 10.5 v 7.5 A 0.75,0.75 0 0 0 18,21 0.75,0.75 0 0 0 18.75,20.25 V 12 3.7519531 a 0.75,0.75 0 0 0 -0.75,-0.75 0.75,0.75 0 0 0 -0.75,0.75 V 11.25 H 6.75 V 3.75 A 0.75,0.75 0 0 0 6,3 Z"),
+        ),
+    )
 }

@@ -7,22 +7,22 @@ import (
 )
 
 func H4Outline(p icons.IconProps) htmx.Node {
-	return htmx.SVG(
-		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-		htmx.Attribute("viewBox", "0 0 24 24"),
-		htmx.Merge(
-			htmx.ClassNames{
-				"h-5": true,
-				"h-6": false,
-				"w-5": true,
-				"w-6": false,
-			},
-			p.ClassNames,
-		),
-		htmx.Path(
-			htmx.Attribute("stroke-linecap", "round"),
-			htmx.Attribute("stroke-linejoin", "round"),
-			htmx.Attribute("d", "M 21,19.5 V 9.75 L 16.500029,16.74968 22.25,16.75 M 2.2470404,4.4962084 v 7.4999996 m 0,0 v 7.502 m 0,-7.501 H 12.74704 m 0,-7.4999996 v 7.4999996 m 0,0 v 7.501"),
-		),
-	)
+    return htmx.SVG(
+        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+        htmx.Attribute("viewBox", "0 0 24 24"),
+        htmx.Merge(
+            htmx.ClassNames{
+                "h-5": true,
+                "h-6": false,
+                "w-5": true,
+                "w-6": false,
+            },
+            p.ClassNames,
+        ),
+        htmx.Path(
+            htmx.Attribute("stroke-linecap", "round"),
+            htmx.Attribute("stroke-linejoin", "round"),
+            htmx.Attribute("d", "M 21,19.5 V 9.75 L 16.500029,16.74968 22.25,16.75 M 2.2470404,4.4962084 v 7.4999996 m 0,0 v 7.502 m 0,-7.501 H 12.74704 m 0,-7.4999996 v 7.4999996 m 0,0 v 7.501"),
+        ),
+    )
 }

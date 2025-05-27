@@ -7,22 +7,22 @@ import (
 )
 
 func GamepadOutline(p icons.IconProps) htmx.Node {
-	return htmx.SVG(
-		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-		htmx.Attribute("viewBox", "0 0 24 24"),
-		htmx.Merge(
-			htmx.ClassNames{
-				"h-5": true,
-				"h-6": false,
-				"w-5": true,
-				"w-6": false,
-			},
-			p.ClassNames,
-		),
-		htmx.Path(
-			htmx.Attribute("stroke-linecap", "round"),
-			htmx.Attribute("stroke-linejoin", "round"),
-			htmx.Attribute("d", "m 13.5,12 h 10e-4 M 14,12 A 0.5,0.5 0 0 1 13.5,12.5 0.5,0.5 0 0 1 13,12 0.5,0.5 0 0 1 13.5,11.5 0.5,0.5 0 0 1 14,12 Z m 4,0 h 0.001 M 18.5,12 A 0.5,0.5 0 0 1 18,12.5 0.5,0.5 0 0 1 17.5,12 0.5,0.5 0 0 1 18,11.5 0.5,0.5 0 0 1 18.5,12 Z m -2.75,2.25 h 10e-4 m 0.499,0 a 0.5,0.5 0 0 1 -0.5,0.5 0.5,0.5 0 0 1 -0.5,-0.5 0.5,0.5 0 0 1 0.5,-0.5 0.5,0.5 0 0 1 0.5,0.5 z m -0.5,-4.5 h 10e-4 m 0.499,0 a 0.5,0.5 0 0 1 -0.5,0.5 0.5,0.5 0 0 1 -0.5,-0.5 0.5,0.5 0 0 1 0.5,-0.5 0.5,0.5 0 0 1 0.5,0.5 z M 7,6.75 h 10 c 2.216,0 4,1.784 4,4 v 2.5 c 0,2.216 -1.784,4 -4,4 H 7 c -2.216,0 -4,-1.784 -4,-4 v -2.5 c 0,-2.216 1.784,-4 4,-4 z M 10.5,12 H 6.0000004 M 8.249467,9.7499999 V 14.25"),
-		),
-	)
+    return htmx.SVG(
+        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+        htmx.Attribute("viewBox", "0 0 24 24"),
+        htmx.Merge(
+            htmx.ClassNames{
+                "h-5": true,
+                "h-6": false,
+                "w-5": true,
+                "w-6": false,
+            },
+            p.ClassNames,
+        ),
+        htmx.Path(
+            htmx.Attribute("stroke-linecap", "round"),
+            htmx.Attribute("stroke-linejoin", "round"),
+            htmx.Attribute("d", "m 13.5,12 h 10e-4 M 14,12 A 0.5,0.5 0 0 1 13.5,12.5 0.5,0.5 0 0 1 13,12 0.5,0.5 0 0 1 13.5,11.5 0.5,0.5 0 0 1 14,12 Z m 4,0 h 0.001 M 18.5,12 A 0.5,0.5 0 0 1 18,12.5 0.5,0.5 0 0 1 17.5,12 0.5,0.5 0 0 1 18,11.5 0.5,0.5 0 0 1 18.5,12 Z m -2.75,2.25 h 10e-4 m 0.499,0 a 0.5,0.5 0 0 1 -0.5,0.5 0.5,0.5 0 0 1 -0.5,-0.5 0.5,0.5 0 0 1 0.5,-0.5 0.5,0.5 0 0 1 0.5,0.5 z m -0.5,-4.5 h 10e-4 m 0.499,0 a 0.5,0.5 0 0 1 -0.5,0.5 0.5,0.5 0 0 1 -0.5,-0.5 0.5,0.5 0 0 1 0.5,-0.5 0.5,0.5 0 0 1 0.5,0.5 z M 7,6.75 h 10 c 2.216,0 4,1.784 4,4 v 2.5 c 0,2.216 -1.784,4 -4,4 H 7 c -2.216,0 -4,-1.784 -4,-4 v -2.5 c 0,-2.216 1.784,-4 4,-4 z M 10.5,12 H 6.0000004 M 8.249467,9.7499999 V 14.25"),
+        ),
+    )
 }

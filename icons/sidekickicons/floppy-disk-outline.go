@@ -7,22 +7,22 @@ import (
 )
 
 func FloppyDiskOutline(p icons.IconProps) htmx.Node {
-	return htmx.SVG(
-		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-		htmx.Attribute("viewBox", "0 0 24 24"),
-		htmx.Merge(
-			htmx.ClassNames{
-				"h-5": true,
-				"h-6": false,
-				"w-5": true,
-				"w-6": false,
-			},
-			p.ClassNames,
-		),
-		htmx.Path(
-			htmx.Attribute("stroke-linecap", "round"),
-			htmx.Attribute("stroke-linejoin", "round"),
-			htmx.Attribute("d", "m 6,20.25 h 12 c 1.242641,0 2.25,-1.007359 2.25,-2.25 V 7.5 L 16.5,3.75 H 6 C 4.7573593,3.75 3.75,4.7573593 3.75,6 v 12 c 0,1.242641 1.0073593,2.25 2.25,2.25 z m 9.75,-16.5 v 5 h -9.5 v -5 z M 13,5.5 V 7 m -6.75,4.25 h 11.5 v 6.5 H 6.25 Z"),
-		),
-	)
+    return htmx.SVG(
+        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+        htmx.Attribute("viewBox", "0 0 24 24"),
+        htmx.Merge(
+            htmx.ClassNames{
+                "h-5": true,
+                "h-6": false,
+                "w-5": true,
+                "w-6": false,
+            },
+            p.ClassNames,
+        ),
+        htmx.Path(
+            htmx.Attribute("stroke-linecap", "round"),
+            htmx.Attribute("stroke-linejoin", "round"),
+            htmx.Attribute("d", "m 6,20.25 h 12 c 1.242641,0 2.25,-1.007359 2.25,-2.25 V 7.5 L 16.5,3.75 H 6 C 4.7573593,3.75 3.75,4.7573593 3.75,6 v 12 c 0,1.242641 1.0073593,2.25 2.25,2.25 z m 9.75,-16.5 v 5 h -9.5 v -5 z M 13,5.5 V 7 m -6.75,4.25 h 11.5 v 6.5 H 6.25 Z"),
+        ),
+    )
 }

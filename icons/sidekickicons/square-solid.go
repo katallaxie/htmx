@@ -7,20 +7,20 @@ import (
 )
 
 func SquareSolid(p icons.IconProps) htmx.Node {
-	return htmx.SVG(
-		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-		htmx.Attribute("viewBox", "0 0 24 24"),
-		htmx.Merge(
-			htmx.ClassNames{
-				"h-5": false,
-				"h-6": true,
-				"w-5": false,
-				"w-6": true,
-			},
-			p.ClassNames,
-		),
-		htmx.Path(
-			htmx.Attribute("d", "M 3,6 C 3,4.34315 4.34315,3 6,3 h 12 c 1.6569,0 3,1.34315 3,3 v 12 c 0,1.6569 -1.3431,3 -3,3 H 6 C 4.34315,21 3,19.6569 3,18 Z"),
-		),
-	)
+    return htmx.SVG(
+        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+        htmx.Attribute("viewBox", "0 0 24 24"),
+        htmx.Merge(
+            htmx.ClassNames{
+                "h-5": false,
+                "h-6": true,
+                "w-5": false,
+                "w-6": true,
+            },
+            p.ClassNames,
+        ),
+        htmx.Path(
+            htmx.Attribute("d", "M 3,6 C 3,4.34315 4.34315,3 6,3 h 12 c 1.6569,0 3,1.34315 3,3 v 12 c 0,1.6569 -1.3431,3 -3,3 H 6 C 4.34315,21 3,19.6569 3,18 Z"),
+        ),
+    )
 }
