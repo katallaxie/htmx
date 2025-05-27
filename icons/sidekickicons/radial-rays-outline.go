@@ -7,22 +7,22 @@ import (
 )
 
 func RadialRaysOutline(p icons.IconProps) htmx.Node {
-    return htmx.SVG(
-        htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-        htmx.Attribute("viewBox", "0 0 24 24"),
-        htmx.Merge(
-            htmx.ClassNames{
-                "h-5": true,
-                "h-6": false,
-                "w-5": true,
-                "w-6": false,
-            },
-            p.ClassNames,
-        ),
-        htmx.Path(
-            htmx.Attribute("stroke-linecap", "round"),
-            htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "M 8.1109128,8.1109128 5.636039,5.636039 M 18.363961,18.363961 15.889087,15.889087 M 6.5000002,12 H 3 m 18,0 H 17.5 M 8.1109127,15.889087 5.636039,18.363961 M 18.363961,5.636039 15.889087,8.1109127 M 12,17.5 V 21 M 12,3 v 3.5"),
-        ),
-    )
+	return htmx.SVG(
+		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
+		htmx.Attribute("viewBox", "0 0 24 24"),
+		htmx.Merge(
+			htmx.ClassNames{
+				"h-5": true,
+				"h-6": false,
+				"w-5": true,
+				"w-6": false,
+			},
+			p.ClassNames,
+		),
+		htmx.Path(
+			htmx.Attribute("stroke-linecap", "round"),
+			htmx.Attribute("stroke-linejoin", "round"),
+			htmx.Attribute("d", "M 8.1109128,8.1109128 5.636039,5.636039 M 18.363961,18.363961 15.889087,15.889087 M 6.5000002,12 H 3 m 18,0 H 17.5 M 8.1109127,15.889087 5.636039,18.363961 M 18.363961,5.636039 15.889087,8.1109127 M 12,17.5 V 21 M 12,3 v 3.5"),
+		),
+	)
 }

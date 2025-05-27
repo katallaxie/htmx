@@ -49,7 +49,8 @@ func Page() htmx.Node {
 			htmx.Div(
 				drawers.Drawer(
 					drawers.DrawerProps{
-						ClassNames: htmx.ClassNames{"lg:drawer-open": true,
+						ClassNames: htmx.ClassNames{
+							"lg:drawer-open": true,
 							"mx-auto":        true,
 							"max-w-[100rem]": true,
 						},
