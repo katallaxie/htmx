@@ -4,11 +4,16 @@ import htmx "github.com/katallaxie/htmx"
 
 // CheckboxProps represents the properties for a checkbox element.
 type CheckboxProps struct {
-	ClassNames htmx.ClassNames // The class names for the checkbox element.
-	Name       string          // The name of the checkbox element.
-	Value      string          // The value of the checkbox element.
-	Checked    bool            // Whether the checkbox element is checked.
-	Disabled   bool            // Whether the checkbox element is disabled.
+	// Name is the name of the checkbox element.
+	Name string
+	// Value is the value of the checkbox element.
+	Value string
+	// Checked indicates whether the checkbox is checked.
+	Checked bool
+	// Disabled indicates whether the checkbox is disabled.
+	Disabled bool
+	// ClassNames allows for additional CSS classes to be applied to the checkbox.
+	htmx.ClassNames
 }
 
 // Checkbox generates a checkbox element based on the provided properties.

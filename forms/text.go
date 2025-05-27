@@ -7,16 +7,16 @@ import (
 
 // TextInputProps represents the properties for a text input element.
 type TextInputProps struct {
-	ClassNames  htmx.ClassNames // The class names for the text input element.
-	Disabled    bool            // Whether the text input element is disabled.
-	Type        string          // The type of the text input element.
-	Error       error           // The error message of the text input element.
-	Icon        htmx.Node       // The icon of the text input element.
-	Name        string          // The name of the text input element.
-	Placeholder string          // The placeholder of the text input element.
-	Value       string          // The value of the text input element.
-	Validator   bool            // Whether the text input element is a validator.
-	Required    bool            // Whether the text input element is required.
+	Disabled    bool      // Whether the text input element is disabled.
+	Error       error     // The error message of the text input element.
+	Icon        htmx.Node // The icon of the text input element.
+	Name        string    // The name of the text input element.
+	Placeholder string    // The placeholder of the text input element.
+	Required    bool      // Whether the text input element is required.
+	Type        string    // The type of the text input element.
+	Validator   bool      // Whether the text input element is a validator.
+	Value       string    // The value of the text input element.
+	htmx.ClassNames
 }
 
 // TextInput returns a text input element based on the provided properties.
