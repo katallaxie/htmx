@@ -45,7 +45,7 @@ import (
 )
 
 func {{.FuncName}}(p icons.IconProps) htmx.Node {
-    return htmx.SVG(
+	return htmx.SVG(
         htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "{{.ViewBox}}"),
         {{- if .Stroke}}

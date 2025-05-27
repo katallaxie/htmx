@@ -1,0 +1,48 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package = "github.com/katallaxie/htmx/proto";
+
+/// Plugin ...
+service Plugin {
+    /// Render ...
+    rpc Render(Render.Request) returns (Render.Response);
+}
+
+/// Render ...
+message Render {
+    enum Status {
+        UNKNOWN = 0;
+        SUCCESS = 1;
+        FAILURE = 2;
+    }
+
+    /// Request ...
+    message Request {
+        string version           = 1;
+        map<string, string> vars = 2;
+        repeated string args     = 3;
+    }
+
+    /// Response ...
+    message Response {
+        Status status                   = 1;
+        repeated Diagnostic diagnostic  = 2;
+        string content                  = 3;
+    }
+}
+
+/// Diagnostic ...
+message Diagnostic {
+    enum Severity {
+        INVALID     = 0;
+        ERROR       = 1;
+        WARNING     = 2;
+    }
+
+    Severity severity                = 1;
+    string summary                   = 2;
+    string detail                    = 3;
+    repeated string FilePaths        = 4;
+}
