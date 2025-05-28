@@ -3,9 +3,11 @@ package plugin
 import (
 	"context"
 	"fmt"
+	"io"
 	"os"
 	"os/exec"
 
+	"github.com/katallaxie/htmx"
 	"github.com/katallaxie/htmx/proto"
 
 	"github.com/hashicorp/go-hclog"
@@ -14,6 +16,31 @@ import (
 )
 
 var enablePluginAutoMTLS = os.Getenv("RUN_DISABLE_PLUGIN_TLS") == ""
+
+// Plugin ...
+func Plugin(ctx context.Context, path string, args ...string) htmx.Node {
+	return htmx.NodeFunc(func(w io.Writer) error {
+		m := Meta{Path: path, Arguments: args}
+		f := m.Factory(ctx)
+
+		p, err := f()
+		if err != nil {
+			return fmt.Errorf("failed to create plugin factory: %w", err)
+		}
+
+		c, err := p.Render(ctx)
+		if err != nil {
+			return fmt.Errorf("failed to render plugin: %w", err)
+		}
+
+		_, err = w.Write([]byte(c))
+		if err != nil {
+			return fmt.Errorf("failed to write plugin content: %w", err)
+		}
+
+		return nil
+	})
+}
 
 // Meta are the meta information provided for the plugin.
 // These are the arguments and the path to the plugin.
@@ -30,6 +57,7 @@ func (m *Meta) ExecutableFile() (string, error) {
 	return m.Path, nil
 }
 
+// Factory returns a factory function that can be used to create a new instance of the plugin.
 func (m *Meta) Factory(ctx context.Context) Factory {
 	return pluginFactory(ctx, m)
 }
@@ -73,29 +101,22 @@ func (p *GRPCPlugin) Close() error {
 }
 
 // Render is rendering the plugin with the provided app and options.
-func (p *GRPCPlugin) Render(ctx context.Context) error {
+func (p *GRPCPlugin) Render(ctx context.Context) (string, error) {
 	r := new(proto.Render_Request)
 
-	_, err := p.client.Render(ctx, r)
+	raw, err := p.client.Render(ctx, r)
 	if err != nil {
-		return err
+		return "", err
 	}
 
-	return nil
+	return raw.GetContent(), nil
 }
 
 // Factory is creatig a new instance of the plugin.
-type Factory func() (Plugin, error)
-
-// Plugin is defining the interface for a plugin.
-// Which essentially implements the provider interface.
-type Plugin interface {
-	// Close ...
-	Close() error
-}
+type Factory func() (*GRPCPlugin, error)
 
 func pluginFactory(ctx context.Context, meta *Meta) Factory {
-	return func() (Plugin, error) {
+	return func() (*GRPCPlugin, error) {
 		f, err := meta.ExecutableFile()
 		if err != nil {
 			return nil, err
