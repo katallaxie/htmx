@@ -14,7 +14,7 @@ var (
 	HxDefaultSettleDelay  = 20 * time.Millisecond
 )
 
-// Swap ...
+// Swap is a component for the htmx swap extension.
 type Swap struct {
 	style       HXSwapStyle
 	transition  *bool
@@ -24,13 +24,13 @@ type Swap struct {
 	focusScroll *bool
 }
 
-// HxSwapTiming ...
+// HxSwapTiming is used to define the timing of the swap operation.
 type HxSwapTiming struct {
 	mode     HxSwapTimingMode
 	duration time.Duration
 }
 
-// String ...
+// String returns the string representation of the hx-swap attribute.
 func (s *HxSwapTiming) String() string {
 	var out string
 
@@ -43,14 +43,14 @@ func (s *HxSwapTiming) String() string {
 	return out
 }
 
-// HxSwapScrolling ...
+// HxSwapScrolling is used to define the scrolling behavior of the swap operation.
 type HxSwapScrolling struct {
 	mode      HxSwapScrollingMode
 	target    string
 	direction HxSwapDirection
 }
 
-// String ...
+// String is used to return the string representation of the hx-swap-scrolling attribute.
 func (s *HxSwapScrolling) String() string {
 	var out string
 
@@ -67,14 +67,14 @@ func (s *HxSwapScrolling) String() string {
 	return out
 }
 
-// NewSwap ...
+// NewSwap creates a new Swap instance with the default style set to HxSwapInnerHTML.
 func NewSwap() *Swap {
 	return &Swap{
 		style: HxSwapInnerHTML,
 	}
 }
 
-// Style ...
+// Style sets the style of the swap operation.
 func (s *Swap) Style(style HXSwapStyle) *Swap {
 	s.style = style
 	return s

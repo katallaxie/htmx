@@ -4,8 +4,8 @@ import htmx "github.com/katallaxie/htmx"
 
 // Props contains the properties for the swap component.
 type Props struct {
-	ClassNames htmx.ClassNames
-	Value      string
+	htmx.ClassNames
+	Value string
 }
 
 // On is a component for the on state of the swap component.
