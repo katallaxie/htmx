@@ -2,22 +2,29 @@ package tooltips
 
 import htmx "github.com/katallaxie/htmx"
 
-// TooltipProps ...
-type TooltipProps struct {
-	ClassNames htmx.ClassNames
-	DataTip    string
+// Tip represents a tooltip with a message.
+func Tip(text string) htmx.Node {
+	return htmx.Attribute("data-tip", text)
 }
 
-// Tooltip ...
+// TooltipProps represents the properties for a tooltip component.
+type TooltipProps struct {
+	htmx.ClassNames
+	Open bool
+	Tip  string
+}
+
+// Tooltip creates a tooltip component with the specified properties and children.
 func Tooltip(p TooltipProps, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
-				"tooltip": true,
+				"tooltip":      true,
+				"tooltip-open": p.Open,
 			},
 			p.ClassNames,
 		),
-		htmx.Attribute("data-tip", p.DataTip),
+		Tip(p.Tip),
 		htmx.Group(children...),
 	)
 }
@@ -29,10 +36,11 @@ func TooltipPrimary(p TooltipProps, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"tooltip":         true,
 				"tooltip-primary": true,
+				"tooltip-open":    p.Open,
 			},
 			p.ClassNames,
 		),
-		htmx.Attribute("data-tip", p.DataTip),
+		Tip(p.Tip),
 		htmx.Group(children...),
 	)
 }
@@ -44,10 +52,11 @@ func TooltipSecondary(p TooltipProps, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"tooltip":           true,
 				"tooltip-secondary": true,
+				"tooltip-open":      p.Open,
 			},
 			p.ClassNames,
 		),
-		htmx.Attribute("data-tip", p.DataTip),
+		Tip(p.Tip),
 		htmx.Group(children...),
 	)
 }
@@ -59,10 +68,11 @@ func TooltipSuccess(p TooltipProps, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"tooltip":         true,
 				"tooltip-success": true,
+				"tooltip-open":    p.Open,
 			},
 			p.ClassNames,
 		),
-		htmx.Attribute("data-tip", p.DataTip),
+		Tip(p.Tip),
 		htmx.Group(children...),
 	)
 }
@@ -74,10 +84,11 @@ func TooltipWarning(p TooltipProps, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"tooltip":         true,
 				"tooltip-warning": true,
+				"tooltip-open":    p.Open,
 			},
 			p.ClassNames,
 		),
-		htmx.Attribute("data-tip", p.DataTip),
+		Tip(p.Tip),
 		htmx.Group(children...),
 	)
 }
@@ -89,10 +100,11 @@ func TooltipInfo(p TooltipProps, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"tooltip":      true,
 				"tooltip-info": true,
+				"tooltip-open": p.Open,
 			},
 			p.ClassNames,
 		),
-		htmx.Attribute("data-tip", p.DataTip),
+		Tip(p.Tip),
 		htmx.Group(children...),
 	)
 }
@@ -107,7 +119,7 @@ func TooltipError(p TooltipProps, children ...htmx.Node) htmx.Node {
 			},
 			p.ClassNames,
 		),
-		htmx.Attribute("data-tip", p.DataTip),
+		Tip(p.Tip),
 		htmx.Group(children...),
 	)
 }
@@ -119,10 +131,11 @@ func TooltipAccent(p TooltipProps, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"tooltip":        true,
 				"tooltip-accent": true,
+				"tooltip-open":   p.Open,
 			},
 			p.ClassNames,
 		),
-		htmx.Attribute("data-tip", p.DataTip),
+		Tip(p.Tip),
 		htmx.Group(children...),
 	)
 }
