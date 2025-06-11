@@ -5,7 +5,7 @@ import htmx "github.com/katallaxie/htmx"
 // Props contains the properties for the text component.
 type Props struct {
 	// ClassNames contains the class names for the text component.
-	ClassNames htmx.ClassNames
+	htmx.ClassNames
 }
 
 // Error is a component that displays an error text.
