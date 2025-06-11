@@ -9,9 +9,12 @@ func Tip(text string) htmx.Node {
 
 // TooltipProps represents the properties for a tooltip component.
 type TooltipProps struct {
-	htmx.ClassNames
+	// Open indicates whether the tooltip is open or not.
 	Open bool
-	Tip  string
+	// Tip is the text to be displayed in the tooltip.
+	Tip string
+	// ClassNames contains the class names for the tooltip component.
+	htmx.ClassNames
 }
 
 // Tooltip creates a tooltip component with the specified properties and children.

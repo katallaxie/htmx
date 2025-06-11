@@ -19,7 +19,11 @@ type Props struct {
 func Token(props Props) htmx.Node {
 	return htmx.Input(
 		htmx.Type("hidden"),
-		htmx.IfElse(utilx.NotEmpty(props.Name), htmx.Name(props.Name), htmx.Name(defaultTokenName)),
+		htmx.IfElse(
+			utilx.NotEmpty(props.Name),
+			htmx.Name(props.Name),
+			htmx.Name(defaultTokenName),
+		),
 		htmx.Value(props.Token),
 	)
 }
