@@ -48,24 +48,27 @@ func Page() htmx.Node {
 		htmx.Body(
 			htmx.Div(
 				drawers.Drawer(
-					drawers.DrawerProps{
+					drawers.Props{
 						ClassNames: htmx.ClassNames{
 							"lg:drawer-open": true,
 							"mx-auto":        true,
 							"max-w-[100rem]": true,
 						},
 					},
+					drawers.DrawerToggle(
+						drawers.ToggleProps{
+							ID: "my-drawer",
+						},
+					),
 					drawers.DrawerContent(
 						drawers.DrawerContentProps{},
 					),
 					drawers.DrawerSide(
 						drawers.DrawerSideProps{},
-						drawers.DrawerSideMenu(
-							drawers.DrawerSideMenuProps{},
-							drawers.DrawerSideMenuItem(
-								drawers.DrawerSideMenuItemProps{},
-								htmx.Text("Item 1"),
-							),
+						drawers.DrawerClose(
+							drawers.DrawerCloseProps{
+								ID: "my-drawer",
+							},
 						),
 					),
 				),
