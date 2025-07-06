@@ -7,8 +7,8 @@ func Tip(text string) htmx.Node {
 	return htmx.Attribute("data-tip", text)
 }
 
-// TooltipProps represents the properties for a tooltip component.
-type TooltipProps struct {
+// Props represents the properties for a tooltip component.
+type Props struct {
 	// Open indicates whether the tooltip is open or not.
 	Open bool
 	// Tip is the text to be displayed in the tooltip.
@@ -18,7 +18,7 @@ type TooltipProps struct {
 }
 
 // Tooltip creates a tooltip component with the specified properties and children.
-func Tooltip(p TooltipProps, children ...htmx.Node) htmx.Node {
+func Tooltip(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -32,8 +32,8 @@ func Tooltip(p TooltipProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// TooltipPrimary ...
-func TooltipPrimary(p TooltipProps, children ...htmx.Node) htmx.Node {
+// Primary creates a primary tooltip component with the specified properties and children.
+func Primary(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -48,8 +48,8 @@ func TooltipPrimary(p TooltipProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// TooltipSecondary ...
-func TooltipSecondary(p TooltipProps, children ...htmx.Node) htmx.Node {
+// Secondary creates a secondary tooltip component with the specified properties and children.
+func Secondary(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -64,8 +64,8 @@ func TooltipSecondary(p TooltipProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// TooltipSuccess ...
-func TooltipSuccess(p TooltipProps, children ...htmx.Node) htmx.Node {
+// Success creates a success tooltip with the specified properties and children.
+func Success(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -80,8 +80,8 @@ func TooltipSuccess(p TooltipProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// TooltipWarning ...
-func TooltipWarning(p TooltipProps, children ...htmx.Node) htmx.Node {
+// Warning is a struct that contains the props of a warning tooltip.
+func Warning(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -96,8 +96,8 @@ func TooltipWarning(p TooltipProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// TooltipInfo ...
-func TooltipInfo(p TooltipProps, children ...htmx.Node) htmx.Node {
+// Info is a struct that contains the props of an info tooltip.
+func Info(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -112,13 +112,14 @@ func TooltipInfo(p TooltipProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// TooltipError ...
-func TooltipError(p TooltipProps, children ...htmx.Node) htmx.Node {
+// Error creates a tooltip component with error styling.
+func Error(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
 				"tooltip":       true,
 				"tooltip-error": true,
+				"tooltip-open":  p.Open,
 			},
 			p.ClassNames,
 		),
@@ -127,8 +128,8 @@ func TooltipError(p TooltipProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// TooltipAccent ...
-func TooltipAccent(p TooltipProps, children ...htmx.Node) htmx.Node {
+// Accent is a struct that contains the props of an accent tooltip.
+func Accent(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
