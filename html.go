@@ -560,3 +560,8 @@ func Comment(comment string) Node {
 		return nil
 	})
 }
+
+// Fieldset represents an HTML fieldset element.
+func Fieldset(children ...Node) Node {
+	return Element("fieldset", children...)
+}

@@ -22,14 +22,14 @@ func Card(p CardProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// CardBordered is a component for the htmx card extension.
-func CardBordered(p CardProps, children ...htmx.Node) htmx.Node {
+// CardBorder is a component for the htmx card extension with a bordered style.
+func CardBorder(p CardProps, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
-				"card":          true,
-				"card-bordered": true,
-				"bg-base-100":   true,
+				"card":        true,
+				"card-border": true,
+				"bg-base-100": true,
 			},
 			p.ClassNames,
 		),
