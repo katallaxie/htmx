@@ -113,7 +113,7 @@ func Page() htmx.Node {
 							),
 						),
 						dividers.Divider(
-							dividers.DividerProps{},
+							dividers.Props{},
 							htmx.Text("OR"),
 						),
 						htmx.Form(

@@ -2,13 +2,13 @@ package dividers
 
 import htmx "github.com/katallaxie/htmx"
 
-// DividerProps is a struct that contains the props of a divider.
-type DividerProps struct {
+// Props is a struct that contains the props of a divider.
+type Props struct {
 	ClassNames htmx.ClassNames
 }
 
 // Divider is a struct that contains the props of a divider.
-func Divider(p DividerProps, children ...htmx.Node) htmx.Node {
+func Divider(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -20,8 +20,8 @@ func Divider(p DividerProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// DividerNeutral is a struct that contains the props of a neutral divider.
-func DividerNeutral(p DividerProps, children ...htmx.Node) htmx.Node {
+// Neutral is a struct that contains the props of a neutral divider.
+func Neutral(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -34,8 +34,8 @@ func DividerNeutral(p DividerProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// DividerPrimary is a struct that contains the props of a primary divider.
-func DividerPrimary(p DividerProps, children ...htmx.Node) htmx.Node {
+// Primary is a struct that contains the props of a primary divider.
+func Primary(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -48,8 +48,8 @@ func DividerPrimary(p DividerProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// DividerSecondary is a struct that contains the props of a secondary divider.
-func DividerSecondary(p DividerProps, children ...htmx.Node) htmx.Node {
+// Secondary is a struct that contains the props of a secondary divider.
+func Secondary(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -62,8 +62,8 @@ func DividerSecondary(p DividerProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// DividerSuccess is a struct that contains the props of a success divider.
-func DividerSuccess(p DividerProps, children ...htmx.Node) htmx.Node {
+// Success is a struct that contains the props of a success divider.
+func Success(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -76,8 +76,8 @@ func DividerSuccess(p DividerProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// DividerWarning is a struct that contains the props of a warning divider.
-func DividerWarning(p DividerProps, children ...htmx.Node) htmx.Node {
+// Warning is a struct that contains the props of a warning divider.
+func Warning(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -90,8 +90,8 @@ func DividerWarning(p DividerProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// DividerInfo is a struct that contains the props of an info divider.
-func DividerInfo(p DividerProps, children ...htmx.Node) htmx.Node {
+// Info is a struct that contains the props of an info divider.
+func Info(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -104,8 +104,8 @@ func DividerInfo(p DividerProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// DividerError is a struct that contains the props of an error divider.
-func DividerError(p DividerProps, children ...htmx.Node) htmx.Node {
+// Error is a struct that contains the props of an error divider.
+func Error(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
