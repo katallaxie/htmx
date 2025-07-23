@@ -2,13 +2,13 @@ package indicators
 
 import htmx "github.com/katallaxie/htmx"
 
-// IndicatorProps is a struct that contains the properties of an indicator.
-type IndicatorProps struct {
+// Props is a struct that contains the properties of an indicator.
+type Props struct {
 	htmx.ClassNames
 }
 
 // Indicator is a function that returns an indicator.
-func Indicator(props IndicatorProps, children ...htmx.Node) htmx.Node {
+func Indicator(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -20,13 +20,13 @@ func Indicator(props IndicatorProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// IndiciatorItemProps is a struct that contains the properties of an indicator item.
-type IndicatorItemProps struct {
+// ItemProps is a struct that contains the properties of an indicator item.
+type ItemProps struct {
 	htmx.ClassNames
 }
 
-// IndicatorItem is a function that returns an indicator item.
-func IndicatorItem(props IndicatorItemProps, children ...htmx.Node) htmx.Node {
+// Item is a function that returns an indicator item.
+func Item(props ItemProps, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -39,8 +39,8 @@ func IndicatorItem(props IndicatorItemProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// IndicatorItemPrimary is a function that returns a primary indicator item.
-func IndicatorItemPrimary(props IndicatorItemProps, children ...htmx.Node) htmx.Node {
+// ItemPrimary is a function that returns a primary indicator item.
+func ItemPrimary(props ItemProps, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -54,8 +54,8 @@ func IndicatorItemPrimary(props IndicatorItemProps, children ...htmx.Node) htmx.
 	)
 }
 
-// IndicatorItemSecondary is a function that returns a secondary indicator item.
-func IndicatorItemSecondary(props IndicatorItemProps, children ...htmx.Node) htmx.Node {
+// ItemSecondary is a function that returns a secondary indicator item.
+func ItemSecondary(props ItemProps, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
