@@ -2,13 +2,13 @@ package badges
 
 import htmx "github.com/katallaxie/htmx"
 
-// BadgeProps represents the properties for a badge element.
-type BadgeProps struct {
+// Props represents the properties for a badge element.
+type Props struct {
 	htmx.ClassNames // The class names for the badge element.
 }
 
 // Badge generates a badge element based on the provided properties.
-func Badge(p BadgeProps, children ...htmx.Node) htmx.Node {
+func Badge(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Span(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -21,7 +21,7 @@ func Badge(p BadgeProps, children ...htmx.Node) htmx.Node {
 }
 
 // Neutral generates a neutral badge element based on the provided properties.
-func Neutral(p BadgeProps, children ...htmx.Node) htmx.Node {
+func Neutral(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Span(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -35,7 +35,7 @@ func Neutral(p BadgeProps, children ...htmx.Node) htmx.Node {
 }
 
 // Primary generates a primary badge element based on the provided properties.
-func Primary(p BadgeProps, children ...htmx.Node) htmx.Node {
+func Primary(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Span(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -49,7 +49,7 @@ func Primary(p BadgeProps, children ...htmx.Node) htmx.Node {
 }
 
 // Secondary generates a secondary badge element based on the provided properties.
-func Secondary(p BadgeProps, children ...htmx.Node) htmx.Node {
+func Secondary(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Span(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -63,7 +63,7 @@ func Secondary(p BadgeProps, children ...htmx.Node) htmx.Node {
 }
 
 // Accent generates an accent badge element based on the provided properties.
-func Accent(p BadgeProps, children ...htmx.Node) htmx.Node {
+func Accent(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Span(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -77,7 +77,7 @@ func Accent(p BadgeProps, children ...htmx.Node) htmx.Node {
 }
 
 // Ghost generates a ghost badge element based on the provided properties.
-func Ghost(p BadgeProps, children ...htmx.Node) htmx.Node {
+func Ghost(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Span(
 		htmx.Merge(
 			htmx.ClassNames{
