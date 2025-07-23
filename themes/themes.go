@@ -40,7 +40,7 @@ const (
 	Wireframe    = "wireframe"
 )
 
-// DataTheme is a type that represents a theme.
+// Theme creates an htmx.Node that sets the data-theme attribute for theming purposes.
 func Theme(theme string) htmx.Node {
 	return htmx.Attribute("data-theme", theme)
 }
