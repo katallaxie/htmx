@@ -2,19 +2,17 @@ package cards
 
 import htmx "github.com/katallaxie/htmx"
 
-// CardProps contains the properties for the card component.
-type CardProps struct {
+// Props contains the properties for the card component.
+type Props struct {
 	ClassNames htmx.ClassNames
 }
 
 // Card is a component for the htmx card extension.
-func Card(p CardProps, children ...htmx.Node) htmx.Node {
+func Card(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
-				"card":        true,
-				"bg-base-100": true,
-				"shadow-xl":   true,
+				"card": true,
 			},
 			p.ClassNames,
 		),
@@ -23,13 +21,12 @@ func Card(p CardProps, children ...htmx.Node) htmx.Node {
 }
 
 // CardBorder is a component for the htmx card extension with a bordered style.
-func CardBorder(p CardProps, children ...htmx.Node) htmx.Node {
+func CardBorder(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
 				"card":        true,
 				"card-border": true,
-				"bg-base-100": true,
 			},
 			p.ClassNames,
 		),

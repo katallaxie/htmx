@@ -6,7 +6,6 @@ import (
 
 	"github.com/katallaxie/htmx/buttons"
 	"github.com/katallaxie/htmx/forms"
-	"github.com/katallaxie/htmx/utils"
 	"github.com/katallaxie/pkg/conv"
 	"github.com/katallaxie/pkg/urlx"
 	"github.com/katallaxie/pkg/utilx"
@@ -364,15 +363,20 @@ func Select(p SelectProps, children ...htmx.Node) htmx.Node {
 			},
 			htmx.IfElse(utilx.NotEmpty(p.ID), htmx.ID(p.ID), htmx.ID("select-table-options")),
 			htmx.Attribute("name", "limit"),
-			utils.Map(func(limit int) htmx.Node {
-				return forms.Option(
-					forms.OptionProps{
-						Selected: limit == p.Limit,
+			htmx.Group(
+				htmx.ForEach(
+					p.Limits,
+					func(limit int, _ int) htmx.Node {
+						return forms.Option(
+							forms.OptionProps{
+								Selected: limit == p.Limit,
+							},
+							htmx.Text(conv.String(limit)),
+							htmx.Value(conv.String(limit)),
+						)
 					},
-					htmx.Text(conv.String(limit)),
-					htmx.Value(conv.String(limit)),
-				)
-			}, p.Limits...),
+				)...,
+			),
 		),
 		htmx.Group(children...),
 	)
