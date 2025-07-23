@@ -37,7 +37,7 @@ func TestAccordion(t *testing.T) {
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
 			component := accordions.Accordion(
-				accordions.AccordionProps{
+				accordions.Props{
 					ClassNames: test.classes,
 					Checked:    test.checked,
 				},
@@ -52,7 +52,7 @@ func TestAccordion(t *testing.T) {
 	}
 }
 
-func TestAccordionTitle(t *testing.T) {
+func TestTitle(t *testing.T) {
 	tests := []struct {
 		name     string
 		classes  htmx.ClassNames
@@ -85,8 +85,8 @@ func TestAccordionTitle(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			component := accordions.AccordionTitle(
-				accordions.AccordionTitleProps{
+			component := accordions.Title(
+				accordions.TitleProps{
 					ClassNames: test.classes,
 				},
 				test.children...,
@@ -101,7 +101,7 @@ func TestAccordionTitle(t *testing.T) {
 	}
 }
 
-func TestAccordionContent(t *testing.T) {
+func TestContent(t *testing.T) {
 	tests := []struct {
 		name     string
 		classes  htmx.ClassNames
@@ -121,8 +121,8 @@ func TestAccordionContent(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			component := accordions.AccordionContent(
-				accordions.AccordionContentProps{
+			component := accordions.Content(
+				accordions.ContentProps{
 					ClassNames: test.classes,
 				},
 			)

@@ -2,15 +2,15 @@ package accordions
 
 import htmx "github.com/katallaxie/htmx"
 
-// AccordionProps is a component that can be expanded and collapsed.
-type AccordionProps struct {
+// Props is a component that can be expanded and collapsed.
+type Props struct {
 	ClassNames htmx.ClassNames
 	Name       string
 	Checked    bool
 }
 
 // Accordion is a component that can be expanded and collapsed.
-func Accordion(props AccordionProps, children ...htmx.Node) htmx.Node {
+func Accordion(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -21,8 +21,8 @@ func Accordion(props AccordionProps, children ...htmx.Node) htmx.Node {
 			},
 			props.ClassNames,
 		),
-		AccordionRadio(
-			AccordionRadioProps{
+		Radio(
+			RadioProps{
 				Name:    props.Name,
 				Checked: props.Checked,
 			},
@@ -31,8 +31,8 @@ func Accordion(props AccordionProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// AccordionArrow is a component that can be expanded and collapsed.
-func AccordionArrow(props AccordionProps, children ...htmx.Node) htmx.Node {
+// Arrow is a component that can be expanded and collapsed.
+func Arrow(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -45,13 +45,13 @@ func AccordionArrow(props AccordionProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// AccordionTitleProps is a component title.
-type AccordionTitleProps struct {
+// TitleProps is a component title.
+type TitleProps struct {
 	htmx.ClassNames
 }
 
-// AccordionTitle is a component that can be expanded and collapsed.
-func AccordionTitle(props AccordionTitleProps, children ...htmx.Node) htmx.Node {
+// Title is a component that can be expanded and collapsed.
+func Title(props TitleProps, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -64,13 +64,13 @@ func AccordionTitle(props AccordionTitleProps, children ...htmx.Node) htmx.Node 
 	)
 }
 
-// AccordionContentProps is a component that can be expanded and collapsed.
-type AccordionContentProps struct {
+// ContentProps is a component that can be expanded and collapsed.
+type ContentProps struct {
 	htmx.ClassNames
 }
 
-// AccordionContent is a component that can be expanded and collapsed.
-func AccordionContent(props AccordionContentProps, children ...htmx.Node) htmx.Node {
+// Content is a component that can be expanded and collapsed.
+func Content(props ContentProps, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -82,8 +82,8 @@ func AccordionContent(props AccordionContentProps, children ...htmx.Node) htmx.N
 	)
 }
 
-// AccordionRadioProps is a component that can be expanded and collapsed.
-type AccordionRadioProps struct {
+// RadioProps is a component that can be expanded and collapsed.
+type RadioProps struct {
 	// Name is the name of the radio button.
 	Name string
 	// Checked is the checked state of the radio button.
@@ -92,8 +92,8 @@ type AccordionRadioProps struct {
 	htmx.ClassNames
 }
 
-// AccordionRadio is a component that can be expanded and collapsed.
-func AccordionRadio(props AccordionRadioProps, children ...htmx.Node) htmx.Node {
+// Radio is a component that can be expanded and collapsed.
+func Radio(props RadioProps, children ...htmx.Node) htmx.Node {
 	return htmx.Input(
 		htmx.Type("radio"),
 		htmx.Name(props.Name),
