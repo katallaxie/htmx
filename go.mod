@@ -22,7 +22,7 @@ require (
 	github.com/yuin/goldmark v1.7.13
 	golang.org/x/text v0.27.0
 	google.golang.org/grpc v1.74.2
-	google.golang.org/protobuf v1.36.6
+	google.golang.org/protobuf v1.36.7
 	gorm.io/gorm v1.30.1
 )
 
