@@ -23,7 +23,7 @@ require (
 	golang.org/x/text v0.28.0
 	google.golang.org/grpc v1.75.0
 	google.golang.org/protobuf v1.36.8
-	gorm.io/gorm v1.30.1
+	gorm.io/gorm v1.30.2
 )
 
 require (
