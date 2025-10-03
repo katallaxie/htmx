@@ -5,7 +5,7 @@ import (
 	"time"
 
 	"github.com/katallaxie/htmx"
-	"github.com/katallaxie/htmx/drawers"
+	"github.com/katallaxie/htmx/dropdowns"
 	"github.com/katallaxie/htmx/imports"
 	"github.com/katallaxie/htmx/imports/cache"
 	"github.com/katallaxie/htmx/imports/jsdeliver"
@@ -22,6 +22,10 @@ func Page() htmx.Node {
 					htmx.Href("https://cdn.jsdelivr.net/npm/daisyui@5"),
 					htmx.Rel("stylesheet"),
 					htmx.Type("text/css"),
+				),
+				htmx.Script(
+					htmx.Src("https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"),
+					htmx.Type("text/javascript"),
 				),
 				htmx.Imports(
 					htmx.ImportsProp{
@@ -46,29 +50,27 @@ func Page() htmx.Node {
 			},
 		},
 		htmx.Body(
-			htmx.Div(
-				drawers.Drawer(
-					drawers.Props{
-						ClassNames: htmx.ClassNames{
-							"lg:drawer-open": true,
-							"mx-auto":        true,
-							"max-w-[100rem]": true,
-						},
-					},
-					drawers.DrawerToggle(
-						drawers.ToggleProps{
-							ID: "my-drawer",
-						},
+
+			dropdowns.Dropdown(
+				dropdowns.DropdownProps{},
+				dropdowns.DropdownButton(
+					dropdowns.DropdownButtonProps{},
+					htmx.Text("Open Menu"),
+				),
+				dropdowns.DropdownMenuItems(
+					dropdowns.DropdownMenuItemsProps{},
+					dropdowns.DropdownMenuItem(
+						dropdowns.DropdownMenuItemProps{},
+						htmx.A(
+							htmx.Href("#"),
+							htmx.Text("Item 1"),
+						),
 					),
-					drawers.DrawerContent(
-						drawers.DrawerContentProps{},
-					),
-					drawers.DrawerSide(
-						drawers.DrawerSideProps{},
-						drawers.DrawerClose(
-							drawers.DrawerCloseProps{
-								ID: "my-drawer",
-							},
+					dropdowns.DropdownMenuItem(
+						dropdowns.DropdownMenuItemProps{},
+						htmx.A(
+							htmx.Href("#"),
+							htmx.Text("Item 2"),
 						),
 					),
 				),
