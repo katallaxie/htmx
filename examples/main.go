@@ -6,6 +6,7 @@ import (
 
 	"github.com/katallaxie/htmx"
 	"github.com/katallaxie/htmx/drawers"
+	"github.com/katallaxie/htmx/forms"
 	"github.com/katallaxie/htmx/imports"
 	"github.com/katallaxie/htmx/imports/cache"
 	"github.com/katallaxie/htmx/imports/jsdeliver"
@@ -101,8 +102,82 @@ func Page() htmx.Node {
 						),
 					),
 				),
+				htmx.Div(
+					forms.LabelInput(
+						forms.LabelProps{},
+						forms.LabelText(
+							forms.LabelProps{},
+							htmx.Text("Select a date"),
+						),
+						forms.DateInput(
+							forms.DateInputProps{},
+						),
+					),
+				),
+				forms.LabelSelect(
+					forms.LabelProps{},
+					htmx.Span(
+						htmx.Class("label"),
+						htmx.Text("Select an option"),
+					),
+					forms.Select(
+						forms.SelectProps{},
+						forms.Option(
+							forms.OptionProps{
+								Value:    "option1",
+								Selected: true,
+							},
+							htmx.Text("Option 1"),
+						),
+						forms.Option(
+							forms.OptionProps{
+								Value: "option2",
+							},
+							htmx.Text("Option 2"),
+						),
+					),
+				),
 
-				htmx.Text("Hello, World!"),
+				htmx.Div(
+					htmx.ClassNames{
+						"flex":           true,
+						"flex-col":       true,
+						"items-center":   true,
+						"justify-center": true,
+						"flex-1":         true,
+						"p-4":            true,
+					},
+					forms.Fieldset(
+						forms.FieldsetProps{
+							ClassNames: htmx.ClassNames{
+								"bg-base-200":     true,
+								"border-base-300": true,
+								"rounded-box":     true,
+								"border":          true,
+								"p-4":             true,
+								"m-4":             true,
+								"w-300":           true,
+							},
+						},
+						forms.Legend(
+							forms.LegendProps{},
+							htmx.Text("Page Title"),
+						),
+						forms.TextInput(
+							forms.TextInputProps{
+								Required: true,
+								ClassNames: htmx.ClassNames{
+									"input-bordered": true,
+									"w-full":         true,
+								},
+							},
+						),
+						forms.Label(
+							forms.LabelProps{},
+							htmx.Text("This is an example page using HTMX components."),
+						),
+					),
+				),
 			),
 		),
 	)

@@ -20,6 +20,32 @@ func Label(props LabelProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
+// LabelInput is a component that renders a label element with an input.
+func LabelInput(props LabelProps, children ...htmx.Node) htmx.Node {
+	return htmx.Label(
+		htmx.Merge(
+			htmx.ClassNames{
+				"input": true,
+			},
+			props.ClassNames,
+		),
+		htmx.Group(children...),
+	)
+}
+
+// LabelText is a component that renders a label element with text styling.
+func LabelText(props LabelProps, children ...htmx.Node) htmx.Node {
+	return htmx.Span(
+		htmx.Merge(
+			htmx.ClassNames{
+				"label": true,
+			},
+			props.ClassNames,
+		),
+		htmx.Group(children...),
+	)
+}
+
 // FloatingLabel is a component that renders a label element with a floating effect.
 func FloatingLabel(props LabelProps, children ...htmx.Node) htmx.Node {
 	return htmx.Label(
