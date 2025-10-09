@@ -211,7 +211,7 @@ func hello(w http.ResponseWriter, _ *http.Request) {
 
 func main() {
 	http.HandleFunc("/", hello)
-	http.HandleFunc("/workflows", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/workflows", func(w http.ResponseWriter, _ *http.Request) {
 		w.Header().Set("Content-Type", "text/html")
 		htmx.Fragment(
 			htmx.Option(
@@ -222,7 +222,7 @@ func main() {
 				htmx.Value("2"),
 				htmx.Text("Workflow 2"),
 			),
-		).Render(w)
+		).Render(w) //nolint:errcheck
 	})
 
 	server := &http.Server{
