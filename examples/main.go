@@ -10,8 +10,10 @@ import (
 	"github.com/katallaxie/htmx/imports"
 	"github.com/katallaxie/htmx/imports/cache"
 	"github.com/katallaxie/htmx/imports/jsdeliver"
+	"github.com/katallaxie/htmx/loading"
 	"github.com/katallaxie/htmx/menus"
 	"github.com/katallaxie/htmx/navbars"
+	"github.com/katallaxie/htmx/tailwind"
 )
 
 const defaultTimeout = 3 * time.Second
@@ -102,6 +104,26 @@ func Page() htmx.Node {
 						),
 					),
 				),
+				forms.FormControl(
+					forms.FormControlProps{},
+					forms.Datalist(
+						forms.DatalistProps{
+							ID:          "workflows",
+							Name:        "workflow_id",
+							Target:      "#workflows",
+							Placeholder: "Search a workflow ...",
+							URL:         "/workflows",
+						},
+					),
+					loading.Spinner(
+						loading.SpinnerProps{
+							ClassNames: htmx.ClassNames{
+								"htmx-indicator": true,
+								tailwind.M2:      true,
+							},
+						},
+					),
+				),
 				htmx.Div(
 					forms.LabelInput(
 						forms.LabelProps{},
@@ -189,6 +211,19 @@ func hello(w http.ResponseWriter, _ *http.Request) {
 
 func main() {
 	http.HandleFunc("/", hello)
+	http.HandleFunc("/workflows", func(w http.ResponseWriter, r *http.Request) {
+		w.Header().Set("Content-Type", "text/html")
+		htmx.Fragment(
+			htmx.Option(
+				htmx.Value("1"),
+				htmx.Text("Workflow 1"),
+			),
+			htmx.Option(
+				htmx.Value("2"),
+				htmx.Text("Workflow 2"),
+			),
+		).Render(w)
+	})
 
 	server := &http.Server{
 		Addr:              ":3000",

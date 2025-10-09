@@ -1,8 +1,6 @@
 package forms
 
 import (
-	"fmt"
-
 	htmx "github.com/katallaxie/htmx"
 	"github.com/katallaxie/pkg/utilx"
 )
@@ -11,6 +9,8 @@ import (
 type DatalistProps struct {
 	// ID is the id of the datalist
 	ID string
+	// Target is the target of the datalist
+	Target string
 	// URL is the url of the datalist
 	URL string
 	// ClassNames is a map of class names to conditionally add to the component
@@ -34,17 +34,23 @@ func Datalist(props DatalistProps, children ...htmx.Node) htmx.Node {
 		TextInputBordered(
 			TextInputProps{
 				ClassNames:  props.ClassNames,
-				Name:        props.Name,
-				Placeholder: props.Placeholder,
 				Disabled:    props.Disabled,
 				Error:       props.Error,
+				Name:        props.Name,
+				Placeholder: props.Placeholder,
 			},
 			htmx.List(props.ID),
 			htmx.HxGet(props.URL),
-			htmx.HxTarget(fmt.Sprintf("#%s", props.ID)),
+			htmx.HxTarget(props.Target),
 			htmx.HxSwap("innerHTML"),
 			htmx.HxTrigger("load, keyup[checkUserKeydown.call(this, event)] changed delay:350ms"),
-			htmx.HxIndicator(utilx.IfElse(utilx.Empty(props.Indicator), htmx.HxClssNameIndicatorSelector, props.Indicator)),
+			htmx.HxIndicator(
+				utilx.IfElse(
+					utilx.Empty(props.Indicator),
+					htmx.HxClssNameIndicatorSelector,
+					props.Indicator,
+				),
+			),
 			htmx.Group(children...),
 		),
 		htmx.DataList(

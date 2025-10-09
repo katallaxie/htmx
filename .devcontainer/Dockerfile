@@ -4,10 +4,6 @@
 ARG VARIANT="jammy"
 FROM mcr.microsoft.com/vscode/devcontainers/base:0-${VARIANT}
 
-# Install additional OS packages, if needed.
-RUN apt-get update \
- && apt-get install -y --no-install-recommends ca-certificates
-
 # [Optional] Uncomment this section to install additional OS packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install protobuf-compiler
