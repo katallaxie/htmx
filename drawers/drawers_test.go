@@ -80,7 +80,7 @@ func Test_DrawerToggle(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			component := drawers.DrawerToggle(
+			component := drawers.Toggle(
 				test.props,
 				test.children...,
 			)
@@ -100,19 +100,19 @@ func Test_DrawerContent(t *testing.T) {
 		name     string
 		expected string
 		children []htmx.Node
-		props    drawers.DrawerContentProps
+		props    drawers.ContentProps
 	}{
 		{
 			name:     "default drawer content",
 			expected: `<div class="drawer-content"></div>`,
 			children: nil,
-			props:    drawers.DrawerContentProps{},
+			props:    drawers.ContentProps{},
 		},
 		{
 			name:     "drawer content with class",
 			expected: `<div class="custom-class drawer-content"></div>`,
 			children: nil,
-			props: drawers.DrawerContentProps{
+			props: drawers.ContentProps{
 				ClassNames: htmx.ClassNames{
 					"custom-class": true,
 				},
@@ -122,7 +122,7 @@ func Test_DrawerContent(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			component := drawers.DrawerContent(
+			component := drawers.Content(
 				test.props,
 				test.children...,
 			)

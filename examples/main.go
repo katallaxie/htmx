@@ -52,13 +52,13 @@ func Page() htmx.Node {
 		},
 		drawers.Drawer(
 			drawers.Props{},
-			drawers.DrawerToggle(
+			drawers.Toggle(
 				drawers.ToggleProps{
 					ID: "my-drawer",
 				},
 			),
-			drawers.DrawerContent(
-				drawers.DrawerContentProps{
+			drawers.Content(
+				drawers.ContentProps{
 					ClassNames: htmx.ClassNames{
 						"flex":     true,
 						"flex-col": true,
