@@ -14,7 +14,7 @@ type TextInputProps struct {
 	Placeholder string    // The placeholder of the text input element.
 	Required    bool      // Whether the text input element is required.
 	Type        string    // The type of the text input element.
-	Validator   bool      // Whether the text input element is a validator.
+	Validator   bool      // Indicates whether the input should have validation.
 	Value       string    // The value of the text input element.
 	htmx.ClassNames
 }
@@ -24,10 +24,10 @@ func TextInput(p TextInputProps, children ...htmx.Node) htmx.Node {
 	return htmx.Input(
 		htmx.Merge(
 			htmx.ClassNames{
-				"input":       true,
 				"input-error": utilx.NotEmpty(p.Error),
-				"w-full":      true,
+				"input":       true,
 				"validator":   p.Validator,
+				"w-full":      true,
 			},
 			p.ClassNames,
 		),

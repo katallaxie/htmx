@@ -8,6 +8,8 @@ type TextareaProps struct {
 	Disabled    bool
 	Name        string
 	Value       string
+	// Validator indicates whether the input should have validation.
+	Validator bool
 
 	htmx.ClassNames
 }
@@ -17,7 +19,8 @@ func Textarea(p TextareaProps, children ...htmx.Node) htmx.Node {
 	return htmx.Textarea(
 		htmx.Merge(
 			htmx.ClassNames{
-				"textarea": true,
+				"textarea":  true,
+				"validator": p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -45,6 +48,7 @@ func TextareaBordered(p TextareaProps, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"textarea":          true,
 				"textarea-bordered": true,
+				"validator":         p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -72,6 +76,7 @@ func TextareaGhost(p TextareaProps, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"textarea":       true,
 				"textarea-ghost": true,
+				"validator":      p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -99,6 +104,7 @@ func TextareaPrimary(p TextareaProps, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"textarea":         true,
 				"textarea-primary": true,
+				"validator":        p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -126,6 +132,7 @@ func TextareaSecondary(p TextareaProps, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"textarea":           true,
 				"textarea-secondary": true,
+				"validator":          p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -153,6 +160,7 @@ func TextareaSuccess(p TextareaProps, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"textarea":         true,
 				"textarea-success": true,
+				"validator":        p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -180,6 +188,7 @@ func TextareaWarning(p TextareaProps, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"textarea":         true,
 				"textarea-warning": true,
+				"validator":        p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -207,6 +216,7 @@ func TextareaError(p TextareaProps, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"textarea":       true,
 				"textarea-error": true,
+				"validator":      p.Validator,
 			},
 			p.ClassNames,
 		),

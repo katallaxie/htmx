@@ -6,6 +6,8 @@ import htmx "github.com/katallaxie/htmx"
 type SelectProps struct {
 	// ClassNames is a map of class names.
 	ClassNames htmx.ClassNames
+	// Validator indicates whether the input should have validation.
+	Validator bool
 	// Disabled is disabling the select.
 	Disabled bool
 }
@@ -15,8 +17,9 @@ func Select(p SelectProps, children ...htmx.Node) htmx.Node {
 	return htmx.Select(
 		htmx.Merge(
 			htmx.ClassNames{
-				"select": true,
-				"w-full": true,
+				"select":    true,
+				"w-full":    true,
+				"validator": p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -33,6 +36,7 @@ func SelectBordered(p SelectProps, children ...htmx.Node) htmx.Node {
 				"select":          true,
 				"select-bordered": true,
 				"w-full":          true,
+				"validator":       p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -49,6 +53,7 @@ func SelectGhost(p SelectProps, children ...htmx.Node) htmx.Node {
 				"select":       true,
 				"select-ghost": true,
 				"w-full":       true,
+				"validator":    p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -65,6 +70,7 @@ func SelectPrimary(p SelectProps, children ...htmx.Node) htmx.Node {
 				"select":         true,
 				"select-primary": true,
 				"w-full":         true,
+				"validator":      p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -81,6 +87,7 @@ func SelectSecondary(p SelectProps, children ...htmx.Node) htmx.Node {
 				"select":           true,
 				"select-secondary": true,
 				"w-full":           true,
+				"validator":        p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -97,6 +104,7 @@ func SelectAccent(p SelectProps, children ...htmx.Node) htmx.Node {
 				"select":        true,
 				"select-accent": true,
 				"w-full":        true,
+				"validator":     p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -113,6 +121,7 @@ func SelectInfo(p SelectProps, children ...htmx.Node) htmx.Node {
 				"select":      true,
 				"select-info": true,
 				"w-full":      true,
+				"validator":   p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -129,6 +138,7 @@ func SelectSuccess(p SelectProps, children ...htmx.Node) htmx.Node {
 				"select":         true,
 				"select-success": true,
 				"w-full":         true,
+				"validator":      p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -161,6 +171,7 @@ func SelectDanger(p SelectProps, children ...htmx.Node) htmx.Node {
 				"select":        true,
 				"select-danger": true,
 				"w-full":        true,
+				"validator":     p.Validator,
 			},
 			p.ClassNames,
 		),
@@ -177,6 +188,7 @@ func SelectError(p SelectProps, children ...htmx.Node) htmx.Node {
 				"select":       true,
 				"select-error": true,
 				"w-full":       true,
+				"validator":    p.Validator,
 			},
 			p.ClassNames,
 		),
