@@ -243,3 +243,159 @@ func TestGhost(t *testing.T) {
 		})
 	}
 }
+
+func TestInfo(t *testing.T) {
+	tests := []struct {
+		name     string
+		expected string
+		props    badges.Props
+		children []htmx.Node
+	}{
+		{
+			name:     "default",
+			expected: "<span class=\"badge badge-info\"></span>",
+			props:    badges.Props{},
+			children: nil,
+		},
+		{
+			name:     "with classes",
+			expected: "<span class=\"badge badge-info custom-class\"></span>",
+			props: badges.Props{
+				ClassNames: htmx.ClassNames{"custom-class": true},
+			},
+			children: nil,
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			component := badges.Info(
+				test.props,
+				test.children...,
+			)
+
+			var buf bytes.Buffer
+			err := component.Render(&buf)
+			require.NoError(t, err)
+
+			require.Equal(t, test.expected, buf.String())
+		})
+	}
+}
+
+func TestWarning(t *testing.T) {
+	tests := []struct {
+		name     string
+		expected string
+		props    badges.Props
+		children []htmx.Node
+	}{
+		{
+			name:     "default",
+			expected: "<span class=\"badge badge-warning\"></span>",
+			props:    badges.Props{},
+			children: nil,
+		},
+		{
+			name:     "with classes",
+			expected: "<span class=\"badge badge-warning custom-class\"></span>",
+			props: badges.Props{
+				ClassNames: htmx.ClassNames{"custom-class": true},
+			},
+			children: nil,
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			component := badges.Warning(
+				test.props,
+				test.children...,
+			)
+
+			var buf bytes.Buffer
+			err := component.Render(&buf)
+			require.NoError(t, err)
+
+			require.Equal(t, test.expected, buf.String())
+		})
+	}
+}
+
+func TestError(t *testing.T) {
+	tests := []struct {
+		name     string
+		expected string
+		props    badges.Props
+		children []htmx.Node
+	}{
+		{
+			name:     "default",
+			expected: "<span class=\"badge badge-error\"></span>",
+			props:    badges.Props{},
+			children: nil,
+		},
+		{
+			name:     "with classes",
+			expected: "<span class=\"badge badge-error custom-class\"></span>",
+			props: badges.Props{
+				ClassNames: htmx.ClassNames{"custom-class": true},
+			},
+			children: nil,
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			component := badges.Error(
+				test.props,
+				test.children...,
+			)
+
+			var buf bytes.Buffer
+			err := component.Render(&buf)
+			require.NoError(t, err)
+
+			require.Equal(t, test.expected, buf.String())
+		})
+	}
+}
+
+func TestSuccess(t *testing.T) {
+	tests := []struct {
+		name     string
+		expected string
+		props    badges.Props
+		children []htmx.Node
+	}{
+		{
+			name:     "default",
+			expected: "<span class=\"badge badge-success\"></span>",
+			props:    badges.Props{},
+			children: nil,
+		},
+		{
+			name:     "with classes",
+			expected: "<span class=\"badge badge-success custom-class\"></span>",
+			props: badges.Props{
+				ClassNames: htmx.ClassNames{"custom-class": true},
+			},
+			children: nil,
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			component := badges.Success(
+				test.props,
+				test.children...,
+			)
+
+			var buf bytes.Buffer
+			err := component.Render(&buf)
+			require.NoError(t, err)
+
+			require.Equal(t, test.expected, buf.String())
+		})
+	}
+}

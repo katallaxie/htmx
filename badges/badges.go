@@ -89,3 +89,59 @@ func Ghost(p Props, children ...htmx.Node) htmx.Node {
 		htmx.Group(children...),
 	)
 }
+
+// Warning generates a warning badge element based on the provided properties.
+func Warning(p Props, children ...htmx.Node) htmx.Node {
+	return htmx.Span(
+		htmx.Merge(
+			htmx.ClassNames{
+				"badge":         true,
+				"badge-warning": true,
+			},
+			p.ClassNames,
+		),
+		htmx.Group(children...),
+	)
+}
+
+// Info generates an info badge element based on the provided properties.
+func Info(p Props, children ...htmx.Node) htmx.Node {
+	return htmx.Span(
+		htmx.Merge(
+			htmx.ClassNames{
+				"badge":      true,
+				"badge-info": true,
+			},
+			p.ClassNames,
+		),
+		htmx.Group(children...),
+	)
+}
+
+// Success generates a success badge element based on the provided properties.
+func Success(p Props, children ...htmx.Node) htmx.Node {
+	return htmx.Span(
+		htmx.Merge(
+			htmx.ClassNames{
+				"badge":         true,
+				"badge-success": true,
+			},
+			p.ClassNames,
+		),
+		htmx.Group(children...),
+	)
+}
+
+// Error generates an error badge element based on the provided properties.
+func Error(p Props, children ...htmx.Node) htmx.Node {
+	return htmx.Span(
+		htmx.Merge(
+			htmx.ClassNames{
+				"badge":       true,
+				"badge-error": true,
+			},
+			p.ClassNames,
+		),
+		htmx.Group(children...),
+	)
+}
