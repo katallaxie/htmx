@@ -5,20 +5,20 @@ import (
 	"github.com/katallaxie/pkg/conv"
 )
 
-// CollapseProps is a component that can be expanded and collapsed.
-type CollapseProps struct {
+// Props is a component that can be expanded and collapsed.
+type Props struct {
+	// TabIndex sets the tabindex attribute.
 	TabIndex int
 
 	htmx.ClassNames
 }
 
 // Collapse is a component that can be expanded and collapsed.
-func Collapse(props CollapseProps, children ...htmx.Node) htmx.Node {
+func Collapse(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
-				"bg-base-200": true,
-				"collapse":    true,
+				"collapse": true,
 			},
 			props.ClassNames,
 		),
@@ -27,8 +27,8 @@ func Collapse(props CollapseProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// CollapseArrow is a component that can be expanded and collapsed.
-func CollapseArrow(p CollapseProps, children ...htmx.Node) htmx.Node {
+// Arrow is a component that can be expanded and collapsed.
+func Arrow(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Attribute("tabindex", conv.String(p.TabIndex)),
 		htmx.Merge(
@@ -45,19 +45,17 @@ func CollapseArrow(p CollapseProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// CollapseTitleProps is a component that can be expanded and collapsed.
-type CollapseTitleProps struct {
+// TitleProps is a component that can be expanded and collapsed.
+type TitleProps struct {
 	htmx.ClassNames
 }
 
-// CollapseTitle is a component that can be expanded and collapsed.
-func CollapseTitle(p CollapseTitleProps, children ...htmx.Node) htmx.Node {
+// Title is a component that can be expanded and collapsed.
+func Title(p TitleProps, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
 				"collapse-title": true,
-				"title-md":       true,
-				"font-medium":    true,
 			},
 			p.ClassNames,
 		),
@@ -65,13 +63,13 @@ func CollapseTitle(p CollapseTitleProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// CollapseContentProps is a component that can be expanded and collapsed.
-type CollapseContentProps struct {
+// ContentProps is a component that can be expanded and collapsed.
+type ContentProps struct {
 	htmx.ClassNames
 }
 
-// CollapseContent is a component that can be expanded and collapsed.
-func CollapseContent(props CollapseContentProps, children ...htmx.Node) htmx.Node {
+// Content is a component that can be expanded and collapsed.
+func Content(props ContentProps, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -83,36 +81,18 @@ func CollapseContent(props CollapseContentProps, children ...htmx.Node) htmx.Nod
 	)
 }
 
-// CollapseCheckboxProps is a component that can be expanded and collapsed.
-type CollapseCheckboxProps struct {
+// CheckboxProps is a component that can be expanded and collapsed.
+type CheckboxProps struct {
 	Checked bool
 
 	htmx.ClassNames
 }
 
-// CollapseCheckbox is a component that can be expanded and collapsed.
-func CollapseCheckbox(props CollapseCheckboxProps, children ...htmx.Node) htmx.Node {
+// Checkbox is a component that can be expanded and collapsed.
+func Checkbox(props CheckboxProps, children ...htmx.Node) htmx.Node {
 	return htmx.Input(
+		htmx.Group(children...),
 		htmx.Merge(props.ClassNames),
 		htmx.Type("checkbox"),
-		htmx.Group(children...),
-	)
-}
-
-// CollapseRadioProps is a component that can be expanded and collapsed.
-type CollapseRadioProps struct {
-	Checked bool
-	Name    string
-
-	htmx.ClassNames
-}
-
-// CollapseRadio is a component that can be expanded and collapsed.
-func CollapseRadio(props CollapseRadioProps, children ...htmx.Node) htmx.Node {
-	return htmx.Input(
-		htmx.Type("radio"),
-		htmx.If(props.Checked, htmx.Checked()),
-		htmx.Name(props.Name),
-		htmx.Group(children...),
 	)
 }

@@ -12,21 +12,21 @@ import (
 func TestCollapsible(t *testing.T) {
 	tests := []struct {
 		name     string
-		props    collapsible.CollapseProps
+		props    collapsible.Props
 		expected string
 		children []htmx.Node
 	}{
 		{
 			name:     "default",
-			props:    collapsible.CollapseProps{},
-			expected: "<div class=\"bg-base-200 collapse\" tabindex=\"0\"></div>",
+			props:    collapsible.Props{},
+			expected: "<div class=\"collapse\" tabindex=\"0\"></div>",
 		},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
 			component := collapsible.Collapse(
-				collapsible.CollapseProps{},
+				collapsible.Props{},
 				tt.children...,
 			)
 

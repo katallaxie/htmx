@@ -6,8 +6,6 @@ import htmx "github.com/katallaxie/htmx"
 type Props struct {
 	// AriaLabel is the aria-label attribute for the status element.
 	AriaLabel string
-	// AnimateBounce is a boolean that indicates whether to apply the animate-bounce class.
-	AnimateBounce bool
 
 	htmx.ClassNames
 }
@@ -17,8 +15,7 @@ func Status(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
-				"status":         true,
-				"animate-bounce": props.AnimateBounce,
+				"status": true,
 			},
 			props.ClassNames,
 		),
@@ -35,7 +32,6 @@ func Primary(props Props, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"status":         true,
 				"status-primary": true,
-				"animate-bounce": props.AnimateBounce,
 			},
 			props.ClassNames,
 		),
@@ -52,7 +48,6 @@ func Secondary(props Props, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"status":           true,
 				"status-secondary": true,
-				"animate-bounce":   props.AnimateBounce,
 			},
 			props.ClassNames,
 		),
@@ -67,9 +62,8 @@ func Accent(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
-				"status":         true,
-				"status-accent":  true,
-				"animate-bounce": props.AnimateBounce,
+				"status":        true,
+				"status-accent": true,
 			},
 			props.ClassNames,
 		),
@@ -84,9 +78,8 @@ func Info(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
-				"status":         true,
-				"status-info":    true,
-				"animate-bounce": props.AnimateBounce,
+				"status":      true,
+				"status-info": true,
 			},
 			props.ClassNames,
 		),
@@ -103,7 +96,6 @@ func Success(props Props, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"status":         true,
 				"status-success": true,
-				"animate-bounce": props.AnimateBounce,
 			},
 			props.ClassNames,
 		),
@@ -120,7 +112,6 @@ func Warning(props Props, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"status":         true,
 				"status-warning": true,
-				"animate-bounce": props.AnimateBounce,
 			},
 			props.ClassNames,
 		),
@@ -135,9 +126,8 @@ func Error(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
-				"status":         true,
-				"status-error":   true,
-				"animate-bounce": props.AnimateBounce,
+				"status":       true,
+				"status-error": true,
 			},
 			props.ClassNames,
 		),
@@ -154,7 +144,6 @@ func Neutral(props Props, children ...htmx.Node) htmx.Node {
 			htmx.ClassNames{
 				"status":         true,
 				"status-neutral": true,
-				"animate-bounce": props.AnimateBounce,
 			},
 			props.ClassNames,
 		),

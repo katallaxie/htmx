@@ -31,11 +31,6 @@ func TestStatus(t *testing.T) {
 			props:    status.Props{AriaLabel: "test"},
 			expected: "<div class=\"status\" role=\"status\" aria-label=\"test\"></div>",
 		},
-		{
-			name:     "with animate bounce",
-			props:    status.Props{AnimateBounce: true},
-			expected: "<div class=\"animate-bounce status\" role=\"status\" aria-label=\"\"></div>",
-		},
 	}
 
 	for _, tt := range tests {
