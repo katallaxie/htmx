@@ -19,17 +19,17 @@ func TestAccordion(t *testing.T) {
 		{
 			name:     "default",
 			classes:  nil,
-			expected: "<div class=\"bg-base-200 border border-base-300 collapse\"><input type=\"radio\" name=\"\"></div>",
+			expected: "<div class=\"collapse\"><input type=\"radio\" name=\"\"></div>",
 		},
 		{
 			name:     "with classes",
 			classes:  htmx.ClassNames{"custom-class": true},
-			expected: "<div class=\"bg-base-200 border border-base-300 collapse custom-class\"><input type=\"radio\" name=\"\"></div>",
+			expected: "<div class=\"collapse custom-class\"><input type=\"radio\" name=\"\"></div>",
 		},
 		{
 			name:     "checked",
 			classes:  nil,
-			expected: "<div class=\"bg-base-200 border border-base-300 collapse\"><input type=\"radio\" name=\"\" checked=\"checked\"></div>",
+			expected: "<div class=\"collapse\"><input type=\"radio\" name=\"\" checked=\"checked\"></div>",
 			checked:  true,
 		},
 	}
@@ -62,23 +62,23 @@ func TestTitle(t *testing.T) {
 		{
 			name:     "default",
 			classes:  nil,
-			expected: "<div class=\"collapse-title font-semibold\"></div>",
+			expected: "<div class=\"collapse-title\"></div>",
 		},
 		{
 			name:     "with classes",
 			classes:  htmx.ClassNames{"custom-class": true},
-			expected: "<div class=\"collapse-title custom-class font-semibold\"></div>",
+			expected: "<div class=\"collapse-title custom-class\"></div>",
 		},
 		{
 			name:     "with children",
 			classes:  nil,
-			expected: "<div class=\"collapse-title font-semibold\">child</div>",
+			expected: "<div class=\"collapse-title\">child</div>",
 			children: []htmx.Node{htmx.Text("child")},
 		},
 		{
 			name:     "with classes and children",
 			classes:  htmx.ClassNames{"custom-class": true},
-			expected: "<div class=\"collapse-title custom-class font-semibold\">child</div>",
+			expected: "<div class=\"collapse-title custom-class\">child</div>",
 			children: []htmx.Node{htmx.Text("child")},
 		},
 	}

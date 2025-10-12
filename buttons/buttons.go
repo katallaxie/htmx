@@ -24,8 +24,15 @@ func Button(props ButtonProps, children ...htmx.Node) htmx.Node {
 			},
 			props.ClassNames,
 		),
-		htmx.IfElse(utilx.Empty(props.Type), htmx.Attribute("type", "button"), htmx.Attribute("type", props.Type)),
-		htmx.If(props.Disabled, htmx.Disabled()),
+		htmx.IfElse(
+			utilx.Empty(props.Type), // default to "button" if no type is provided
+			htmx.Attribute("type", "button"),
+			htmx.Attribute("type", props.Type),
+		),
+		htmx.If(
+			props.Disabled, // only add the disabled attribute if true
+			htmx.Disabled(),
+		),
 		htmx.Group(children...),
 	)
 }
