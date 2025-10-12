@@ -2,13 +2,13 @@ package avatars
 
 import htmx "github.com/katallaxie/htmx"
 
-// AvatarProps represents the properties for an avatar.
-type AvatarProps struct {
+// Props represents the properties for an avatar.
+type Props struct {
 	htmx.ClassNames
 }
 
 // Avatar generates an avatar based on the provided properties.
-func Avatar(p AvatarProps, children ...htmx.Node) htmx.Node {
+func Avatar(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -20,8 +20,8 @@ func Avatar(p AvatarProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// AvatarGroup generates a group of avatars based on the provided properties.
-func AvatarGroup(p AvatarProps, children ...htmx.Node) htmx.Node {
+// Group generates a group of avatars based on the provided properties.
+func Group(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -34,8 +34,8 @@ func AvatarGroup(p AvatarProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// AvatarOnline generates an online avatar based on the provided properties.
-func AvatarOnline(p AvatarProps, children ...htmx.Node) htmx.Node {
+// Online generates an online avatar based on the provided properties.
+func Online(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -48,8 +48,8 @@ func AvatarOnline(p AvatarProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// AvatarOffline generates an offline avatar based on the provided properties.
-func AvatarOffline(p AvatarProps, children ...htmx.Node) htmx.Node {
+// Offline generates an offline avatar based on the provided properties.
+func Offline(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -62,8 +62,8 @@ func AvatarOffline(p AvatarProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// AvtarPlaceholder generates a placeholder for an avatar based on the provided properties.
-func AvatarPlaceholder(p AvatarProps, children ...htmx.Node) htmx.Node {
+// Placeholder generates a placeholder for an avatar based on the provided properties.
+func Placeholder(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.ClassNames{
 			"avatar":             true,
@@ -83,8 +83,8 @@ func AvatarPlaceholder(p AvatarProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// AvatarRounded generates an avatar based on the provided properties.
-func AvatarRoundedMedium(p AvatarProps, children ...htmx.Node) htmx.Node {
+// RoundedMedium generates an avatar based on the provided properties.
+func RoundedMedium(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -102,8 +102,8 @@ func AvatarRoundedMedium(p AvatarProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// AvatarRoundedSmall generates an extra small avatar based on the provided properties.
-func AvatarRoundedSmall(p AvatarProps, children ...htmx.Node) htmx.Node {
+// RoundedSmall generates an extra small avatar based on the provided properties.
+func RoundedSmall(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -121,8 +121,8 @@ func AvatarRoundedSmall(p AvatarProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// AvatarRoundedLarge generates a large avatar based on the provided properties.
-func AvatarRoundedLarge(p AvatarProps, children ...htmx.Node) htmx.Node {
+// RoundedLarge generates a large avatar based on the provided properties.
+func RoundedLarge(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -140,27 +140,8 @@ func AvatarRoundedLarge(p AvatarProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// AvatarRoundMedium generates a round avatar based on the provided properties.
-func AvatarRoundMedium(p AvatarProps, children ...htmx.Node) htmx.Node {
-	return htmx.Div(
-		htmx.Merge(
-			htmx.ClassNames{
-				"avatar": true,
-			},
-			p.ClassNames,
-		),
-		htmx.Div(
-			htmx.ClassNames{
-				"w-24":         true,
-				"rounded-full": true,
-			},
-			htmx.Group(children...),
-		),
-	)
-}
-
-// AvatarRoundSmall generates an extra small round avatar based on the provided properties.
-func AvatarRoundSmall(p AvatarProps, children ...htmx.Node) htmx.Node {
+// RoundSmall generates an extra small round avatar based on the provided properties.
+func RoundSmall(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -178,8 +159,8 @@ func AvatarRoundSmall(p AvatarProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// AvatarRoundLarge generates a large round avatar based on the provided properties.
-func AvatarRoundLarge(p AvatarProps, children ...htmx.Node) htmx.Node {
+// RoundLarge generates a large round avatar based on the provided properties.
+func RoundLarge(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{

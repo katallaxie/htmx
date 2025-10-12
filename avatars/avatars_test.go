@@ -15,26 +15,26 @@ func TestAvatr(t *testing.T) {
 		name     string
 		expected string
 		children []htmx.Node
-		props    avatars.AvatarProps
+		props    avatars.Props
 	}{
 		{
 			name:     "default",
-			props:    avatars.AvatarProps{},
+			props:    avatars.Props{},
 			expected: `<div class="avatar"></div>`,
 		},
 		{
 			name:     "with class",
-			props:    avatars.AvatarProps{ClassNames: htmx.ClassNames{"bg-red-500": true}},
+			props:    avatars.Props{ClassNames: htmx.ClassNames{"bg-red-500": true}},
 			expected: `<div class="avatar bg-red-500"></div>`,
 		},
 		{
 			name:     "with multiple classes",
-			props:    avatars.AvatarProps{ClassNames: htmx.ClassNames{"bg-red-500": true, "text-white": true}},
+			props:    avatars.Props{ClassNames: htmx.ClassNames{"bg-red-500": true, "text-white": true}},
 			expected: `<div class="avatar bg-red-500 text-white"></div>`,
 		},
 		{
 			name:     "with children",
-			props:    avatars.AvatarProps{},
+			props:    avatars.Props{},
 			children: []htmx.Node{htmx.Text("Avatar Content")},
 			expected: `<div class="avatar">Avatar Content</div>`,
 		},
@@ -61,28 +61,28 @@ func TestAvatarGroup(t *testing.T) {
 		name     string
 		expected string
 		children []htmx.Node
-		props    avatars.AvatarProps
+		props    avatars.Props
 	}{
 		{
 			name:     "default",
-			props:    avatars.AvatarProps{},
+			props:    avatars.Props{},
 			expected: `<div class="-space-x-6 avatar-group"></div>`,
 		},
 		{
 			name:     "with class",
-			props:    avatars.AvatarProps{ClassNames: htmx.ClassNames{"bg-red-500": true}},
+			props:    avatars.Props{ClassNames: htmx.ClassNames{"bg-red-500": true}},
 			expected: `<div class="-space-x-6 avatar-group bg-red-500"></div>`,
 		},
 		{
 			name:     "with multiple classes",
-			props:    avatars.AvatarProps{ClassNames: htmx.ClassNames{"bg-red-500": true, "text-white": true}},
+			props:    avatars.Props{ClassNames: htmx.ClassNames{"bg-red-500": true, "text-white": true}},
 			expected: `<div class="-space-x-6 avatar-group bg-red-500 text-white"></div>`,
 		},
 	}
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			component := avatars.AvatarGroup(
+			component := avatars.Group(
 				test.props,
 				test.children...,
 			)
