@@ -2,13 +2,13 @@ package lists
 
 import htmx "github.com/katallaxie/htmx"
 
-// ListProps is a struct that contains the properties of the List component.
-type ListProps struct {
+// Props is a struct that contains the properties of the List component.
+type Props struct {
 	htmx.ClassNames
 }
 
 // List is a component that renders a list of items.
-func List(props ListProps, children ...htmx.Node) htmx.Node {
+func List(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Ul(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -20,20 +20,20 @@ func List(props ListProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// ListHeader is a component that renders a header for a list.
-type ListHeaderProps struct {
+// TitleProps is a component that renders a header for a list.
+type TitleProps struct {
 	htmx.ClassNames
 }
 
-// ListHeader is a component that renders a header for a list.
-func ListHeader(props ListHeaderProps, children ...htmx.Node) htmx.Node {
+// Title is a component that renders a header for a list.
+func Title(props TitleProps, children ...htmx.Node) htmx.Node {
 	return htmx.Li(
 		htmx.Merge(
 			htmx.ClassNames{
+				"opacity-60":    true,
 				"p-4":           true,
 				"pb-2":          true,
 				"text-xs":       true,
-				"opacity-60":    true,
 				"tracking-wide": true,
 			},
 			props.ClassNames,
@@ -42,13 +42,13 @@ func ListHeader(props ListHeaderProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// ListRow is a component that renders a row in a list.
-type ListRowProps struct {
+// RowProps is a component that renders a row in a list.
+type RowProps struct {
 	htmx.ClassNames
 }
 
-// ListRow is a component that renders a row in a list.
-func ListRow(props ListRowProps, children ...htmx.Node) htmx.Node {
+// Row is a component that renders a row in a list.
+func Row(props RowProps, children ...htmx.Node) htmx.Node {
 	return htmx.Li(
 		htmx.Merge(
 			htmx.ClassNames{

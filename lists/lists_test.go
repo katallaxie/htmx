@@ -12,18 +12,18 @@ import (
 func TestList(t *testing.T) {
 	tests := []struct {
 		name     string
-		props    lists.ListProps
+		props    lists.Props
 		expected string
 		children []htmx.Node
 	}{
 		{
 			name:     "default",
-			props:    lists.ListProps{},
+			props:    lists.Props{},
 			expected: "<ul class=\"list\"></ul>",
 		},
 		{
 			name:     "with class",
-			props:    lists.ListProps{ClassNames: htmx.ClassNames{"custom-class": true}},
+			props:    lists.Props{ClassNames: htmx.ClassNames{"custom-class": true}},
 			expected: "<ul class=\"custom-class list\"></ul>",
 		},
 	}
@@ -47,25 +47,25 @@ func TestList(t *testing.T) {
 func TestListRow(t *testing.T) {
 	tests := []struct {
 		name     string
-		props    lists.ListRowProps
+		props    lists.RowProps
 		expected string
 		children []htmx.Node
 	}{
 		{
 			name:     "default",
-			props:    lists.ListRowProps{},
+			props:    lists.RowProps{},
 			expected: "<li class=\"list-row\"></li>",
 		},
 		{
 			name:     "with class",
-			props:    lists.ListRowProps{ClassNames: htmx.ClassNames{"custom-class": true}},
+			props:    lists.RowProps{ClassNames: htmx.ClassNames{"custom-class": true}},
 			expected: "<li class=\"custom-class list-row\"></li>",
 		},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			component := lists.ListRow(
+			component := lists.Row(
 				tt.props,
 				tt.children...,
 			)
@@ -79,28 +79,28 @@ func TestListRow(t *testing.T) {
 	}
 }
 
-func TestListHeader(t *testing.T) {
+func TestListTitle(t *testing.T) {
 	tests := []struct {
 		name     string
-		props    lists.ListHeaderProps
+		props    lists.TitleProps
 		expected string
 		children []htmx.Node
 	}{
 		{
 			name:     "default",
-			props:    lists.ListHeaderProps{},
+			props:    lists.TitleProps{},
 			expected: "<li class=\"opacity-60 p-4 pb-2 text-xs tracking-wide\"></li>",
 		},
 		{
 			name:     "with class",
-			props:    lists.ListHeaderProps{ClassNames: htmx.ClassNames{"custom-class": true}},
+			props:    lists.TitleProps{ClassNames: htmx.ClassNames{"custom-class": true}},
 			expected: "<li class=\"custom-class opacity-60 p-4 pb-2 text-xs tracking-wide\"></li>",
 		},
 	}
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			component := lists.ListHeader(
+			component := lists.Title(
 				tt.props,
 				tt.children...,
 			)
