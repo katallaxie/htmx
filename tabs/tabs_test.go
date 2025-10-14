@@ -68,24 +68,24 @@ func TestBoxed(t *testing.T) {
 		{
 			name:     "default",
 			classes:  nil,
-			expected: "<div class=\"tabs tabs-boxed\" role=\"tablist\"></div>",
+			expected: "<div class=\"tabs tabs-box\" role=\"tablist\"></div>",
 		},
 		{
 			name:     "with classes",
 			classes:  htmx.ClassNames{"custom-class": true},
-			expected: "<div class=\"custom-class tabs tabs-boxed\" role=\"tablist\"></div>",
+			expected: "<div class=\"custom-class tabs tabs-box\" role=\"tablist\"></div>",
 		},
 		{
 			name:     "with children",
 			classes:  nil,
 			children: []htmx.Node{htmx.Text("child")},
-			expected: "<div class=\"tabs tabs-boxed\" role=\"tablist\">child</div>",
+			expected: "<div class=\"tabs tabs-box\" role=\"tablist\">child</div>",
 		},
 		{
 			name:     "with classes and children",
 			classes:  htmx.ClassNames{"custom-class": true},
 			children: []htmx.Node{htmx.Text("child")},
-			expected: "<div class=\"custom-class tabs tabs-boxed\" role=\"tablist\">child</div>",
+			expected: "<div class=\"custom-class tabs tabs-box\" role=\"tablist\">child</div>",
 		},
 	}
 
