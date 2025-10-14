@@ -29,8 +29,8 @@ func Boxed(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
-				"tabs":       true,
-				"tabs-boxed": true,
+				"tabs":     true,
+				"tabs-box": true,
 			},
 			props.ClassNames,
 		),
