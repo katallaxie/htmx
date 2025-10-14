@@ -74,6 +74,65 @@ func Test_AttrRender(t *testing.T) {
 	}
 }
 
+func Test_AttrRead(t *testing.T) {
+	tests := []struct {
+		desc  string
+		name  string
+		value string
+		out   string
+	}{
+		{
+			desc:  "name only",
+			name:  "data-tip",
+			value: "",
+			out:   ` data-tip=""`,
+		},
+		{
+			desc:  "name and value",
+			name:  "href",
+			value: "/",
+			out:   ` href="/"`,
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.desc, func(t *testing.T) {
+			attr := htmx.Attribute(test.name, test.value)
+			b, err := io.ReadAll(attr)
+			require.NoError(t, err)
+			assert.Equal(t, test.out, string(b))
+		})
+	}
+}
+
+func Test_ElementRead(t *testing.T) {
+	tests := []struct {
+		desc string
+		tag  string
+		out  string
+	}{
+		{
+			desc: "div",
+			tag:  "div",
+			out:  "<div></div>",
+		},
+		{
+			desc: "span",
+			tag:  "span",
+			out:  "<span></span>",
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.desc, func(t *testing.T) {
+			elem := htmx.Element(test.tag)
+			b, err := io.ReadAll(elem)
+			require.NoError(t, err)
+			assert.Equal(t, test.out, string(b))
+		})
+	}
+}
+
 func TestNodeFunc(t *testing.T) {
 	t.Run("implements fmt.String", func(t *testing.T) {
 		fn := htmx.NodeFunc(func(w io.Writer) error {

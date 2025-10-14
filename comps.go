@@ -13,6 +13,7 @@ import (
 // Node is a node in the HTML tree.
 type Node interface {
 	Render(w io.Writer) error
+	io.Reader
 }
 
 // Nodes is a slice of nodes.
@@ -37,6 +38,17 @@ type NodeFunc func(io.Writer) error
 // Render renders the node.
 func (n NodeFunc) Render(w io.Writer) error {
 	return n(w)
+}
+
+// Read is a node that reads from the node.
+func (n NodeFunc) Read(p []byte) (int, error) {
+	var r bytes.Buffer
+
+	if err := n.Render(&r); err != nil {
+		return 0, err
+	}
+
+	return copy(p, r.Bytes()), io.EOF
 }
 
 // Type returns the node type.
@@ -171,6 +183,17 @@ func (a *attr) Render(w io.Writer) error {
 	return err
 }
 
+// Read is a node that reads from the attribute.
+func (a *attr) Read(p []byte) (int, error) {
+	var r bytes.Buffer
+
+	if err := a.Render(&r); err != nil {
+		return 0, err
+	}
+
+	return copy(p, r.Bytes()), io.EOF
+}
+
 // Type is a node that returns the type of an attribute.
 func (a *attr) Type() NodeType {
 	return AttributeType
@@ -264,6 +287,11 @@ func (c group) Render(io.Writer) error {
 	panic("cannot render children directly")
 }
 
+// Read is a node that reads from the group of nodes.
+func (c group) Read(_ []byte) (int, error) {
+	panic("cannot read from group directly")
+}
+
 // Group is a node that groups children nodes.
 func Group(children ...Node) Node {
 	return group{children: children}
@@ -300,6 +328,17 @@ func (c fragment) Render(w io.Writer) error {
 	return nil
 }
 
+// Read is a node that reads from the fragment of nodes.
+func (c fragment) Read(p []byte) (int, error) {
+	var r bytes.Buffer
+
+	if err := c.Render(&r); err != nil {
+		return 0, err
+	}
+
+	return copy(p, r.Bytes()), io.EOF
+}
+
 type errorBoundary struct {
 	n ErrBoundaryFunc
 }
@@ -317,6 +356,19 @@ func (c errorBoundary) Render(w io.Writer) error {
 	n := c.n()
 
 	return n.Render(w)
+}
+
+// Read is a node that reads from the error boundary.
+func (c errorBoundary) Read(p []byte) (int, error) {
+	var r bytes.Buffer
+
+	n := c.n()
+
+	if err := n.Render(&r); err != nil {
+		return 0, err
+	}
+
+	return copy(p, r.Bytes()), io.EOF
 }
 
 type fallback struct {
@@ -348,6 +400,22 @@ func (c fallback) Render(w io.Writer) (err error) {
 	_, err = io.Copy(w, &b)
 
 	return err
+}
+
+// Read is a node that reads from the fallback node.
+func (c fallback) Read(p []byte) (n int, err error) {
+	if c.n == nil {
+		nn, err := c.f(nil).Read(p)
+		return nn, err
+	}
+
+	var r bytes.Buffer
+
+	if err := c.n.Render(&r); err != nil {
+		return 0, err
+	}
+
+	return copy(p, r.Bytes()), io.EOF
 }
 
 // If is a node that renders a child node if a condition is true.
@@ -400,4 +468,15 @@ func (m md) Render(w io.Writer) error {
 	md := goldmark.New(m.opts...)
 
 	return md.Convert(m.source, w)
+}
+
+// Read is a node that reads from the markdown.
+func (m md) Read(p []byte) (int, error) {
+	var r bytes.Buffer
+
+	if err := m.Render(&r); err != nil {
+		return 0, err
+	}
+
+	return copy(p, r.Bytes()), io.EOF
 }

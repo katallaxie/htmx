@@ -1,6 +1,7 @@
 package htmx
 
 import (
+	"bytes"
 	"io"
 	"sort"
 	"strings"
@@ -79,6 +80,17 @@ func (c ClassNames) Render(w io.Writer) error {
 	sort.Strings(classes)
 
 	return Class(strings.Join(classes, " ")).Render(w)
+}
+
+// Read reads the class names into the provided byte slice.
+func (c ClassNames) Read(p []byte) (int, error) {
+	var r bytes.Buffer
+
+	if err := c.Render(&r); err != nil {
+		return 0, err
+	}
+
+	return copy(p, r.Bytes()), io.EOF
 }
 
 // Type returns the node type of the ClassNames.
