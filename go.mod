@@ -23,7 +23,7 @@ require (
 	github.com/yuin/goldmark v1.7.13
 	golang.org/x/text v0.32.0
 	google.golang.org/grpc v1.77.0
-	google.golang.org/protobuf v1.36.10
+	google.golang.org/protobuf v1.36.11
 )
 
 require (
