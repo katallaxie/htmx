@@ -283,3 +283,31 @@ func TestRaw(t *testing.T) {
 		})
 	}
 }
+
+func TestPopover(t *testing.T) {
+	tests := []struct {
+		name     string
+		classes  htmx.ClassNames
+		expected string
+	}{
+		{
+			name:     "default",
+			classes:  nil,
+			expected: "<div popover></div>",
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			component := htmx.Div(
+				htmx.Popover(),
+			)
+
+			var buf bytes.Buffer
+			err := component.Render(&buf)
+			require.NoError(t, err)
+
+			require.Equal(t, test.expected, buf.String())
+		})
+	}
+}

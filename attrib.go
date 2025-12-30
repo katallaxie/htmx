@@ -706,3 +706,9 @@ func CommandFor(v string) Node {
 func Command(v string) Node {
 	return Attribute("command", v)
 }
+
+// Popover make a element a popover target.
+// See: https://developer.mozilla.org/en-US/docs/Web/HTML/Reference/Global_attributes/popover
+func Popover() Node {
+	return Attribute("popover")
+}
