@@ -244,3 +244,43 @@ func TestJSEvent(t *testing.T) {
 		})
 	}
 }
+
+func TestCommandFor(t *testing.T) {
+	tests := []struct {
+		name string
+		want string
+		val  string
+	}{
+		{
+			name: "commandfor",
+			want: " commandfor=\"\"",
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			h := htmx.CommandFor(test.val)
+			assert.Equal(t, test.want, h)
+		})
+	}
+}
+
+func TestCommand(t *testing.T) {
+	tests := []struct {
+		name string
+		want string
+		val  string
+	}{
+		{
+			name: "command",
+			want: " command=\"\"",
+		},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			h := htmx.Command(test.val)
+			assert.Equal(t, test.want, h)
+		})
+	}
+}

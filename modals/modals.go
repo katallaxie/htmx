@@ -1,6 +1,8 @@
 package modals
 
-import htmx "github.com/katallaxie/htmx"
+import (
+	htmx "github.com/katallaxie/htmx"
+)
 
 // Props contains the properties for the modal component.
 type Props struct {
@@ -24,62 +26,85 @@ func Modal(p Props, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// ModalBox contains the properties for the modal box component.
-type ModalBoxProps struct {
+// Box contains the properties for the modal box component.
+type BoxProps struct {
 	htmx.ClassNames
 }
 
-// ModalBox is a component for the htmx modal extension.
-func ModalBox(p ModalBoxProps, children ...htmx.Node) htmx.Node {
+// Box is a component for the htmx modal extension.
+func Box(props BoxProps, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
 				"modal-box": true,
 			},
-			p.ClassNames,
+			props.ClassNames,
 		),
 		htmx.Group(children...),
 	)
 }
 
-// ModalActionProps contains the properties for the modal actions component.
-type ModalActionProps struct {
+// ActionProps contains the properties for the modal actions component.
+type ActionProps struct {
 	// ClassNames are the CSS class names to apply to the modal actions.
 	htmx.ClassNames
 }
 
-// ModalAction is a component for the htmx modal extension.
-func ModalAction(p ModalActionProps, children ...htmx.Node) htmx.Node {
+// Action is a component for the htmx modal extension.
+func Action(props ActionProps, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
 				"modal-action": true,
 			},
-			p.ClassNames,
+			props.ClassNames,
 		),
 		htmx.Group(children...),
 	)
 }
 
-// ModalCloseButtonProps contains the properties for the modal close button component.
-type ModalCloseButtonProps struct {
+// CloseButtonProps contains the properties for the modal close button component.
+type CloseButtonProps struct {
 	// ClassNames are the CSS class names to apply to the modal close button.
 	htmx.ClassNames
+	// ID is the identifier for the modal close button.
+	ID string
 }
 
-// ModalCloseButton is a component for the htmx modal extension.
-func ModalCloseButton(p ModalCloseButtonProps, children ...htmx.Node) htmx.Node {
-	return htmx.Form(
-		htmx.Method("dialog"),
-		htmx.Button(
-			htmx.Merge(
-				htmx.ClassNames{
-					"btn": true,
-				},
-				p.ClassNames,
-			),
-			htmx.Text("Close"),
+// CloseButton is a component for the htmx modal extension.
+func CloseButton(props CloseButtonProps, children ...htmx.Node) htmx.Node {
+	return htmx.Button(
+		htmx.Merge(
+			htmx.ClassNames{
+				"btn": true,
+			},
+			props.ClassNames,
 		),
+		htmx.CommandFor(props.ID),
+		htmx.Command("close"),
+		htmx.Group(children...),
+	)
+}
+
+// OpenButtonProps contains the properties for the modal open button component.
+type OpenButtonProps struct {
+	// ClassNames are the CSS class names to apply to the modal open button.
+	htmx.ClassNames
+	// ID is the identifier for the modal open button.
+	ID string
+}
+
+// OpenButton is a component for the htmx modal extension.
+func OpenButton(props OpenButtonProps, children ...htmx.Node) htmx.Node {
+	return htmx.Button(
+		htmx.Merge(
+			htmx.ClassNames{
+				"btn": true,
+			},
+			props.ClassNames,
+		),
+		htmx.CommandFor(props.ID),
+		htmx.Command("show-modal"),
 		htmx.Group(children...),
 	)
 }

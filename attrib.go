@@ -696,3 +696,13 @@ func OnePasswordIgnore() Node {
 func ContentEditable(v string) Node {
 	return Attribute("contenteditable", v)
 }
+
+// CommandFor sets the command following the https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API.
+func CommandFor(v string) Node {
+	return Attribute("commandfor", v)
+}
+
+// Command sets the command following the https://developer.mozilla.org/en-US/docs/Web/API/Invoker_Commands_API.
+func Command(v string) Node {
+	return Attribute("command", v)
+}
