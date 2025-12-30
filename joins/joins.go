@@ -2,13 +2,13 @@ package joins
 
 import htmx "github.com/katallaxie/htmx"
 
-// JoinProps is a struct that contains the properties of a join.
-type JoinProps struct {
+// Props is a struct that contains the properties of a join.
+type Props struct {
 	htmx.ClassNames
 }
 
 // Join is a function that returns a join.
-func Join(props JoinProps, children ...htmx.Node) htmx.Node {
+func Join(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -20,8 +20,8 @@ func Join(props JoinProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// JoinVertical is a function that returns a vertical join.
-func JoinVertical(props JoinProps, children ...htmx.Node) htmx.Node {
+// Vertical is a function that returns a vertical join.
+func Vertical(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -34,8 +34,8 @@ func JoinVertical(props JoinProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// JoinHorizontal is a function that returns a horizontal join.
-func JoinHorizontal(props JoinProps, children ...htmx.Node) htmx.Node {
+// Horizontal is a function that returns a horizontal join.
+func Horizontal(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -48,8 +48,8 @@ func JoinHorizontal(props JoinProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// JoinItem is a function that returns a join item.
-func JoinItem(props JoinProps, children ...htmx.Node) htmx.Node {
+// Item is a function that returns a join item.
+func Item(props Props, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{

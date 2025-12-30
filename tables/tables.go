@@ -5,6 +5,7 @@ import (
 
 	"github.com/katallaxie/htmx/buttons"
 	"github.com/katallaxie/htmx/forms"
+	"github.com/katallaxie/htmx/joins"
 	"github.com/katallaxie/pkg/conv"
 	"github.com/katallaxie/pkg/urlx"
 	"github.com/katallaxie/pkg/utilx"
@@ -17,8 +18,8 @@ var DefaultLimits = []int{5, 10, 25, 50}
 
 // PaginationProps is a struct that contains the properties of a pagination.
 type PaginationProps struct {
-	// ClassNames is a struct that contains the class names of a pagination.
-	ClassNames htmx.ClassNames
+	// ID is the id of the table.
+	ID string
 	// Limit is the number of items to return.
 	Limit int
 	// Offset is the number of items to skip.
@@ -29,17 +30,18 @@ type PaginationProps struct {
 	Total int
 	// URL is the URL of the pagination.
 	URL string
+	// Limits is the list of limits.
+	Limits []int
+
+	htmx.ClassNames
 }
 
 // Pagination is a component that renders a pagination.
 func Pagination(p PaginationProps, children ...htmx.Node) htmx.Node {
-	return htmx.Div(
-		htmx.Merge(
-			htmx.ClassNames{
-				"join": true,
-			},
-			p.ClassNames,
-		),
+	return joins.Join(
+		joins.Props{
+			ClassNames: p.ClassNames,
+		},
 		htmx.Group(children...),
 	)
 }
@@ -64,7 +66,6 @@ func Prev(p PaginationProps) htmx.Node {
 			buttons.ButtonProps{
 				ClassNames: htmx.Merge(
 					htmx.ClassNames{
-						"btn-outline":    true,
 						"btn":            true,
 						"input-bordered": true,
 						"join-item":      true,
@@ -101,7 +102,6 @@ func Next(p PaginationProps) htmx.Node {
 					htmx.ClassNames{
 						"join-item":      true,
 						"btn":            true,
-						"btn-outline":    true,
 						"input-bordered": true,
 					},
 					p.ClassNames,
@@ -112,26 +112,6 @@ func Next(p PaginationProps) htmx.Node {
 			htmx.Text("Next"),
 		),
 	)
-}
-
-// SelectProps are the properties of a select.
-type SelectProps struct {
-	// ID is the id of the select.
-	ID string
-	// ClassNames is a struct that contains the class names of a select.
-	ClassNames htmx.ClassNames
-	// Limit is the number of items to return.
-	Limit int
-	// Limits is a list of limits.
-	Limits []int
-	// Offset is the number of items to skip.
-	Offset int
-	// Target is the target of the select.
-	Target string
-	// Total is the total number of items.
-	Total int
-	// URL is the URL of the select.
-	URL string
 }
 
 // SearchProps are the properties of a search.
@@ -169,7 +149,7 @@ func Search(props SearchProps, children ...htmx.Node) htmx.Node {
 }
 
 // Select is a component that renders a select.
-func Select(p SelectProps, children ...htmx.Node) htmx.Node {
+func Select(p PaginationProps, children ...htmx.Node) htmx.Node {
 	return htmx.Form(
 		htmx.Method("GET"),
 		htmx.Action(urlx.MustRemoveQueryValues(p.URL, "offset", "limit")),
@@ -180,6 +160,11 @@ func Select(p SelectProps, children ...htmx.Node) htmx.Node {
 			htmx.Value(conv.String(p.Offset)),
 		),
 		htmx.HxBoost(true),
+		joins.Item(
+			joins.Props{
+				ClassNames: p.ClassNames,
+			},
+		),
 		forms.Select(
 			forms.SelectProps{
 				ClassNames: htmx.Merge(
@@ -265,16 +250,16 @@ type Row interface {
 	comparable
 }
 
-// TableProps is a struct that contains the properties of a table.
-type TableProps struct {
-	// ClassNames is a struct that contains the class names of a table.
-	ClassNames htmx.ClassNames
+// Props is a struct that contains the properties of a table.
+type Props struct {
 	// ID is the id of the table.
 	ID string
 	// Pagination is the pagination of the table.
 	Pagination htmx.Node
 	// Toolbar is the toolbar of the table.
 	Toolbar htmx.Node
+
+	htmx.ClassNames
 }
 
 // Columns returns a new column definition.
@@ -287,9 +272,9 @@ type ColumnDef[R Row] struct {
 	// AccessorKey is the accessor key of the column.
 	AccessorKey string
 	// Header is the header of the column.
-	Header func(p TableProps) htmx.Node
+	Header func(p Props) htmx.Node
 	// Cell is the cell of the column.
-	Cell func(p TableProps, row R) htmx.Node
+	Cell func(p Props, row R) htmx.Node
 	// EnableSorting is a flag to enable sorting.
 	EnableSorting bool
 	// EnableFiltering is a flag to enable filtering.
@@ -297,7 +282,7 @@ type ColumnDef[R Row] struct {
 }
 
 // Table is a struct that contains the properties of a table.
-func Table[S ~[]R, R Row](p TableProps, columns Columns[R], s S) htmx.Node {
+func Table[S ~[]R, R Row](p Props, columns Columns[R], s S) htmx.Node {
 	headers := []htmx.Node{}
 	for _, column := range columns {
 		headers = append(headers, column.Header(p))
@@ -314,14 +299,9 @@ func Table[S ~[]R, R Row](p TableProps, columns Columns[R], s S) htmx.Node {
 
 	return htmx.Div(
 		htmx.ID(p.ID),
-		htmx.Merge(
-			htmx.ClassNames{
-				"space-y-4": true,
-			},
-		),
+		htmx.Merge(p.ClassNames),
 		p.Toolbar,
 		htmx.Div(
-			htmx.Merge(),
 			htmx.Table(
 				htmx.Merge(
 					htmx.ClassNames{

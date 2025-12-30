@@ -43,7 +43,7 @@ func TestJoin(t *testing.T) {
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
 			component := joins.Join(
-				joins.JoinProps{
+				joins.Props{
 					ClassNames: test.classes,
 				},
 				test.children...,
@@ -91,8 +91,8 @@ func TestJoinVertical(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			component := joins.JoinVertical(
-				joins.JoinProps{
+			component := joins.Vertical(
+				joins.Props{
 					ClassNames: test.classes,
 				},
 				test.children...,
@@ -140,8 +140,8 @@ func TestJoinHorizontal(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			component := joins.JoinHorizontal(
-				joins.JoinProps{
+			component := joins.Horizontal(
+				joins.Props{
 					ClassNames: test.classes,
 				},
 				test.children...,
