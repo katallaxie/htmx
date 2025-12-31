@@ -52,19 +52,19 @@ func TestFieldset(t *testing.T) {
 func TestLegend(t *testing.T) {
 	tests := []struct {
 		name     string
-		props    forms.LegendProps
+		props    forms.FieldSetLegendProps
 		expected string
 		children []htmx.Node
 	}{
 		{
 			name:     "default",
-			props:    forms.LegendProps{},
+			props:    forms.FieldSetLegendProps{},
 			expected: "<legend class=\"fieldset-legend\"></legend>",
 			children: nil,
 		},
 		{
 			name:     "with-children",
-			props:    forms.LegendProps{},
+			props:    forms.FieldSetLegendProps{},
 			expected: "<legend class=\"fieldset-legend\">Example Legend</legend>",
 			children: []htmx.Node{htmx.Text("Example Legend")},
 		},
@@ -72,7 +72,7 @@ func TestLegend(t *testing.T) {
 
 	for _, tt := range tests {
 		t.Run(tt.name, func(t *testing.T) {
-			component := forms.Legend(
+			component := forms.FieldSetLegend(
 				tt.props,
 				tt.children...,
 			)

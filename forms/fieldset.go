@@ -20,13 +20,13 @@ func Fieldset(p FieldsetProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// LegendProps contains the properties for the legend component.
-type LegendProps struct {
+// FieldSetLegendProps contains the properties for the legend component.
+type FieldSetLegendProps struct {
 	ClassNames htmx.ClassNames // The class names for the legend element.
 }
 
-// Legend is a component for the htmx legend extension.
-func Legend(p LegendProps, children ...htmx.Node) htmx.Node {
+// FieldSetLegend is a component for the htmx legend extension.
+func FieldSetLegend(p FieldSetLegendProps, children ...htmx.Node) htmx.Node {
 	return htmx.Legend(
 		htmx.Merge(
 			htmx.ClassNames{

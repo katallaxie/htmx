@@ -181,8 +181,8 @@ func Page() htmx.Node {
 								"w-300":           true,
 							},
 						},
-						forms.Legend(
-							forms.LegendProps{},
+						forms.FieldSetLegend(
+							forms.FieldSetLegendProps{},
 							htmx.Text("Page Title"),
 						),
 						forms.TextInput(
