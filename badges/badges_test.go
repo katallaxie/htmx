@@ -19,13 +19,13 @@ func TestBadge(t *testing.T) {
 	}{
 		{
 			name:     "default",
-			expected: "<span class=\"badge\"></span>",
+			expected: "<div class=\"badge\"></div>",
 			props:    badges.Props{},
 			children: nil,
 		},
 		{
 			name:     "with classes",
-			expected: "<span class=\"badge custom-class\"></span>",
+			expected: "<div class=\"badge custom-class\"></div>",
 			props: badges.Props{
 				ClassNames: htmx.ClassNames{"custom-class": true},
 			},
@@ -58,13 +58,13 @@ func TestNeutral(t *testing.T) {
 	}{
 		{
 			name:     "default",
-			expected: "<span class=\"badge badge-neutral\"></span>",
+			expected: "<div class=\"badge badge-neutral\"></div>",
 			props:    badges.Props{},
 			children: nil,
 		},
 		{
 			name:     "with classes",
-			expected: "<span class=\"badge badge-neutral custom-class\"></span>",
+			expected: "<div class=\"badge badge-neutral custom-class\"></div>",
 			props: badges.Props{
 				ClassNames: htmx.ClassNames{"custom-class": true},
 			},
@@ -97,13 +97,13 @@ func TestPrimary(t *testing.T) {
 	}{
 		{
 			name:     "default",
-			expected: "<span class=\"badge badge-primary\"></span>",
+			expected: "<div class=\"badge badge-primary\"></div>",
 			props:    badges.Props{},
 			children: nil,
 		},
 		{
 			name:     "with classes",
-			expected: "<span class=\"badge badge-primary custom-class\"></span>",
+			expected: "<div class=\"badge badge-primary custom-class\"></div>",
 			props: badges.Props{
 				ClassNames: htmx.ClassNames{"custom-class": true},
 			},
@@ -136,13 +136,13 @@ func TestSecondary(t *testing.T) {
 	}{
 		{
 			name:     "default",
-			expected: "<span class=\"badge badge-secondary\"></span>",
+			expected: "<div class=\"badge badge-secondary\"></div>",
 			props:    badges.Props{},
 			children: nil,
 		},
 		{
 			name:     "with classes",
-			expected: "<span class=\"badge badge-secondary custom-class\"></span>",
+			expected: "<div class=\"badge badge-secondary custom-class\"></div>",
 			props: badges.Props{
 				ClassNames: htmx.ClassNames{"custom-class": true},
 			},
@@ -175,13 +175,13 @@ func TestAccent(t *testing.T) {
 	}{
 		{
 			name:     "default",
-			expected: "<span class=\"badge badge-accent\"></span>",
+			expected: "<div class=\"badge badge-accent\"></div>",
 			props:    badges.Props{},
 			children: nil,
 		},
 		{
 			name:     "with classes",
-			expected: "<span class=\"badge badge-accent custom-class\"></span>",
+			expected: "<div class=\"badge badge-accent custom-class\"></div>",
 			props: badges.Props{
 				ClassNames: htmx.ClassNames{"custom-class": true},
 			},
@@ -214,13 +214,13 @@ func TestGhost(t *testing.T) {
 	}{
 		{
 			name:     "default",
-			expected: "<span class=\"badge badge-ghost\"></span>",
+			expected: "<div class=\"badge badge-ghost\"></div>",
 			props:    badges.Props{},
 			children: nil,
 		},
 		{
 			name:     "with classes",
-			expected: "<span class=\"badge badge-ghost custom-class\"></span>",
+			expected: "<div class=\"badge badge-ghost custom-class\"></div>",
 			props: badges.Props{
 				ClassNames: htmx.ClassNames{"custom-class": true},
 			},
@@ -253,13 +253,13 @@ func TestInfo(t *testing.T) {
 	}{
 		{
 			name:     "default",
-			expected: "<span class=\"badge badge-info\"></span>",
+			expected: "<div class=\"badge badge-info\"></div>",
 			props:    badges.Props{},
 			children: nil,
 		},
 		{
 			name:     "with classes",
-			expected: "<span class=\"badge badge-info custom-class\"></span>",
+			expected: "<div class=\"badge badge-info custom-class\"></div>",
 			props: badges.Props{
 				ClassNames: htmx.ClassNames{"custom-class": true},
 			},
@@ -292,13 +292,13 @@ func TestWarning(t *testing.T) {
 	}{
 		{
 			name:     "default",
-			expected: "<span class=\"badge badge-warning\"></span>",
+			expected: "<div class=\"badge badge-warning\"></div>",
 			props:    badges.Props{},
 			children: nil,
 		},
 		{
 			name:     "with classes",
-			expected: "<span class=\"badge badge-warning custom-class\"></span>",
+			expected: "<div class=\"badge badge-warning custom-class\"></div>",
 			props: badges.Props{
 				ClassNames: htmx.ClassNames{"custom-class": true},
 			},
@@ -331,13 +331,13 @@ func TestError(t *testing.T) {
 	}{
 		{
 			name:     "default",
-			expected: "<span class=\"badge badge-error\"></span>",
+			expected: "<div class=\"badge badge-error\"></div>",
 			props:    badges.Props{},
 			children: nil,
 		},
 		{
 			name:     "with classes",
-			expected: "<span class=\"badge badge-error custom-class\"></span>",
+			expected: "<div class=\"badge badge-error custom-class\"></div>",
 			props: badges.Props{
 				ClassNames: htmx.ClassNames{"custom-class": true},
 			},
@@ -370,13 +370,13 @@ func TestSuccess(t *testing.T) {
 	}{
 		{
 			name:     "default",
-			expected: "<span class=\"badge badge-success\"></span>",
+			expected: "<div class=\"badge badge-success\"></div>",
 			props:    badges.Props{},
 			children: nil,
 		},
 		{
 			name:     "with classes",
-			expected: "<span class=\"badge badge-success custom-class\"></span>",
+			expected: "<div class=\"badge badge-success custom-class\"></div>",
 			props: badges.Props{
 				ClassNames: htmx.ClassNames{"custom-class": true},
 			},
