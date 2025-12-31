@@ -31,7 +31,6 @@ func Item(props ItemProps, children ...htmx.Node) htmx.Node {
 		htmx.Merge(
 			htmx.ClassNames{
 				"indicator-item": true,
-				"badge":          true,
 			},
 			props.ClassNames,
 		),
@@ -39,8 +38,8 @@ func Item(props ItemProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// ItemPrimary is a function that returns a primary indicator item.
-func ItemPrimary(props ItemProps, children ...htmx.Node) htmx.Node {
+// BadgePrimary is a function that returns a primary indicator item.
+func BadgePrimary(props ItemProps, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -54,14 +53,44 @@ func ItemPrimary(props ItemProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// ItemSecondary is a function that returns a secondary indicator item.
-func ItemSecondary(props ItemProps, children ...htmx.Node) htmx.Node {
+// BadgeSecondary is a function that returns a secondary indicator item.
+func BadgeSecondary(props ItemProps, children ...htmx.Node) htmx.Node {
 	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
 				"indicator-item":  true,
 				"badge":           true,
 				"badge-secondary": true,
+			},
+			props.ClassNames,
+		),
+		htmx.Group(children...),
+	)
+}
+
+// StatusSuccess is a function that returns a success indicator item.
+func StatusSuccess(props ItemProps, children ...htmx.Node) htmx.Node {
+	return htmx.Div(
+		htmx.Merge(
+			htmx.ClassNames{
+				"indicator-item": true,
+				"status":         true,
+				"status-success": true,
+			},
+			props.ClassNames,
+		),
+		htmx.Group(children...),
+	)
+}
+
+// StatusError is a function that returns an error indicator item.
+func StatusError(props ItemProps, children ...htmx.Node) htmx.Node {
+	return htmx.Div(
+		htmx.Merge(
+			htmx.ClassNames{
+				"indicator-item": true,
+				"status":         true,
+				"status-error":   true,
 			},
 			props.ClassNames,
 		),

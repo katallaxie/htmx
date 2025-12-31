@@ -58,13 +58,13 @@ func TestItem(t *testing.T) {
 	}{
 		{
 			name:     "default",
-			expected: "<div class=\"badge indicator-item\"></div>",
+			expected: "<div class=\"indicator-item\"></div>",
 			props:    indicators.ItemProps{},
 			children: nil,
 		},
 		{
 			name:     "with classes",
-			expected: "<div class=\"badge custom-class indicator-item\"></div>",
+			expected: "<div class=\"custom-class indicator-item\"></div>",
 			props: indicators.ItemProps{
 				ClassNames: htmx.ClassNames{"custom-class": true},
 			},
@@ -113,7 +113,7 @@ func TestItemPrimary(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			component := indicators.ItemPrimary(
+			component := indicators.BadgePrimary(
 				test.props,
 				test.children...,
 			)
@@ -152,7 +152,7 @@ func TestItemSecondary(t *testing.T) {
 
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
-			component := indicators.ItemSecondary(
+			component := indicators.BadgeSecondary(
 				test.props,
 				test.children...,
 			)
