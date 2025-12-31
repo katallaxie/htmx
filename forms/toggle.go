@@ -4,12 +4,17 @@ import htmx "github.com/katallaxie/htmx"
 
 // ToggleProps represents the properties for a toggle element.
 type ToggleProps struct {
-	ClassNames htmx.ClassNames // The class names for the toggle element.
-	Name       string          // The name of the toggle element.
-	Value      string          // The value of the toggle element.
-	Disabled   bool            // Whether the toggle element is disabled.
-	Checked    bool            // Whether the toggle element is checked.
-	Validator  bool            // Whether the toggle element is a validator.
+	// Name is the name of the toggle element.
+	Name string
+	// Value is the value of the toggle element.
+	Value string
+	// Disabled indicates whether the toggle is disabled.
+	Disabled bool
+	// Checked indicates whether the toggle is checked.
+	Checked bool
+	// Validator indicates whether the toggle has validation styles.
+	Validator bool
+	htmx.ClassNames
 }
 
 // Toggle returns a toggle element based on the provided properties.
