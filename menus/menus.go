@@ -83,7 +83,9 @@ func Title(p TitleProps, children ...htmx.Node) htmx.Node {
 
 // CollapsibleProps is the struct for the menu collapse props.
 type CollapsibleProps struct {
+	// Open indicates whether the collapsible menu is open or closed.
 	Open bool
+	// ClassNames are the additional class names for the collapsible menu.
 	htmx.ClassNames
 }
 

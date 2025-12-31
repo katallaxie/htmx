@@ -1,6 +1,9 @@
 package drawers
 
-import htmx "github.com/katallaxie/htmx"
+import (
+	htmx "github.com/katallaxie/htmx"
+	"github.com/katallaxie/pkg/utilx"
+)
 
 // Props is the props for the Drawer component.
 type Props struct {
@@ -24,10 +27,35 @@ func Drawer(p Props, children ...htmx.Node) htmx.Node {
 	)
 }
 
+// ToggleButtonProps is the props for the DrawerToggleButton component.
+type ToggleButtonProps struct {
+	// ID is the ID of the drawer toggle button.
+	ID string
+	// ClassNames is a set of class names to apply to the button.
+	htmx.ClassNames
+}
+
+// ToggleButton is a component that renders a drawer toggle button.
+func ToggleButton(p ToggleButtonProps, children ...htmx.Node) htmx.Node {
+	return htmx.Label(
+		htmx.Merge(
+			htmx.ClassNames{
+				"btn":           true,
+				"drawer-button": true,
+			},
+			p.ClassNames,
+		),
+		htmx.For(p.ID),
+		htmx.Group(children...),
+	)
+}
+
 // ToggleProps is the props for the DrawerToggle component.
 type ToggleProps struct {
 	// ID is the ID of the drawer toggle button.
 	ID string
+	// AriaLabel is the aria-label of the drawer toggle button.
+	AriaLabel string
 	// ClassNames is a set of class names to apply to the button.
 	htmx.ClassNames
 }
@@ -43,6 +71,7 @@ func Toggle(p ToggleProps, children ...htmx.Node) htmx.Node {
 		),
 		htmx.ID(p.ID),
 		htmx.Type("checkbox"),
+		htmx.If(utilx.NotEmpty(p.AriaLabel), htmx.AriaLabel(p.AriaLabel)),
 		htmx.Group(children...),
 	)
 }

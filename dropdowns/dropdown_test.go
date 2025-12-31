@@ -30,7 +30,7 @@ func TestDropdown(t *testing.T) {
 	for _, test := range tests {
 		t.Run(test.name, func(t *testing.T) {
 			component := dropdowns.Dropdown(
-				dropdowns.DropdownProps{
+				dropdowns.Props{
 					ClassNames: test.classes,
 				},
 			)

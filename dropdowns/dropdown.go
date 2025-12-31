@@ -6,13 +6,13 @@ import (
 	"github.com/katallaxie/pkg/conv"
 )
 
-// DropdownProps represents the properties for a dropdown element.
-type DropdownProps struct {
+// Props represents the properties for a dropdown element.
+type Props struct {
 	htmx.ClassNames // The class names for the dropdown element.
 }
 
 // Dropdown generates a dropdown element based on the provided properties.
-func Dropdown(p DropdownProps, children ...htmx.Node) htmx.Node {
+func Dropdown(p Props, children ...htmx.Node) htmx.Node {
 	return htmx.Details(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -24,14 +24,14 @@ func Dropdown(p DropdownProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// DropdownButtonProps represents the properties for a dropdown summary element.
-type DropdownButtonProps struct {
+// ButtonProps represents the properties for a dropdown summary element.
+type ButtonProps struct {
 	TabIndex int
 	htmx.ClassNames
 }
 
-// DropdownButton generates a dropdown summary element based on the provided properties.
-func DropdownButton(p DropdownButtonProps, children ...htmx.Node) htmx.Node {
+// Button generates a dropdown summary element based on the provided properties.
+func Button(p ButtonProps, children ...htmx.Node) htmx.Node {
 	return htmx.Summary(
 		htmx.If(p.TabIndex > 0, htmx.TabIndex(conv.String(p.TabIndex))),
 		htmx.Merge(
@@ -44,14 +44,14 @@ func DropdownButton(p DropdownButtonProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// DropdownMenuItemsProps represents the properties for a dropdown menu items element.
-type DropdownMenuItemsProps struct {
+// MenuItemsProps represents the properties for a dropdown menu items element.
+type MenuItemsProps struct {
 	TabIndex int
 	htmx.ClassNames
 }
 
-// DropdownMenuItems generates a dropdown menu items element based on the provided properties.
-func DropdownMenuItems(p DropdownMenuItemsProps, children ...htmx.Node) htmx.Node {
+// MenuItems generates a dropdown menu items element based on the provided properties.
+func MenuItems(p MenuItemsProps, children ...htmx.Node) htmx.Node {
 	return htmx.Ul(
 		htmx.TabIndex(
 			conv.String(p.TabIndex),
@@ -73,13 +73,13 @@ func DropdownMenuItems(p DropdownMenuItemsProps, children ...htmx.Node) htmx.Nod
 	)
 }
 
-// DropdownMenuItem represents the properties for a dropdown items element.
-type DropdownMenuItemProps struct {
+// MenuItem represents the properties for a dropdown items element.
+type MenuItemProps struct {
 	htmx.ClassNames // The class names for the dropdown items element.
 }
 
-// DropdownMenuItem generates a dropdown items element based on the provided properties.
-func DropdownMenuItem(p DropdownMenuItemProps, children ...htmx.Node) htmx.Node {
+// MenuItem generates a dropdown items element based on the provided properties.
+func DropdownMenuItem(p MenuItemProps, children ...htmx.Node) htmx.Node {
 	return htmx.Li(
 		htmx.Merge(
 			htmx.ClassNames{},

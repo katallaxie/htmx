@@ -15,11 +15,11 @@ type SingleSelectProps struct {
 // SingleSelect ...
 func SingleSelect(props SingleSelectProps, children ...htmx.Node) htmx.Node {
 	return Dropdown(
-		DropdownProps{
+		Props{
 			ClassNames: htmx.ClassNames{},
 		},
-		DropdownButton(
-			DropdownButtonProps{
+		Button(
+			ButtonProps{
 				ClassNames: htmx.ClassNames{
 					"btn-outline": true,
 				},
@@ -27,8 +27,8 @@ func SingleSelect(props SingleSelectProps, children ...htmx.Node) htmx.Node {
 			htmx.ID(props.ID),
 			htmx.Text("Dropdown"),
 		),
-		DropdownMenuItems(
-			DropdownMenuItemsProps{},
+		MenuItems(
+			MenuItemsProps{},
 			forms.TextInputBordered(
 				forms.TextInputProps{
 					ClassNames: htmx.ClassNames{
@@ -57,8 +57,8 @@ type SingleSelectOptionProps struct {
 
 // SingleSelectOption ...
 func SingleSelectOption(props SingleSelectOptionProps, children ...htmx.Node) htmx.Node {
-	return DropdownMenuItem(
-		DropdownMenuItemProps{},
+	return MenuItems(
+		MenuItemsProps{},
 		htmx.Input(
 			htmx.Attribute("type", "hidden"),
 			htmx.Attribute("name", props.Name),
