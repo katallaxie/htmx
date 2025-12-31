@@ -712,3 +712,8 @@ func Command(v string) Node {
 func Popover() Node {
 	return Attribute("popover")
 }
+
+// AriaLabel sets the aria-label attribute for elements.
+func AriaLabel(v string) Node {
+	return Attribute("aria-label", v)
+}

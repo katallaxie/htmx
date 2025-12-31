@@ -5,13 +5,14 @@ import (
 	"github.com/katallaxie/pkg/utilx"
 )
 
-// FilterFormProps is a struct that contains the properties of the Filter component.
-type FilterFormProps struct {
+// FilterProps is a struct that contains the properties of the Filter component.
+type FilterProps struct {
+	// ClassNames are the additional class names for the filter.
 	htmx.ClassNames
 }
 
-// FilterForm is a component that renders a filter element.
-func FilterForm(props FilterFormProps, children ...htmx.Node) htmx.Node {
+// Filter is a component that renders a filter element.
+func Filter(props FilterProps, children ...htmx.Node) htmx.Node {
 	return htmx.Form(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -23,32 +24,16 @@ func FilterForm(props FilterFormProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
-// FilterProps is a struct that contains the properties of the Filter component.
-type FilterProps struct {
-	htmx.ClassNames
-}
-
-// Filter is a component that renders a filter element.
-func Filter(props FilterFormProps, children ...htmx.Node) htmx.Node {
-	return htmx.Div(
-		htmx.Merge(
-			htmx.ClassNames{
-				"filter": true,
-			},
-			props.ClassNames,
-		),
-		htmx.Group(children...),
-	)
-}
-
 // FilterResetButtonProps is a struct that contains the properties of the FilterReset component.
-type FilterResetButtonProps struct {
+type FilterResetProps struct {
+	// Value is the value of the reset button.
 	Value string
+	// ClassNames are the additional class names for the reset button.
 	htmx.ClassNames
 }
 
-// FilterResetButton is a component that renders a filter reset button.
-func FilterResetButton(props FilterResetButtonProps, _ ...htmx.Node) htmx.Node {
+// FilterReset is a component that renders a filter reset button.
+func FilterReset(props FilterResetProps, children ...htmx.Node) htmx.Node {
 	return htmx.Input(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -59,18 +44,22 @@ func FilterResetButton(props FilterResetButtonProps, _ ...htmx.Node) htmx.Node {
 		),
 		htmx.Type("reset"),
 		utilx.IfElse(utilx.NotEmpty(props.Value), htmx.Value(props.Value), htmx.Value("×")),
+		htmx.Group(children...),
 	)
 }
 
-// FilterButton is a component that renders a filter button.
-type FilterButtonProps struct {
-	Name  string
-	Label string
+// FilterOptionProps is a struct that contains the properties of the FilterOption component.
+type FilterOptionProps struct {
+	// Name is the name of the filter option.
+	Name string
+	// AriaLabel is the aria-label of the filter option.
+	AriaLabel string
+	// ClassNames are the additional class names for the filter option.
 	htmx.ClassNames
 }
 
-// FilterButton is a component that renders a filter button.
-func FilterButton(props FilterButtonProps, _ ...htmx.Node) htmx.Node {
+// FilterOption is a component that renders a filter option.
+func FilterOption(props FilterOptionProps, children ...htmx.Node) htmx.Node {
 	return htmx.Input(
 		htmx.Merge(
 			htmx.ClassNames{
@@ -78,8 +67,9 @@ func FilterButton(props FilterButtonProps, _ ...htmx.Node) htmx.Node {
 			},
 			props.ClassNames,
 		),
-		htmx.Type("radio"),
+		htmx.Type("checkbox"),
 		htmx.Name(props.Name),
-		htmx.Attribute("aria-label", props.Label),
+		htmx.AriaLabel(props.AriaLabel),
+		htmx.Group(children...),
 	)
 }
