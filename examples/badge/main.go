@@ -9,6 +9,7 @@ import (
 	"github.com/katallaxie/htmx/imports"
 	"github.com/katallaxie/htmx/imports/cache"
 	"github.com/katallaxie/htmx/imports/jsdeliver"
+	"github.com/katallaxie/htmx/mockups"
 )
 
 const defaultTimeout = 3 * time.Second
@@ -49,14 +50,26 @@ func Page() htmx.Node {
 			},
 		},
 		htmx.Body(
-			badges.Primary(badges.Props{}, htmx.Text("Primary")),
-			badges.Secondary(badges.Props{}, htmx.Text("Secondary")),
-			badges.Accent(badges.Props{}, htmx.Text("Accent")),
-			badges.Neutral(badges.Props{}, htmx.Text("Neutral")),
-			badges.Info(badges.Props{}, htmx.Text("Info")),
-			badges.Success(badges.Props{}, htmx.Text("Success")),
-			badges.Warning(badges.Props{}, htmx.Text("Warning")),
-			badges.Error(badges.Props{}, htmx.Text("Error")),
+			mockups.Window(
+				mockups.WindowProps{
+					ClassNames: htmx.ClassNames{
+						"m-4": true,
+					},
+				},
+				htmx.Div(
+					htmx.ClassNames{
+						"p-4": true,
+					},
+					badges.Primary(badges.Props{}, htmx.Text("Primary")),
+					badges.Secondary(badges.Props{}, htmx.Text("Secondary")),
+					badges.Accent(badges.Props{}, htmx.Text("Accent")),
+					badges.Neutral(badges.Props{}, htmx.Text("Neutral")),
+					badges.Info(badges.Props{}, htmx.Text("Info")),
+					badges.Success(badges.Props{}, htmx.Text("Success")),
+					badges.Warning(badges.Props{}, htmx.Text("Warning")),
+					badges.Error(badges.Props{}, htmx.Text("Error")),
+				),
+			),
 		),
 	)
 }
