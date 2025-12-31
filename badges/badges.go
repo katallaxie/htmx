@@ -9,7 +9,7 @@ type Props struct {
 
 // Badge generates a badge element based on the provided properties.
 func Badge(p Props, children ...htmx.Node) htmx.Node {
-	return htmx.Span(
+	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
 				"badge": true,
@@ -22,7 +22,7 @@ func Badge(p Props, children ...htmx.Node) htmx.Node {
 
 // Neutral generates a neutral badge element based on the provided properties.
 func Neutral(p Props, children ...htmx.Node) htmx.Node {
-	return htmx.Span(
+	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
 				"badge":         true,
@@ -36,7 +36,7 @@ func Neutral(p Props, children ...htmx.Node) htmx.Node {
 
 // Primary generates a primary badge element based on the provided properties.
 func Primary(p Props, children ...htmx.Node) htmx.Node {
-	return htmx.Span(
+	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
 				"badge":         true,
@@ -50,7 +50,7 @@ func Primary(p Props, children ...htmx.Node) htmx.Node {
 
 // Secondary generates a secondary badge element based on the provided properties.
 func Secondary(p Props, children ...htmx.Node) htmx.Node {
-	return htmx.Span(
+	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
 				"badge":           true,
@@ -64,7 +64,7 @@ func Secondary(p Props, children ...htmx.Node) htmx.Node {
 
 // Accent generates an accent badge element based on the provided properties.
 func Accent(p Props, children ...htmx.Node) htmx.Node {
-	return htmx.Span(
+	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
 				"badge":        true,
@@ -78,7 +78,7 @@ func Accent(p Props, children ...htmx.Node) htmx.Node {
 
 // Ghost generates a ghost badge element based on the provided properties.
 func Ghost(p Props, children ...htmx.Node) htmx.Node {
-	return htmx.Span(
+	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
 				"badge":       true,
@@ -92,7 +92,7 @@ func Ghost(p Props, children ...htmx.Node) htmx.Node {
 
 // Warning generates a warning badge element based on the provided properties.
 func Warning(p Props, children ...htmx.Node) htmx.Node {
-	return htmx.Span(
+	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
 				"badge":         true,
@@ -106,7 +106,7 @@ func Warning(p Props, children ...htmx.Node) htmx.Node {
 
 // Info generates an info badge element based on the provided properties.
 func Info(p Props, children ...htmx.Node) htmx.Node {
-	return htmx.Span(
+	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
 				"badge":      true,
@@ -120,7 +120,7 @@ func Info(p Props, children ...htmx.Node) htmx.Node {
 
 // Success generates a success badge element based on the provided properties.
 func Success(p Props, children ...htmx.Node) htmx.Node {
-	return htmx.Span(
+	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
 				"badge":         true,
@@ -134,7 +134,7 @@ func Success(p Props, children ...htmx.Node) htmx.Node {
 
 // Error generates an error badge element based on the provided properties.
 func Error(p Props, children ...htmx.Node) htmx.Node {
-	return htmx.Span(
+	return htmx.Div(
 		htmx.Merge(
 			htmx.ClassNames{
 				"badge":       true,
