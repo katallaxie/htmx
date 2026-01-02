@@ -10,18 +10,18 @@ func VariableDefaultOutline(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 24 24"),
-        htmx.Attribute("stroke-width", "1.5"),
-        htmx.Attribute("stroke", "currentColor"),
         htmx.Attribute("fill", "none"),
         htmx.Merge(
             htmx.ClassNames{
+                "h-8": true,
+                "w-8": true,
             },
             p.ClassNames,
         ),
         htmx.Path(
             htmx.Attribute("stroke-linecap", "round"),
             htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "M4.745 3A23.933 23.933 0 0 0 3 12c0 3.183.62 6.22 1.745 9M19.5 3c.967 2.78 1.5 5.817 1.5 9s-.533 6.22-1.5 9M8.25 8.885l1.444-.89a.75.75 0 0 1 1.105.402l2.402 7.206a.75.75 0 0 0 1.104.401l1.445-.889m-8.25.75.213.09a1.687 1.687 0 0 0 2.062-.617l4.45-6.676a1.688 1.688 0 0 1 2.062-.618l.213.09"),
+            htmx.Attribute("d", "M4.74455 3C3.61952 5.77929 3 8.8173 3 12C3 15.1827 3.61952 18.2207 4.74455 21M19.5 3C20.4673 5.77929 21 8.8173 21 12C21 15.1827 20.4673 18.2207 19.5 21M8.25 8.88462L9.6945 7.99569C10.1061 7.74241 10.6463 7.93879 10.7991 8.39726L13.2009 15.6027C13.3537 16.0612 13.8939 16.2576 14.3055 16.0043L15.75 15.1154M7.5 15.8654L7.71335 15.9556C8.45981 16.2715 9.32536 16.012 9.77495 15.3376L14.225 8.66243C14.6746 7.98804 15.5402 7.72854 16.2867 8.04435L16.5 8.13462"),
         ),
     )
 }

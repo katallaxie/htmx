@@ -10,14 +10,16 @@ func MinusMiniSolid(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 20 20"),
-        htmx.Attribute("fill", "currentColor"),
+        htmx.Attribute("fill", "none"),
         htmx.Merge(
             htmx.ClassNames{
+                "h-6": true,
+                "w-6": true,
             },
             p.ClassNames,
         ),
         htmx.Path(
-            htmx.Attribute("d", "M4 10a.75.75 0 0 1 .75-.75h10.5a.75.75 0 0 1 0 1.5H4.75A.75.75 0 0 1 4 10Z"),
+            htmx.Attribute("d", "M4 10C4 9.58579 4.33579 9.25 4.75 9.25L15.25 9.25C15.6642 9.25 16 9.58579 16 10C16 10.4142 15.6642 10.75 15.25 10.75L4.75 10.75C4.33579 10.75 4 10.4142 4 10Z"),
         ),
     )
 }

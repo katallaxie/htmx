@@ -10,18 +10,18 @@ func ExclamationTriangleDefaultOutline(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 24 24"),
-        htmx.Attribute("stroke-width", "1.5"),
-        htmx.Attribute("stroke", "currentColor"),
         htmx.Attribute("fill", "none"),
         htmx.Merge(
             htmx.ClassNames{
+                "h-8": true,
+                "w-8": true,
             },
             p.ClassNames,
         ),
         htmx.Path(
             htmx.Attribute("stroke-linecap", "round"),
             htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z"),
+            htmx.Attribute("d", "M11.9998 9.00006V12.7501M2.69653 16.1257C1.83114 17.6257 2.91371 19.5001 4.64544 19.5001H19.3541C21.0858 19.5001 22.1684 17.6257 21.303 16.1257L13.9487 3.37819C13.0828 1.87736 10.9167 1.87736 10.0509 3.37819L2.69653 16.1257ZM11.9998 15.7501H12.0073V15.7576H11.9998V15.7501Z"),
         ),
     )
 }

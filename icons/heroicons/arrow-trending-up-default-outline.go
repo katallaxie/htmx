@@ -10,18 +10,18 @@ func ArrowTrendingUpDefaultOutline(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 24 24"),
-        htmx.Attribute("stroke-width", "1.5"),
-        htmx.Attribute("stroke", "currentColor"),
         htmx.Attribute("fill", "none"),
         htmx.Merge(
             htmx.ClassNames{
+                "h-8": true,
+                "w-8": true,
             },
             p.ClassNames,
         ),
         htmx.Path(
             htmx.Attribute("stroke-linecap", "round"),
             htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941"),
+            htmx.Attribute("d", "M2.25 17.9999L9 11.2499L13.3064 15.5564C14.5101 13.188 16.5042 11.2022 19.1203 10.0375L21.8609 8.81726M21.8609 8.81726L15.9196 6.53662M21.8609 8.81726L19.5802 14.7585"),
         ),
     )
 }

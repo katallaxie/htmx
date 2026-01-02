@@ -10,18 +10,18 @@ func CurrencyBangladeshiDefaultOutline(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 24 24"),
-        htmx.Attribute("stroke-width", "1.5"),
-        htmx.Attribute("stroke", "currentColor"),
         htmx.Attribute("fill", "none"),
         htmx.Merge(
             htmx.ClassNames{
+                "h-8": true,
+                "w-8": true,
             },
             p.ClassNames,
         ),
         htmx.Path(
             htmx.Attribute("stroke-linecap", "round"),
             htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "m8.25 7.5.415-.207a.75.75 0 0 1 1.085.67V10.5m0 0h6m-6 0h-1.5m1.5 0v5.438c0 .354.161.697.473.865a3.751 3.751 0 0 0 5.452-2.553c.083-.409-.263-.75-.68-.75h-.745M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"),
+            htmx.Attribute("d", "M8.25 7.49997L8.66459 7.29267C9.16327 7.04333 9.75 7.40596 9.75 7.96349V10.5M9.75 10.5H15.75M9.75 10.5H8.25M9.75 10.5V15.9383C9.75 16.2921 9.91144 16.6351 10.2229 16.803C10.7518 17.0882 11.357 17.25 12 17.25C13.8142 17.25 15.3275 15.9617 15.675 14.25C15.7579 13.8414 15.412 13.5 14.995 13.5H14.25M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"),
         ),
     )
 }

@@ -10,18 +10,18 @@ func BoltDefaultOutline(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 24 24"),
-        htmx.Attribute("stroke-width", "1.5"),
-        htmx.Attribute("stroke", "currentColor"),
         htmx.Attribute("fill", "none"),
         htmx.Merge(
             htmx.ClassNames{
+                "h-8": true,
+                "w-8": true,
             },
             p.ClassNames,
         ),
         htmx.Path(
             htmx.Attribute("stroke-linecap", "round"),
             htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "m3.75 13.5 10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75Z"),
+            htmx.Attribute("d", "M3.75 13.5L14.25 2.25L12 10.5H20.25L9.75 21.75L12 13.5H3.75Z"),
         ),
     )
 }

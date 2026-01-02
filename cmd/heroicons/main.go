@@ -10,6 +10,7 @@ import (
 	"strings"
 	"text/template"
 
+	"github.com/katallaxie/htmx"
 	"github.com/katallaxie/pkg/filex"
 	"github.com/katallaxie/pkg/logx"
 	"github.com/spf13/pflag"
@@ -29,8 +30,6 @@ type SVG struct {
 	Fill        string   `xml:"fill,attr"`
 	Paths       []Path   `xml:"path"`
 }
-
-//
 
 type Path struct {
 	D              string `xml:"d,attr"`
@@ -82,12 +81,13 @@ func {{.FuncName}}(p icons.IconProps) htmx.Node {
 }
 `
 
-var defaultRoot = "heroicons/optimized"
+var defaultRoot = "heroicons/src"
 
 type variant struct {
-	Path string
-	Size string
-	Type string
+	Path       string
+	Size       string
+	Type       string
+	ClassNames htmx.ClassNames
 }
 
 var variants = []variant{
@@ -95,18 +95,34 @@ var variants = []variant{
 		Path: "16/solid",
 		Size: "micro",
 		Type: "solid",
+		ClassNames: htmx.ClassNames{
+			"w-4": true,
+			"h-4": true,
+		},
 	}, {
 		Path: "20/solid",
 		Size: "mini",
 		Type: "solid",
+		ClassNames: htmx.ClassNames{
+			"w-6": true,
+			"h-6": true,
+		},
 	}, {
 		Path: "24/solid",
 		Size: "default",
 		Type: "solid",
+		ClassNames: htmx.ClassNames{
+			"w-8": true,
+			"h-8": true,
+		},
 	}, {
 		Path: "24/outline",
 		Size: "default",
 		Type: "outline",
+		ClassNames: htmx.ClassNames{
+			"w-8": true,
+			"h-8": true,
+		},
 	},
 }
 
@@ -200,14 +216,15 @@ func processSVG(inputPath, outputDir string, variant variant) error {
 		StrokeWidth    string
 		DefaultClasses map[string]bool
 	}{
-		FuncName:    funcName,
-		Width:       svg.Width,
-		Height:      svg.Height,
-		ViewBox:     svg.ViewBox,
-		Stroke:      svg.Stroke,
-		Fill:        svg.Fill,
-		StrokeWidth: svg.StrokeWidth,
-		Paths:       svg.Paths,
+		FuncName:       funcName,
+		Width:          svg.Width,
+		Height:         svg.Height,
+		ViewBox:        svg.ViewBox,
+		Stroke:         svg.Stroke,
+		Fill:           svg.Fill,
+		StrokeWidth:    svg.StrokeWidth,
+		Paths:          svg.Paths,
+		DefaultClasses: variant.ClassNames,
 	})
 	if err != nil {
 		return err

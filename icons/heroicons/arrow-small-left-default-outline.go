@@ -10,18 +10,18 @@ func ArrowSmallLeftDefaultOutline(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 24 24"),
-        htmx.Attribute("stroke-width", "1.5"),
-        htmx.Attribute("stroke", "currentColor"),
         htmx.Attribute("fill", "none"),
         htmx.Merge(
             htmx.ClassNames{
+                "h-8": true,
+                "w-8": true,
             },
             p.ClassNames,
         ),
         htmx.Path(
             htmx.Attribute("stroke-linecap", "round"),
             htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "M19.5 12h-15m0 0 6.75 6.75M4.5 12l6.75-6.75"),
+            htmx.Attribute("d", "M19.5 12L4.5 12M4.5 12L11.25 18.75M4.5 12L11.25 5.25"),
         ),
     )
 }

@@ -10,14 +10,16 @@ func SlashMiniSolid(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 20 20"),
-        htmx.Attribute("fill", "currentColor"),
+        htmx.Attribute("fill", "none"),
         htmx.Merge(
             htmx.ClassNames{
+                "h-6": true,
+                "w-6": true,
             },
             p.ClassNames,
         ),
         htmx.Path(
-            htmx.Attribute("d", "M12.528 3.047a.75.75 0 0 1 .449.961L8.433 16.504a.75.75 0 1 1-1.41-.512l4.544-12.496a.75.75 0 0 1 .961-.449Z"),
+            htmx.Attribute("d", "M12.5284 3.04731C12.9177 3.18887 13.1185 3.61919 12.977 4.00846L8.43308 16.5042C8.29152 16.8935 7.8612 17.0943 7.47192 16.9527C7.08265 16.8112 6.88183 16.3809 7.02339 15.9916L11.5673 3.49585C11.7088 3.10657 12.1392 2.90576 12.5284 3.04731Z"),
         ),
     )
 }

@@ -10,18 +10,18 @@ func H1DefaultOutline(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 24 24"),
-        htmx.Attribute("stroke-width", "1.5"),
-        htmx.Attribute("stroke", "currentColor"),
         htmx.Attribute("fill", "none"),
         htmx.Merge(
             htmx.ClassNames{
+                "h-8": true,
+                "w-8": true,
             },
             p.ClassNames,
         ),
         htmx.Path(
             htmx.Attribute("stroke-linecap", "round"),
             htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "M2.243 4.493v7.5m0 0v7.502m0-7.501h10.5m0-7.5v7.5m0 0v7.501m4.501-8.627 2.25-1.5v10.126m0 0h-2.25m2.25 0h2.25"),
+            htmx.Attribute("d", "M2.24316 4.49316V11.9939M2.24316 11.9939V19.4946M2.24316 11.9939L12.7434 11.9946M12.7434 4.49389V11.9946M12.7434 11.9946V19.4953M17.244 10.8682L19.494 9.3681V19.4941M19.494 19.4941H17.244M19.494 19.4941H21.744"),
         ),
     )
 }

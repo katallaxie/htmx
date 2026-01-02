@@ -10,14 +10,16 @@ func Bars2MiniSolid(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 20 20"),
-        htmx.Attribute("fill", "currentColor"),
+        htmx.Attribute("fill", "none"),
         htmx.Merge(
             htmx.ClassNames{
+                "h-6": true,
+                "w-6": true,
             },
             p.ClassNames,
         ),
         htmx.Path(
-            htmx.Attribute("d", "M2 6.75A.75.75 0 0 1 2.75 6h14.5a.75.75 0 0 1 0 1.5H2.75A.75.75 0 0 1 2 6.75Zm0 6.5a.75.75 0 0 1 .75-.75h14.5a.75.75 0 0 1 0 1.5H2.75a.75.75 0 0 1-.75-.75Z"),
+            htmx.Attribute("d", "M2 6.75C2 6.33579 2.33579 6 2.75 6H17.25C17.6642 6 18 6.33579 18 6.75C18 7.16421 17.6642 7.5 17.25 7.5H2.75C2.33579 7.5 2 7.16421 2 6.75ZM2 13.25C2 12.8358 2.33579 12.5 2.75 12.5H17.25C17.6642 12.5 18 12.8358 18 13.25C18 13.6642 17.6642 14 17.25 14H2.75C2.33579 14 2 13.6642 2 13.25Z"),
         ),
     )
 }

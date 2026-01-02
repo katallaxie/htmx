@@ -10,14 +10,22 @@ func CubeMiniSolid(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 20 20"),
-        htmx.Attribute("fill", "currentColor"),
+        htmx.Attribute("fill", "none"),
         htmx.Merge(
             htmx.ClassNames{
+                "h-6": true,
+                "w-6": true,
             },
             p.ClassNames,
         ),
         htmx.Path(
-            htmx.Attribute("d", "M10.362 1.093a.75.75 0 0 0-.724 0L2.523 5.018 10 9.143l7.477-4.125-7.115-3.925ZM18 6.443l-7.25 4v8.25l6.862-3.786A.75.75 0 0 0 18 14.25V6.443ZM9.25 18.693v-8.25l-7.25-4v7.807a.75.75 0 0 0 .388.657l6.862 3.786Z"),
+            htmx.Attribute("d", "M10.3623 1.09332C10.1368 0.968894 9.86321 0.968894 9.63769 1.09332L2.52344 5.01842L10 9.14342L17.4766 5.01842L10.3623 1.09332Z"),
+        ),
+        htmx.Path(
+            htmx.Attribute("d", "M18 6.44278L10.75 10.4428V18.6928L17.6123 14.9067C17.8515 14.7747 18 14.5232 18 14.25V6.44278Z"),
+        ),
+        htmx.Path(
+            htmx.Attribute("d", "M9.25 18.6928V10.4428L2 6.44278V14.25C2 14.5232 2.14852 14.7747 2.38769 14.9067L9.25 18.6928Z"),
         ),
     )
 }

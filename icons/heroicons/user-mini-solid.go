@@ -10,14 +10,19 @@ func UserMiniSolid(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 20 20"),
-        htmx.Attribute("fill", "currentColor"),
+        htmx.Attribute("fill", "none"),
         htmx.Merge(
             htmx.ClassNames{
+                "h-6": true,
+                "w-6": true,
             },
             p.ClassNames,
         ),
         htmx.Path(
-            htmx.Attribute("d", "M10 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM3.465 14.493a1.23 1.23 0 0 0 .41 1.412A9.957 9.957 0 0 0 10 18c2.31 0 4.438-.784 6.131-2.1.43-.333.604-.903.408-1.41a7.002 7.002 0 0 0-13.074.003Z"),
+            htmx.Attribute("d", "M10 8C11.6569 8 13 6.65685 13 5C13 3.34315 11.6569 2 10 2C8.34315 2 7 3.34315 7 5C7 6.65685 8.34315 8 10 8Z"),
+        ),
+        htmx.Path(
+            htmx.Attribute("d", "M3.46517 14.4935C3.27029 15.0016 3.44435 15.571 3.8742 15.9046C5.56656 17.218 7.69202 18 10.0001 18C12.3106 18 14.438 17.2164 16.1312 15.9006C16.5608 15.5667 16.7345 14.9971 16.5393 14.4892C15.5301 11.8635 12.9842 10 10.0031 10C7.02032 10 4.47329 11.8656 3.46517 14.4935Z"),
         ),
     )
 }
