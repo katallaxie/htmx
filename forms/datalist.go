@@ -13,8 +13,6 @@ type DatalistProps struct {
 	Target string
 	// URL is the url of the datalist
 	URL string
-	// ClassNames is a map of class names to conditionally add to the component
-	ClassNames htmx.ClassNames
 	// Name is the name of the datalist
 	Name string
 	// Placeholder is the placeholder of the datalist
@@ -25,6 +23,8 @@ type DatalistProps struct {
 	Indicator string
 	// Error is the error of the datalist
 	Error error
+	// ClassNames are the class names of the datalist
+	htmx.ClassNames
 }
 
 // Datalist is a component that displays a datalist.
@@ -43,6 +43,7 @@ func Datalist(props DatalistProps, children ...htmx.Node) htmx.Node {
 			htmx.HxGet(props.URL),
 			htmx.HxTarget(props.Target),
 			htmx.HxSwap("innerHTML"),
+			htmx.Name(props.Name),
 			htmx.HxTrigger("load, keyup[checkUserKeydown.call(this, event)] changed delay:350ms"),
 			htmx.HxIndicator(
 				utilx.IfElse(
