@@ -205,6 +205,14 @@ icon := heroicons.AcademicCapOutline(heroicons.IconProps{})
 icon.Render(os.Stdout)
 ```
 
+## Web Components
+
+Web components work [great with HTMX](https://htmx.org/essays/webcomponents-work-great/) and
+are the idiomatic way to add interactive features to web applications.
+
+* [HTMX Toasts](https://github.com/katallaxie/htmx-toasts-element)
+* [HTMX Dark Mode](https://github.com/katallaxie/htmx-dark-mode-element)
+
 ## 📄 Examples
 
 See [examples](https://github.com/katallaxie/fiber-htmx/tree/master/examples) to understand the provided interfaces.
