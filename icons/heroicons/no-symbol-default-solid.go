@@ -13,8 +13,8 @@ func NoSymbolDefaultSolid(p icons.IconProps) htmx.Node {
         htmx.Attribute("fill", "currentColor"),
         htmx.Merge(
             htmx.ClassNames{
-                "h-8": true,
-                "w-8": true,
+                "h-6": true,
+                "w-6": true,
             },
             p.ClassNames,
         ),
