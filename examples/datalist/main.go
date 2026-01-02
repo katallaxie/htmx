@@ -77,7 +77,7 @@ func hello(w http.ResponseWriter, _ *http.Request) {
 
 func main() {
 	http.HandleFunc("/", hello)
-	http.HandleFunc("/users", func(w http.ResponseWriter, r *http.Request) {
+	http.HandleFunc("/users", func(w http.ResponseWriter, _ *http.Request) {
 		users := []string{"alice", "bob", "charlie", "dave", "eve", "frank", "grace", "heidi"}
 		resp := htmx.Fragment(
 			htmx.ForEach(users, func(u string, idx int) htmx.Node {
