@@ -9,17 +9,17 @@ import (
 func NoSymbolMicroSolid(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-        htmx.Attribute("viewBox", "0 0 16 16"),
-        htmx.Attribute("fill", "currentColor"),
-        htmx.Merge(
-            htmx.ClassNames{
-                "h-4": true,
-                "w-4": true,
-            },
-            p.ClassNames,
-        ),
-        htmx.Path(
-            htmx.Attribute("d", "M3.05 3.05a7 7 0 1 1 9.9 9.9 7 7 0 0 1-9.9-9.9Zm1.627.566 7.707 7.707a5.501 5.501 0 0 0-7.707-7.707Zm6.646 8.768L3.616 4.677a5.501 5.501 0 0 0 7.707 7.707Z"),
-        ),
-    )
+		htmx.Attribute("viewBox", "0 0 16 16"),
+		htmx.Attribute("fill", "currentColor"),
+		htmx.Merge(
+			htmx.ClassNames{
+				"h-4": true,
+				"w-4": true,
+			},
+			p.ClassNames,
+		),
+		htmx.Path(
+			htmx.Attribute("d", "M3.05 3.05a7 7 0 1 1 9.9 9.9 7 7 0 0 1-9.9-9.9Zm1.627.566 7.707 7.707a5.501 5.501 0 0 0-7.707-7.707Zm6.646 8.768L3.616 4.677a5.501 5.501 0 0 0 7.707 7.707Z"),
+		),
+	)
 }

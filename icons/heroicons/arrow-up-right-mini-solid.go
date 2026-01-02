@@ -9,17 +9,17 @@ import (
 func ArrowUpRightMiniSolid(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-        htmx.Attribute("viewBox", "0 0 20 20"),
-        htmx.Attribute("fill", "currentColor"),
-        htmx.Merge(
-            htmx.ClassNames{
-                "h-6": true,
-                "w-6": true,
-            },
-            p.ClassNames,
-        ),
-        htmx.Path(
-            htmx.Attribute("d", "M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z"),
-        ),
-    )
+		htmx.Attribute("viewBox", "0 0 20 20"),
+		htmx.Attribute("fill", "currentColor"),
+		htmx.Merge(
+			htmx.ClassNames{
+				"h-6": true,
+				"w-6": true,
+			},
+			p.ClassNames,
+		),
+		htmx.Path(
+			htmx.Attribute("d", "M5.22 14.78a.75.75 0 0 0 1.06 0l7.22-7.22v5.69a.75.75 0 0 0 1.5 0v-7.5a.75.75 0 0 0-.75-.75h-7.5a.75.75 0 0 0 0 1.5h5.69l-7.22 7.22a.75.75 0 0 0 0 1.06Z"),
+		),
+	)
 }

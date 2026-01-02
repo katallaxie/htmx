@@ -9,17 +9,17 @@ import (
 func ItalicMicroSolid(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-        htmx.Attribute("viewBox", "0 0 16 16"),
-        htmx.Attribute("fill", "currentColor"),
-        htmx.Merge(
-            htmx.ClassNames{
-                "h-4": true,
-                "w-4": true,
-            },
-            p.ClassNames,
-        ),
-        htmx.Path(
-            htmx.Attribute("d", "M6.25 2.75A.75.75 0 0 1 7 2h6a.75.75 0 0 1 0 1.5h-2.483l-3.429 9H9A.75.75 0 0 1 9 14H3a.75.75 0 0 1 0-1.5h2.483l3.429-9H7a.75.75 0 0 1-.75-.75Z"),
-        ),
-    )
+		htmx.Attribute("viewBox", "0 0 16 16"),
+		htmx.Attribute("fill", "currentColor"),
+		htmx.Merge(
+			htmx.ClassNames{
+				"h-4": true,
+				"w-4": true,
+			},
+			p.ClassNames,
+		),
+		htmx.Path(
+			htmx.Attribute("d", "M6.25 2.75A.75.75 0 0 1 7 2h6a.75.75 0 0 1 0 1.5h-2.483l-3.429 9H9A.75.75 0 0 1 9 14H3a.75.75 0 0 1 0-1.5h2.483l3.429-9H7a.75.75 0 0 1-.75-.75Z"),
+		),
+	)
 }

@@ -9,21 +9,21 @@ import (
 func EllipsisHorizontalCircleDefaultOutline(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-        htmx.Attribute("viewBox", "0 0 24 24"),
-        htmx.Attribute("stroke-width", "1.5"),
-        htmx.Attribute("stroke", "currentColor"),
-        htmx.Attribute("fill", "none"),
-        htmx.Merge(
-            htmx.ClassNames{
-                "h-6": true,
-                "w-6": true,
-            },
-            p.ClassNames,
-        ),
-        htmx.Path(
-            htmx.Attribute("stroke-linecap", "round"),
-            htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"),
-        ),
-    )
+		htmx.Attribute("viewBox", "0 0 24 24"),
+		htmx.Attribute("stroke-width", "1.5"),
+		htmx.Attribute("stroke", "currentColor"),
+		htmx.Attribute("fill", "none"),
+		htmx.Merge(
+			htmx.ClassNames{
+				"h-6": true,
+				"w-6": true,
+			},
+			p.ClassNames,
+		),
+		htmx.Path(
+			htmx.Attribute("stroke-linecap", "round"),
+			htmx.Attribute("stroke-linejoin", "round"),
+			htmx.Attribute("d", "M8.625 12a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"),
+		),
+	)
 }

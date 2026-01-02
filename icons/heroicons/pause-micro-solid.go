@@ -9,17 +9,17 @@ import (
 func PauseMicroSolid(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-        htmx.Attribute("viewBox", "0 0 16 16"),
-        htmx.Attribute("fill", "currentColor"),
-        htmx.Merge(
-            htmx.ClassNames{
-                "h-4": true,
-                "w-4": true,
-            },
-            p.ClassNames,
-        ),
-        htmx.Path(
-            htmx.Attribute("d", "M4.5 2a.5.5 0 0 0-.5.5v11a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-11a.5.5 0 0 0-.5-.5h-1ZM10.5 2a.5.5 0 0 0-.5.5v11a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-11a.5.5 0 0 0-.5-.5h-1Z"),
-        ),
-    )
+		htmx.Attribute("viewBox", "0 0 16 16"),
+		htmx.Attribute("fill", "currentColor"),
+		htmx.Merge(
+			htmx.ClassNames{
+				"h-4": true,
+				"w-4": true,
+			},
+			p.ClassNames,
+		),
+		htmx.Path(
+			htmx.Attribute("d", "M4.5 2a.5.5 0 0 0-.5.5v11a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-11a.5.5 0 0 0-.5-.5h-1ZM10.5 2a.5.5 0 0 0-.5.5v11a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-11a.5.5 0 0 0-.5-.5h-1Z"),
+		),
+	)
 }

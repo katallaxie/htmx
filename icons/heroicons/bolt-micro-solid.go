@@ -9,17 +9,17 @@ import (
 func BoltMicroSolid(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-        htmx.Attribute("viewBox", "0 0 16 16"),
-        htmx.Attribute("fill", "currentColor"),
-        htmx.Merge(
-            htmx.ClassNames{
-                "h-4": true,
-                "w-4": true,
-            },
-            p.ClassNames,
-        ),
-        htmx.Path(
-            htmx.Attribute("d", "M9.58 1.077a.75.75 0 0 1 .405.82L9.165 6h4.085a.75.75 0 0 1 .567 1.241l-6.5 7.5a.75.75 0 0 1-1.302-.638L6.835 10H2.75a.75.75 0 0 1-.567-1.241l6.5-7.5a.75.75 0 0 1 .897-.182Z"),
-        ),
-    )
+		htmx.Attribute("viewBox", "0 0 16 16"),
+		htmx.Attribute("fill", "currentColor"),
+		htmx.Merge(
+			htmx.ClassNames{
+				"h-4": true,
+				"w-4": true,
+			},
+			p.ClassNames,
+		),
+		htmx.Path(
+			htmx.Attribute("d", "M9.58 1.077a.75.75 0 0 1 .405.82L9.165 6h4.085a.75.75 0 0 1 .567 1.241l-6.5 7.5a.75.75 0 0 1-1.302-.638L6.835 10H2.75a.75.75 0 0 1-.567-1.241l6.5-7.5a.75.75 0 0 1 .897-.182Z"),
+		),
+	)
 }

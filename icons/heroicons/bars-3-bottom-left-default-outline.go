@@ -9,21 +9,21 @@ import (
 func Bars3BottomLeftDefaultOutline(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-        htmx.Attribute("viewBox", "0 0 24 24"),
-        htmx.Attribute("stroke-width", "1.5"),
-        htmx.Attribute("stroke", "currentColor"),
-        htmx.Attribute("fill", "none"),
-        htmx.Merge(
-            htmx.ClassNames{
-                "h-6": true,
-                "w-6": true,
-            },
-            p.ClassNames,
-        ),
-        htmx.Path(
-            htmx.Attribute("stroke-linecap", "round"),
-            htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"),
-        ),
-    )
+		htmx.Attribute("viewBox", "0 0 24 24"),
+		htmx.Attribute("stroke-width", "1.5"),
+		htmx.Attribute("stroke", "currentColor"),
+		htmx.Attribute("fill", "none"),
+		htmx.Merge(
+			htmx.ClassNames{
+				"h-6": true,
+				"w-6": true,
+			},
+			p.ClassNames,
+		),
+		htmx.Path(
+			htmx.Attribute("stroke-linecap", "round"),
+			htmx.Attribute("stroke-linejoin", "round"),
+			htmx.Attribute("d", "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"),
+		),
+	)
 }

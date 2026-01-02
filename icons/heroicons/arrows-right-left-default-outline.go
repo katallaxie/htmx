@@ -9,21 +9,21 @@ import (
 func ArrowsRightLeftDefaultOutline(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-        htmx.Attribute("viewBox", "0 0 24 24"),
-        htmx.Attribute("stroke-width", "1.5"),
-        htmx.Attribute("stroke", "currentColor"),
-        htmx.Attribute("fill", "none"),
-        htmx.Merge(
-            htmx.ClassNames{
-                "h-6": true,
-                "w-6": true,
-            },
-            p.ClassNames,
-        ),
-        htmx.Path(
-            htmx.Attribute("stroke-linecap", "round"),
-            htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"),
-        ),
-    )
+		htmx.Attribute("viewBox", "0 0 24 24"),
+		htmx.Attribute("stroke-width", "1.5"),
+		htmx.Attribute("stroke", "currentColor"),
+		htmx.Attribute("fill", "none"),
+		htmx.Merge(
+			htmx.ClassNames{
+				"h-6": true,
+				"w-6": true,
+			},
+			p.ClassNames,
+		),
+		htmx.Path(
+			htmx.Attribute("stroke-linecap", "round"),
+			htmx.Attribute("stroke-linejoin", "round"),
+			htmx.Attribute("d", "M7.5 21 3 16.5m0 0L7.5 12M3 16.5h13.5m0-13.5L21 7.5m0 0L16.5 12M21 7.5H7.5"),
+		),
+	)
 }

@@ -9,20 +9,20 @@ import (
 func GiftMiniSolid(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
-        htmx.Attribute("viewBox", "0 0 20 20"),
-        htmx.Attribute("fill", "currentColor"),
-        htmx.Merge(
-            htmx.ClassNames{
-                "h-6": true,
-                "w-6": true,
-            },
-            p.ClassNames,
-        ),
-        htmx.Path(
-            htmx.Attribute("d", "M14 6.005a2.5 2.5 0 0 0-4-3 2.5 2.5 0 0 0-4 3H3.25c-.69 0-1.25.56-1.25 1.25v.5c0 .69.56 1.25 1.25 1.25h6v-3h1.5v3h6c.69 0 1.25-.56 1.25-1.25v-.5c0-.69-.56-1.25-1.25-1.25H14Zm-1-1.5a1 1 0 0 1-1 1h-1v-1a1 1 0 1 1 2 0Zm-6 0a1 1 0 0 0 1 1h1v-1a1 1 0 1 0-2 0Z"),
-        ),
-        htmx.Path(
-            htmx.Attribute("d", "M9.25 10.505H3v4.75a2.75 2.75 0 0 0 2.75 2.75h3.5v-7.5ZM10.75 18.005v-7.5H17v4.75a2.75 2.75 0 0 1-2.75 2.75h-3.5Z"),
-        ),
-    )
+		htmx.Attribute("viewBox", "0 0 20 20"),
+		htmx.Attribute("fill", "currentColor"),
+		htmx.Merge(
+			htmx.ClassNames{
+				"h-6": true,
+				"w-6": true,
+			},
+			p.ClassNames,
+		),
+		htmx.Path(
+			htmx.Attribute("d", "M14 6.005a2.5 2.5 0 0 0-4-3 2.5 2.5 0 0 0-4 3H3.25c-.69 0-1.25.56-1.25 1.25v.5c0 .69.56 1.25 1.25 1.25h6v-3h1.5v3h6c.69 0 1.25-.56 1.25-1.25v-.5c0-.69-.56-1.25-1.25-1.25H14Zm-1-1.5a1 1 0 0 1-1 1h-1v-1a1 1 0 1 1 2 0Zm-6 0a1 1 0 0 0 1 1h1v-1a1 1 0 1 0-2 0Z"),
+		),
+		htmx.Path(
+			htmx.Attribute("d", "M9.25 10.505H3v4.75a2.75 2.75 0 0 0 2.75 2.75h3.5v-7.5ZM10.75 18.005v-7.5H17v4.75a2.75 2.75 0 0 1-2.75 2.75h-3.5Z"),
+		),
+	)
 }

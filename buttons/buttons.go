@@ -355,7 +355,7 @@ func Circle(props ButtonProps, children ...htmx.Node) htmx.Node {
 		htmx.Merge(
 			htmx.ClassNames{
 				"btn":        true,
-				"btn-square": true,
+				"btn-circle": true,
 			},
 			props.ClassNames,
 		),
