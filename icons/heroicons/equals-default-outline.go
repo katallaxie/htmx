@@ -18,7 +18,7 @@ func EqualsDefaultOutline(p icons.IconProps) htmx.Node {
         htmx.Path(
             htmx.Attribute("stroke-linecap", "round"),
             htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "M4.49854 8.24805H19.4982M4.49854 15.749H19.4982"),
+            htmx.Attribute("d", "M4.499 8.248h15m-15 7.501h15"),
         ),
     )
 }

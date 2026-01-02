@@ -16,13 +16,7 @@ func ViewColumnsMiniSolid(p icons.IconProps) htmx.Node {
             p.ClassNames,
         ),
         htmx.Path(
-            htmx.Attribute("d", "M14 17H16.75C17.9926 17 19 15.9926 19 14.75V5.25C19 4.00736 17.9926 3 16.75 3H14V17Z"),
-        ),
-        htmx.Path(
-            htmx.Attribute("d", "M12.5 3H7.5V17H12.5V3Z"),
-        ),
-        htmx.Path(
-            htmx.Attribute("d", "M3.25 3H6V17H3.25C2.00736 17 1 15.9926 1 14.75V5.25C1 4.00736 2.00736 3 3.25 3Z"),
+            htmx.Attribute("d", "M14 17h2.75A2.25 2.25 0 0 0 19 14.75v-9.5A2.25 2.25 0 0 0 16.75 3H14v14ZM12.5 3h-5v14h5V3ZM3.25 3H6v14H3.25A2.25 2.25 0 0 1 1 14.75v-9.5A2.25 2.25 0 0 1 3.25 3Z"),
         ),
     )
 }

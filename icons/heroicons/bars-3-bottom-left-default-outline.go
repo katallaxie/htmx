@@ -18,7 +18,7 @@ func Bars3BottomLeftDefaultOutline(p icons.IconProps) htmx.Node {
         htmx.Path(
             htmx.Attribute("stroke-linecap", "round"),
             htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "M3.75 6.75H20.25M3.75 12H20.25M3.75 17.25H12"),
+            htmx.Attribute("d", "M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25H12"),
         ),
     )
 }

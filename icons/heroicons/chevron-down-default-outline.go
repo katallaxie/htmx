@@ -18,7 +18,7 @@ func ChevronDownDefaultOutline(p icons.IconProps) htmx.Node {
         htmx.Path(
             htmx.Attribute("stroke-linecap", "round"),
             htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "M19.5 8.25L12 15.75L4.5 8.25"),
+            htmx.Attribute("d", "m19.5 8.25-7.5 7.5-7.5-7.5"),
         ),
     )
 }

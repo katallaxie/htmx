@@ -18,7 +18,7 @@ func ArrowLongUpDefaultOutline(p icons.IconProps) htmx.Node {
         htmx.Path(
             htmx.Attribute("stroke-linecap", "round"),
             htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "M8.25 6.75L12 3M12 3L15.75 6.75M12 3V21"),
+            htmx.Attribute("d", "M8.25 6.75 12 3m0 0 3.75 3.75M12 3v18"),
         ),
     )
 }

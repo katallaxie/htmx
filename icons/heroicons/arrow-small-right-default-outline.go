@@ -18,7 +18,7 @@ func ArrowSmallRightDefaultOutline(p icons.IconProps) htmx.Node {
         htmx.Path(
             htmx.Attribute("stroke-linecap", "round"),
             htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "M4.5 12L19.5 12M19.5 12L12.75 5.25M19.5 12L12.75 18.75"),
+            htmx.Attribute("d", "M4.5 12h15m0 0-6.75-6.75M19.5 12l-6.75 6.75"),
         ),
     )
 }

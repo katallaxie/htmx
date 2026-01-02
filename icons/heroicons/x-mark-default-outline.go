@@ -18,7 +18,7 @@ func XMarkDefaultOutline(p icons.IconProps) htmx.Node {
         htmx.Path(
             htmx.Attribute("stroke-linecap", "round"),
             htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "M6 18L18 6M6 6L18 18"),
+            htmx.Attribute("d", "M6 18 18 6M6 6l12 12"),
         ),
     )
 }

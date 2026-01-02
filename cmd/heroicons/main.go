@@ -79,7 +79,7 @@ func {{.FuncName}}(p icons.IconProps) htmx.Node {
 }
 `
 
-var defaultRoot = "heroicons/src"
+var defaultRoot = "heroicons/optimized"
 
 type variant struct {
 	Path string
