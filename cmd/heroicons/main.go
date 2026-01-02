@@ -50,6 +50,9 @@ func {{.FuncName}}(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "{{.ViewBox}}"),
+		{{- if .StrokeWidth}}
+        htmx.Attribute("stroke-width", "{{.StrokeWidth}}"),
+        {{- end}}
         {{- if .Stroke}}
         htmx.Attribute("stroke", "{{.Stroke}}"),
         {{- end}}
@@ -194,13 +197,17 @@ func processSVG(inputPath, outputDir string, variant variant) error {
 		Paths          []Path
 		Stroke         string
 		Fill           string
+		StrokeWidth    string
 		DefaultClasses map[string]bool
 	}{
-		FuncName: funcName,
-		Width:    svg.Width,
-		Height:   svg.Height,
-		ViewBox:  svg.ViewBox,
-		Paths:    svg.Paths,
+		FuncName:    funcName,
+		Width:       svg.Width,
+		Height:      svg.Height,
+		ViewBox:     svg.ViewBox,
+		Stroke:      svg.Stroke,
+		Fill:        svg.Fill,
+		StrokeWidth: svg.StrokeWidth,
+		Paths:       svg.Paths,
 	})
 	if err != nil {
 		return err
