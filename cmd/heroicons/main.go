@@ -30,6 +30,8 @@ type SVG struct {
 	Paths       []Path   `xml:"path"`
 }
 
+//
+
 type Path struct {
 	D              string `xml:"d,attr"`
 	StrokeLinecap  string `xml:"stroke-linecap,attr"`
@@ -79,6 +81,32 @@ func {{.FuncName}}(p icons.IconProps) htmx.Node {
 
 var defaultRoot = "heroicons/src"
 
+type variant struct {
+	Path string
+	Size string
+	Type string
+}
+
+var variants = []variant{
+	{
+		Path: "16/solid",
+		Size: "micro",
+		Type: "solid",
+	}, {
+		Path: "20/solid",
+		Size: "mini",
+		Type: "solid",
+	}, {
+		Path: "24/solid",
+		Size: "default",
+		Type: "solid",
+	}, {
+		Path: "24/outline",
+		Size: "default",
+		Type: "outline",
+	},
+}
+
 type flags struct {
 	Root   string
 	Output string
@@ -109,19 +137,22 @@ func main() {
 	pflag.StringVar(&f.Root, "root", f.Root, "root")
 	pflag.Parse()
 
-	err := filepath.WalkDir(f.Root, func(path string, _ fs.DirEntry, _ error) error {
-		if filepath.Ext(path) != ".svg" {
-			return nil
-		}
+	for _, v := range variants {
+		path := filepath.Join(defaultRoot, v.Path)
+		err := filepath.Walk(path, func(path string, _ fs.FileInfo, _ error) error {
+			if filepath.Ext(path) != ".svg" {
+				return nil
+			}
 
-		return processSVG(path, f.Output)
-	})
-	if err != nil {
-		log.Fatal(err)
+			return processSVG(path, f.Output, v)
+		})
+		if err != nil {
+			log.Fatalf("error processing SVGs: %v", err)
+		}
 	}
 }
 
-func processSVG(inputPath, outputDir string) error {
+func processSVG(inputPath, outputDir string, variant variant) error {
 	data, err := os.ReadFile(filepath.Clean(inputPath))
 	if err != nil {
 		return err
@@ -133,11 +164,10 @@ func processSVG(inputPath, outputDir string) error {
 		return err
 	}
 
-	variant := filepath.Base(filepath.Dir(inputPath)) // "solid" or "outline"
 	baseName := strings.TrimSuffix(filepath.Base(inputPath), ".svg")
 
-	funcName := fmt.Sprintf("%s%s", ToCamelCase(baseName), cases.Title(language.English).String(variant))
-	outputFile := filepath.Join(outputDir, baseName+"-"+variant+".go")
+	funcName := fmt.Sprintf("%s%s%s", ToCamelCase(baseName), cases.Title(language.English).String(variant.Size), cases.Title(language.English).String(variant.Type))
+	outputFile := filepath.Join(outputDir, baseName+"-"+variant.Size+"-"+variant.Type+".go")
 
 	tmpl, err := template.New("component").Parse(templ)
 	if err != nil {
@@ -171,12 +201,6 @@ func processSVG(inputPath, outputDir string) error {
 		Height:   svg.Height,
 		ViewBox:  svg.ViewBox,
 		Paths:    svg.Paths,
-		DefaultClasses: map[string]bool{
-			"w-6": variant == "solid",
-			"h-6": variant == "solid",
-			"w-5": variant == "outline",
-			"h-5": variant == "outline",
-		},
 	})
 	if err != nil {
 		return err
