@@ -205,7 +205,7 @@ icon := heroicons.AcademicCapDefaultOutline(heroicons.IconProps{})
 icon.Render(os.Stdout)
 ```
 
-## Web Components
+## 🖱️ Web Components
 
 Web components work [great with HTMX](https://htmx.org/essays/webcomponents-work-great/) and
 are the idiomatic way to add interactive features to web applications.
