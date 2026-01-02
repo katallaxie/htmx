@@ -201,7 +201,7 @@ htmx.Imports(
 The package has support for [Heroicons](https://heroicons.com/). The support is for the outline and solid icons.
 
 ```go
-icon := heroicons.AcademicCapOutline(heroicons.IconProps{})
+icon := heroicons.AcademicCapDefaultOutline(heroicons.IconProps{})
 icon.Render(os.Stdout)
 ```
 
