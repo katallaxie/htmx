@@ -10,7 +10,7 @@ func StopCircleMicroSolid(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 16 16"),
-        htmx.Attribute("fill", "none"),
+        htmx.Attribute("fill", "currentColor"),
         htmx.Merge(
             htmx.ClassNames{
                 "h-4": true,
@@ -19,7 +19,7 @@ func StopCircleMicroSolid(p icons.IconProps) htmx.Node {
             p.ClassNames,
         ),
         htmx.Path(
-            htmx.Attribute("d", "M8 15C11.866 15 15 11.866 15 8C15 4.13401 11.866 1 8 1C4.13401 1 1 4.13401 1 8C1 11.866 4.13401 15 8 15ZM6.5 5.5C5.94772 5.5 5.5 5.94772 5.5 6.5V9.5C5.5 10.0523 5.94772 10.5 6.5 10.5H9.5C10.0523 10.5 10.5 10.0523 10.5 9.5V6.5C10.5 5.94772 10.0523 5.5 9.5 5.5H6.5Z"),
+            htmx.Attribute("d", "M8 15A7 7 0 1 0 8 1a7 7 0 0 0 0 14ZM6.5 5.5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h3a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1h-3Z"),
         ),
     )
 }

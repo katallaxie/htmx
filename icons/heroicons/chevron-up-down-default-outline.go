@@ -10,6 +10,8 @@ func ChevronUpDownDefaultOutline(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 24 24"),
+        htmx.Attribute("stroke-width", "1.5"),
+        htmx.Attribute("stroke", "currentColor"),
         htmx.Attribute("fill", "none"),
         htmx.Merge(
             htmx.ClassNames{
@@ -21,7 +23,7 @@ func ChevronUpDownDefaultOutline(p icons.IconProps) htmx.Node {
         htmx.Path(
             htmx.Attribute("stroke-linecap", "round"),
             htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "M8.25 15L12 18.75L15.75 15M8.25 9L12 5.25L15.75 9"),
+            htmx.Attribute("d", "M8.25 15 12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"),
         ),
     )
 }

@@ -10,7 +10,7 @@ func MinusSmallDefaultSolid(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 24 24"),
-        htmx.Attribute("fill", "none"),
+        htmx.Attribute("fill", "currentColor"),
         htmx.Merge(
             htmx.ClassNames{
                 "h-8": true,
@@ -19,7 +19,7 @@ func MinusSmallDefaultSolid(p icons.IconProps) htmx.Node {
             p.ClassNames,
         ),
         htmx.Path(
-            htmx.Attribute("d", "M5.25 12C5.25 11.5858 5.58579 11.25 6 11.25L18 11.25C18.4142 11.25 18.75 11.5858 18.75 12C18.75 12.4142 18.4142 12.75 18 12.75L6 12.75C5.58579 12.75 5.25 12.4142 5.25 12Z"),
+            htmx.Attribute("d", "M5.25 12a.75.75 0 0 1 .75-.75h12a.75.75 0 0 1 0 1.5H6a.75.75 0 0 1-.75-.75Z"),
         ),
     )
 }

@@ -10,7 +10,7 @@ func UserMicroSolid(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 16 16"),
-        htmx.Attribute("fill", "none"),
+        htmx.Attribute("fill", "currentColor"),
         htmx.Merge(
             htmx.ClassNames{
                 "h-4": true,
@@ -19,10 +19,7 @@ func UserMicroSolid(p icons.IconProps) htmx.Node {
             p.ClassNames,
         ),
         htmx.Path(
-            htmx.Attribute("d", "M8 8C9.65685 8 11 6.65685 11 5C11 3.34315 9.65685 2 8 2C6.34315 2 5 3.34315 5 5C5 6.65685 6.34315 8 8 8Z"),
-        ),
-        htmx.Path(
-            htmx.Attribute("d", "M12.7347 14C13.3531 14 13.8275 13.439 13.607 12.8613C12.7455 10.6036 10.5597 9 7.99942 9C5.43913 9 3.25338 10.6036 2.39182 12.8613C2.17134 13.439 2.64575 14 3.26412 14H12.7347Z"),
+            htmx.Attribute("d", "M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6ZM12.735 14c.618 0 1.093-.561.872-1.139a6.002 6.002 0 0 0-11.215 0c-.22.578.254 1.139.872 1.139h9.47Z"),
         ),
     )
 }

@@ -10,7 +10,7 @@ func DocumentMiniSolid(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 20 20"),
-        htmx.Attribute("fill", "none"),
+        htmx.Attribute("fill", "currentColor"),
         htmx.Merge(
             htmx.ClassNames{
                 "h-6": true,
@@ -19,7 +19,7 @@ func DocumentMiniSolid(p icons.IconProps) htmx.Node {
             p.ClassNames,
         ),
         htmx.Path(
-            htmx.Attribute("d", "M3 3.5C3 2.67157 3.67157 2 4.5 2H11.3787C11.7765 2 12.158 2.15804 12.4393 2.43934L16.5607 6.56066C16.842 6.84197 17 7.2235 17 7.62132V16.5C17 17.3284 16.3284 18 15.5 18H4.5C3.67157 18 3 17.3284 3 16.5V3.5Z"),
+            htmx.Attribute("d", "M3 3.5A1.5 1.5 0 0 1 4.5 2h6.879a1.5 1.5 0 0 1 1.06.44l4.122 4.12A1.5 1.5 0 0 1 17 7.622V16.5a1.5 1.5 0 0 1-1.5 1.5h-11A1.5 1.5 0 0 1 3 16.5v-13Z"),
         ),
     )
 }

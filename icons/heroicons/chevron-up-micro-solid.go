@@ -10,7 +10,7 @@ func ChevronUpMicroSolid(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 16 16"),
-        htmx.Attribute("fill", "none"),
+        htmx.Attribute("fill", "currentColor"),
         htmx.Merge(
             htmx.ClassNames{
                 "h-4": true,
@@ -19,7 +19,7 @@ func ChevronUpMicroSolid(p icons.IconProps) htmx.Node {
             p.ClassNames,
         ),
         htmx.Path(
-            htmx.Attribute("d", "M11.7803 9.78033C11.4874 10.0732 11.0126 10.0732 10.7197 9.78033L8 7.06066L5.28033 9.78033C4.98744 10.0732 4.51256 10.0732 4.21967 9.78033C3.92678 9.48744 3.92678 9.01256 4.21967 8.71967L7.46967 5.46967C7.76256 5.17678 8.23744 5.17678 8.53033 5.46967L11.7803 8.71967C12.0732 9.01256 12.0732 9.48744 11.7803 9.78033Z"),
+            htmx.Attribute("d", "M11.78 9.78a.75.75 0 0 1-1.06 0L8 7.06 5.28 9.78a.75.75 0 0 1-1.06-1.06l3.25-3.25a.75.75 0 0 1 1.06 0l3.25 3.25a.75.75 0 0 1 0 1.06Z"),
         ),
     )
 }

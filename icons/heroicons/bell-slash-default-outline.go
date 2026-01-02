@@ -10,6 +10,8 @@ func BellSlashDefaultOutline(p icons.IconProps) htmx.Node {
 	return htmx.SVG(
 		htmx.Attribute("xmlns", "http://www.w3.org/2000/svg"),
         htmx.Attribute("viewBox", "0 0 24 24"),
+        htmx.Attribute("stroke-width", "1.5"),
+        htmx.Attribute("stroke", "currentColor"),
         htmx.Attribute("fill", "none"),
         htmx.Merge(
             htmx.ClassNames{
@@ -21,7 +23,7 @@ func BellSlashDefaultOutline(p icons.IconProps) htmx.Node {
         htmx.Path(
             htmx.Attribute("stroke-linecap", "round"),
             htmx.Attribute("stroke-linejoin", "round"),
-            htmx.Attribute("d", "M9.14314 17.0818C10.0799 17.1929 11.0332 17.25 11.9998 17.25C12.3306 17.25 12.6599 17.2433 12.9874 17.2301M9.14314 17.0818C7.24843 16.857 5.4214 16.4116 3.68848 15.7719C5.02539 14.2879 5.87549 12.3567 5.98723 10.2299M9.14314 17.0818C9.05019 17.3712 9 17.6797 9 18C9 19.6569 10.3431 21 12 21C13.2864 21 14.3837 20.1903 14.8101 19.0527M16.7749 16.7749L21 21M16.7749 16.7749C17.9894 16.5298 19.1706 16.1929 20.3111 15.7719C18.8743 14.177 17.9998 12.0656 17.9998 9.75V9.04919L18 9C18 5.68629 15.3137 3 12 3C9.5667 3 7.47171 4.44849 6.53026 6.53026M16.7749 16.7749L6.53026 6.53026M3 3L6.53026 6.53026"),
+            htmx.Attribute("d", "M9.143 17.082a24.248 24.248 0 0 0 3.844.148m-3.844-.148a23.856 23.856 0 0 1-5.455-1.31 8.964 8.964 0 0 0 2.3-5.542m3.155 6.852a3 3 0 0 0 5.667 1.97m1.965-2.277L21 21m-4.225-4.225a23.81 23.81 0 0 0 3.536-1.003A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6.53 6.53m10.245 10.245L6.53 6.53M3 3l3.53 3.53"),
         ),
     )
 }
