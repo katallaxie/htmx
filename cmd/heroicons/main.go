@@ -112,16 +112,16 @@ var variants = []variant{
 		Size: "default",
 		Type: "solid",
 		ClassNames: htmx.ClassNames{
-			"w-8": true,
-			"h-8": true,
+			"w-6": true,
+			"h-6": true,
 		},
 	}, {
 		Path: "24/outline",
 		Size: "default",
 		Type: "outline",
 		ClassNames: htmx.ClassNames{
-			"w-8": true,
-			"h-8": true,
+			"w-6": true,
+			"h-6": true,
 		},
 	},
 }
