@@ -22,7 +22,7 @@ require (
 	github.com/tdewolff/parse/v2 v2.8.5
 	github.com/yuin/goldmark v1.7.16
 	golang.org/x/text v0.34.0
-	google.golang.org/grpc v1.78.0
+	google.golang.org/grpc v1.79.0
 	google.golang.org/protobuf v1.36.11
 )
 
@@ -239,7 +239,7 @@ require (
 	golang.org/x/sys v0.40.0 // indirect
 	golang.org/x/term v0.39.0 // indirect
 	golang.org/x/tools v0.41.0 // indirect
-	google.golang.org/genproto/googleapis/rpc v0.0.0-20251029180050-ab9386a59fda // indirect
+	google.golang.org/genproto/googleapis/rpc v0.0.0-20251202230838-ff82c1b0f217 // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
 	gotest.tools/gotestsum v1.12.1 // indirect
 	honnef.co/go/tools v0.6.1 // indirect
