@@ -19,7 +19,7 @@ require (
 	github.com/spf13/cobra v1.10.2
 	github.com/spf13/pflag v1.0.10
 	github.com/stretchr/testify v1.11.1
-	github.com/tdewolff/parse/v2 v2.8.10
+	github.com/tdewolff/parse/v2 v2.8.11
 	github.com/yuin/goldmark v1.8.1
 	golang.org/x/text v0.35.0
 	google.golang.org/grpc v1.79.3
