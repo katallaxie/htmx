@@ -13,7 +13,7 @@ tool (
 require (
 	github.com/ettle/strcase v0.2.0
 	github.com/hashicorp/go-hclog v1.6.3
-	github.com/hashicorp/go-plugin v1.7.0
+	github.com/hashicorp/go-plugin v1.8.0
 	github.com/hashicorp/golang-lru/v2 v2.0.7
 	github.com/katallaxie/pkg v0.7.11
 	github.com/spf13/cobra v1.10.2
