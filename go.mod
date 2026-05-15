@@ -22,7 +22,7 @@ require (
 	github.com/tdewolff/parse/v2 v2.8.12
 	github.com/yuin/goldmark v1.8.2
 	golang.org/x/text v0.37.0
-	google.golang.org/grpc v1.81.0
+	google.golang.org/grpc v1.81.1
 	google.golang.org/protobuf v1.36.11
 )
 
