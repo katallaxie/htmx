@@ -17,7 +17,7 @@ func Benchmark_HTML5_Render(b *testing.B) {
 		nodes = append(nodes, htmx.Element("div"))
 	}
 
-	for i := 0; i < b.N; i++ {
+	for b.Loop() {
 		err := htmx.HTML5(
 			htmx.HTML5Props{
 				Title:       "Hello, World!",
@@ -36,7 +36,7 @@ func Benchmark_HTML5_Render(b *testing.B) {
 func Benchmark_ClassNames_Render(b *testing.B) {
 	c := htmx.ClassNames{"foo": true, "bar": true, "baz": true, "qux": true, "quux": true, "corge": true, "grault": true, "garply": true, "waldo": true, "fred": true, "plugh": true, "xyzzy": true, "thud": true}
 
-	for i := 0; i < b.N; i++ {
+	for b.Loop() {
 		var buf bytes.Buffer
 		buf.Reset()
 		err := c.Render(&buf)

@@ -13,7 +13,7 @@ func TestResolve(t *testing.T) {
 
 	pkg := &imports.ExactPackage{
 		Name:    "htmx.org",
-		Version: "2.0.4",
+		Version: "4.0.1",
 	}
 
 	err := cdn.Resolve(pkg)
@@ -21,8 +21,8 @@ func TestResolve(t *testing.T) {
 	require.NotNil(t, pkg)
 
 	require.Equal(t, "htmx.org", pkg.Name)
-	require.Equal(t, "2.0.4", pkg.Version)
-	require.Len(t, pkg.Files, 35)
+	require.Equal(t, "4.0.1", pkg.Version)
+	require.Len(t, pkg.Files, 73)
 
 	b, err := jsonx.Prettify(pkg)
 	require.NoError(t, err)

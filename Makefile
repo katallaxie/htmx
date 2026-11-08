@@ -1,10 +1,11 @@
 .DEFAULT_GOAL := build
 
 # Go variables
-GO 					?= go
+GO 						?= go
 GO_TOOL 			?= $(GO) tool
 GO_TEST 			?= $(GO_TOOL) gotest.tools/gotestsum --format pkgname
-GO_RELEASER 		?= $(GO_TOOL) github.com/goreleaser/goreleaser
+GO_RELEASER 	?= $(GO_TOOL) github.com/goreleaser/goreleaser
+GO_BENCHSTAT	?= $(GO_TOOL) golang.org/x/perf/cmd/benchstat
 
 .PHONY: release
 release: ## Release the project.
@@ -20,7 +21,7 @@ generate: ## Generate code.
 
 .PHONY: bench
 bench: ## Run benchmarks.
-	$(GO) test -bench=. ./...
+	$(GO) test -bench=. ./... | $(GO_BENCHSTAT) -
 
 .PHONY: start
 start: ## Run air live reload.

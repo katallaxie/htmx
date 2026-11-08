@@ -182,7 +182,7 @@ htmx.Imports(
         Pkgs: []imports.ExactPackage{
             {
                 Name:    "htmx.org",
-                Version: "2.0.4",
+                Version: "4.0.1",
             },
         },
         Requires: []imports.Require{

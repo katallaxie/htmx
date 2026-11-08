@@ -14,14 +14,14 @@ import (
 )
 
 func BenchmarkElement(b *testing.B) {
-	for i := 0; i < b.N; i++ {
+	for b.Loop() {
 		err := htmx.Element("div").Render(io.Discard)
 		assert.NoError(b, err)
 	}
 }
 
 func Benchmark_AttrRender(b *testing.B) {
-	for i := 0; i < b.N; i++ {
+	for b.Loop() {
 		err := htmx.Attribute("href", "/").Render(io.Discard)
 		assert.NoError(b, err)
 	}
