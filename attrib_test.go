@@ -222,7 +222,7 @@ func TestJSEvent(t *testing.T) {
 		name  string
 		want  string
 		value string
-		event htmx.JSEventType
+		event string
 	}{
 		{
 			name:  "onclick",
