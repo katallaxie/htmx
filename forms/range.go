@@ -87,6 +87,28 @@ func RangeWarning(p RangeProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
+// RangeNeutral is a component that displays a neutral range input.
+func RangeNeutral(p RangeProps, children ...htmx.Node) htmx.Node {
+	return htmx.Input(
+		htmx.Merge(
+			htmx.ClassNames{
+				"range":         true,
+				"range-neutral": true,
+				"validator":     p.Validator,
+			},
+			p.ClassNames,
+		),
+		htmx.Attribute("type", "range"),
+		htmx.Attribute("name", p.Name),
+		htmx.Attribute("value", p.Value),
+		htmx.Attribute("min", p.Min),
+		htmx.Attribute("max", p.Max),
+		htmx.Attribute("step", p.Step),
+		htmx.If(p.Disabled, htmx.Disabled()),
+		htmx.Group(children...),
+	)
+}
+
 // RangeInfo is a component that displays an info range input.
 func RangeInfo(p RangeProps, children ...htmx.Node) htmx.Node {
 	return htmx.Input(
@@ -117,6 +139,28 @@ func RangeError(p RangeProps, children ...htmx.Node) htmx.Node {
 				"range":       true,
 				"range-error": true,
 				"validator":   p.Validator,
+			},
+			p.ClassNames,
+		),
+		htmx.Attribute("type", "range"),
+		htmx.Attribute("name", p.Name),
+		htmx.Attribute("value", p.Value),
+		htmx.Attribute("min", p.Min),
+		htmx.Attribute("max", p.Max),
+		htmx.Attribute("step", p.Step),
+		htmx.If(p.Disabled, htmx.Disabled()),
+		htmx.Group(children...),
+	)
+}
+
+// RangeVertical is a component that displays a vertical range input.
+func RangeVertical(p RangeProps, children ...htmx.Node) htmx.Node {
+	return htmx.Input(
+		htmx.Merge(
+			htmx.ClassNames{
+				"range":          true,
+				"range-vertical": true,
+				"validator":      p.Validator,
 			},
 			p.ClassNames,
 		),
