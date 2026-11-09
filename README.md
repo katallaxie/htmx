@@ -223,6 +223,21 @@ See [examples](https://github.com/katallaxie/fiber-htmx/tree/master/examples) to
 make bench
 ```
 
+```bash
+goos: linux
+goarch: arm64
+pkg: github.com/katallaxie/htmx
+                     │      -       │
+                     │    sec/op    │
+Element-5              63.81n ± ∞ ¹
+_AttrRender-5          64.97n ± ∞ ¹
+_HTML5_Render-5        760.0µ ± ∞ ¹
+_ClassNames_Render-5   1.192µ ± ∞ ¹
+Merge-5                2.248µ ± ∞ ¹
+geomean                1.532µ
+¹ need >= 6 samples for confidence interval at level 0.95
+```
+
 ## License
 
 [MIT](/LICENSE)
