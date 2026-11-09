@@ -283,14 +283,14 @@ type ColumnDef[R Row] struct {
 
 // Table is a struct that contains the properties of a table.
 func Table[S ~[]R, R Row](p Props, columns Columns[R], s S) htmx.Node {
-	headers := []htmx.Node{}
+	headers := make([]htmx.Node, 0, len(columns))
 	for _, column := range columns {
 		headers = append(headers, column.Header(p))
 	}
 
-	rows := []htmx.Node{}
+	rows := make([]htmx.Node, 0, len(s))
 	for _, row := range s {
-		cells := []htmx.Node{}
+		cells := make([]htmx.Node, 0, len(columns))
 		for _, column := range columns {
 			cells = append(cells, column.Cell(p, row))
 		}

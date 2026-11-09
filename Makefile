@@ -6,6 +6,7 @@ GO_TOOL 			?= $(GO) tool
 GO_TEST 			?= $(GO_TOOL) gotest.tools/gotestsum --format pkgname
 GO_RELEASER 	?= $(GO_TOOL) github.com/goreleaser/goreleaser
 GO_BENCHSTAT	?= $(GO_TOOL) golang.org/x/perf/cmd/benchstat
+GO_LINT			?= $(GO_TOOL) github.com/golangci/golangci-lint/v2/cmd/golangci-lint
 
 .PHONY: release
 release: ## Release the project.
@@ -43,14 +44,14 @@ fmt: ## Run go fmt against code.
 vet: ## Run go vet against code.
 	$(GO) vet ./...
 
+.PHONY: lint
+lint: ## Run lint.
+	$(GO_LINT) run --timeout 5m -c .golangci.yml
+
 .PHONY: test
 test: fmt vet ## Run tests.
 	mkdir -p .test/reports
 	$(GO_TEST) --junitfile .test/reports/unit-test.xml -- -race ./... -count=1 -short -cover -coverprofile .test/reports/unit-test-coverage.out
-
-.PHONY: lint
-lint: ## Run lint.
-	$(GO_TOOL) github.com/golangci/golangci-lint/v2/cmd/golangci-lint run --timeout 5m -c .golangci.yml
 
 .PHONY: clean
 clean: ## Remove previous build.

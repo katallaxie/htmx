@@ -87,6 +87,20 @@ func CloseButton(props CloseButtonProps, children ...htmx.Node) htmx.Node {
 	)
 }
 
+// CloseButtonOutside is a component for the htmx modal extension.
+func CloseButtonOutside(props CloseButtonProps, children ...htmx.Node) htmx.Node {
+	return htmx.Form(
+		htmx.Method("dialog"),
+		htmx.Merge(
+			htmx.ClassNames{
+				"modal-backdrop": true,
+			},
+			props.ClassNames,
+		),
+		htmx.Group(children...),
+	)
+}
+
 // OpenButtonProps contains the properties for the modal open button component.
 type OpenButtonProps struct {
 	// ClassNames are the CSS class names to apply to the modal open button.

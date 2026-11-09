@@ -49,6 +49,7 @@ func Page() htmx.Node {
 			},
 		},
 		htmx.Body(
+			// Form with close button
 			modals.OpenButton(modals.OpenButtonProps{
 				ID: "example1",
 			},
@@ -72,6 +73,33 @@ func Page() htmx.Node {
 						},
 							htmx.Text("Close"),
 						),
+					),
+				),
+			),
+			// Form with close button outside
+			modals.OpenButton(modals.OpenButtonProps{
+				ID: "example2",
+			},
+				htmx.Text("Open Modal"),
+			),
+			modals.Modal(modals.Props{
+				ID: "example2",
+			},
+				modals.Box(modals.BoxProps{},
+					htmx.H4(
+						htmx.ClassNames{"font-bold": true, "text-lg": true},
+						htmx.Text("Hello!"),
+					),
+					htmx.P(
+						htmx.ClassNames{"py-4": true},
+						htmx.Text("This is an example modal."),
+					),
+				),
+				modals.CloseButtonOutside(modals.CloseButtonProps{
+					ID: "example2",
+				},
+					htmx.Button(
+						htmx.Text("Close"),
 					),
 				),
 			),
