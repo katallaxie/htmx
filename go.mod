@@ -20,7 +20,7 @@ require (
 	github.com/hashicorp/golang-lru/v2 v2.0.7
 	github.com/katallaxie/pkg v0.7.11
 	github.com/spf13/cobra v1.10.2
-	github.com/spf13/pflag v1.0.10
+	github.com/spf13/pflag v1.1.0
 	github.com/stretchr/testify v1.12.1
 	github.com/tdewolff/parse/v2 v2.8.12
 	github.com/yuin/goldmark v1.8.7
